@@ -1,8 +1,6 @@
-## sfx-framedata
+# sfx-framedata
 
-A general purpose discord and IRC bot written in Python. Uses Async version of discord.py and IRC3 for each version of the bot. 
-
-A custom interface.py module is used instead of the discord cog extension to provide compatibility between the versions. 
+Un bottino per i combattenti di strada cinque.
 
 ## Running the bot
 
@@ -14,6 +12,7 @@ python3 src/discord-bot.py
 
 
 ## Commands
+
 A sample of the commands available to the bot, see [config file](conf/bots.yaml) for the full list. 
 
 * !gif: Returns the most relevant gif for the caption using Giffy. ```!gif obama mic drop```
@@ -34,4 +33,4 @@ A sample of the commands available to the bot, see [config file](conf/bots.yaml)
 
   
 
-Originally based on [Yaksha](https://github.com/ellipses/Yaksha) by [ellipses](https://github.com/ellipses)
+Originally based on [Yaksha](https://github.com/ellipses/Yaksha) bot by [ellipses](https://github.com/ellipses)
