@@ -1,4 +1,4 @@
-## Yaksha
+## sfx-framedata
 
 A general purpose discord and IRC bot written in Python. Uses Async version of discord.py and IRC3 for each version of the bot. 
 
@@ -6,7 +6,12 @@ A custom interface.py module is used instead of the discord cog extension to pro
 
 ## Running the bot
 
-While its possible to self host the bot, I would prefer if you invited the bot to your channel using [invite link](https://discordapp.com/oauth2/authorize?client_id=194156698150240257&scope=bot&permissions=0x00000c00).
+```bash
+python3 -m venv .
+source bin/activate
+python3 src/discord-bot.py
+```
+
 
 ## Commands
 A sample of the commands available to the bot, see [config file](conf/bots.yaml) for the full list. 
@@ -29,4 +34,4 @@ A sample of the commands available to the bot, see [config file](conf/bots.yaml)
 
   
 
-
+Originally based on [Yaksha](https://github.com/ellipses/Yaksha) by [ellipses](https://github.com/ellipses)
