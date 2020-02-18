@@ -21,7 +21,7 @@ async def on_ready():
     print(client.user.name)
     print(client.user.id)
     print('--------')
-    servers = client.servers
+    servers = client.guilds
     for server in servers:
         print('Joined server %s' % server)
 
@@ -31,7 +31,7 @@ async def on_message(message):
     if message.author == client.user:
         return
 
-    if message.server.id in client.config.get('ignored_servers', []):
+    if message.guild.id in client.config.get('ignored_servers', []):
         return
 
     for command in client.commands.keys():
@@ -43,7 +43,7 @@ async def on_message(message):
             command = command.lower()
             response = await client.interface.call_command(
                 command, msg, user, message.channel, client,
-                server=message.server.id
+                server=message.guild.id
             )
             if response:
                 await send_message(response, message)
@@ -109,7 +109,7 @@ async def publish_stats(config):
 
     while True:
         payload = {
-            "server_count": len(client.servers)
+            "server_count": len(client.guilds)
         }
         try:
             await post_request(url, payload, headers)
@@ -139,9 +139,9 @@ async def send_message(response, message):
             # Try sending only the embded message if it exists and fall
             # back the the text message.
             if em:
-                await client.send_message(message.channel, None, embed=em)
+                await message.channel.send(None, embed=em)
             else:
-                await client.send_message(message.channel, msg)
+                await message.channel.send(msg)
             break
         except discord.HTTPException as e:
             # Empty message error code which happens if you don't
@@ -157,7 +157,7 @@ async def send_message(response, message):
     else:
         logging.error(
             'Failed sending %s and %s to %s in %s after %s retries' % (
-                msg, em, message.channel, message.server, client.max_retries
+                msg, em, message.channel, message.guild, client.max_retries
             )
         )
 
