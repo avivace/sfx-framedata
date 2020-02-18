@@ -1,10 +1,11 @@
 
 prefixdict = {
-	"Crouching" : ["cb"]	
+	"Crouching" : ["cb"]
 }
 
 aliasdict = {
 	"LP" : ["jab", "lp"],
+	"Collarbone Breaker" : ["f+mp"]
 }
 
 def findAlias(text):
