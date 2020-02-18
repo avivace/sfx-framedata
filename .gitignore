@@ -68,3 +68,6 @@ target/
 
 # Editors
 .vscode
+
+# Python
+Scripts
