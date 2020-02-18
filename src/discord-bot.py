@@ -139,9 +139,9 @@ async def send_message(response, message):
             # Try sending only the embded message if it exists and fall
             # back the the text message.
             if em:
-                await client.send_message(message.channel, None, embed=em)
+                await message.channel.send(None, embed=em)
             else:
-                await client.send_message(message.channel, msg)
+                await message.channel.send(msg)
             break
         except discord.HTTPException as e:
             # Empty message error code which happens if you don't
