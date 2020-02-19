@@ -1,12 +1,23 @@
 # sfx-framedata
 
-Un bottino per i combattenti di strada cinque.
+Un bottino per i combattenti di strada cinque. Runs on discord-py 1.31 or more recent (post-rewrite API).
 
-## Running the bot
+## Deploy
+
+#### Discord application
+
+[Create a Discord Bot](https://discordpy.readthedocs.io/en/latest/discord.html). Put the token (not the secret) in the `conf/bots.yaml` configuration file.
+
+#### Steam authentication
+
+TODO
+
+#### Run the bot
 
 ```bash
 python3 -m venv .
 source bin/activate
+pip3 install -r requirements.txt
 python3 src/discord-bot.py
 ```
 
