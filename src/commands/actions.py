@@ -1,23 +1,7 @@
 #!/usr/bin/python
-import re
-import os
-import yaml
-import json
-import time
-import random
-import base64
-import aiohttp
-import asyncio
-import requests
 import aiofiles
-import asyncio_redis
-from urllib.parse import quote
 from fuzzywuzzy import process
-from bs4 import BeautifulSoup
-from datetime import datetime, timedelta
-from dateparser.date import DateDataParser
-from commands.utilities import (rate_limit, memoize, get_request,
-                                register, get_callbacks)
+from commands.utilities import register
 
 class Help():
 
