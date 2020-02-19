@@ -175,7 +175,8 @@ def main():
 
     token = config['discord']['token']
     client.loop.create_task(change_status(config))
-    client.loop.create_task(publish_stats(config))
+    # Disable stats publishing
+    # client.loop.create_task(publish_stats(config))
     client.run(token)
 
 
