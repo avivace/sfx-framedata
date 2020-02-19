@@ -2,6 +2,8 @@
 
 Un bottino per i combattenti di strada cinque. Runs on discord-py 1.31 or more recent (post-rewrite API).
 
+Built and mantained by [ricki122](https://twitter.com/ricki122), [Antonio Vivace](https://twitter.com/avivace4), [d3nnib](https://twitter.com/dennibevilacqua)
+
 ## Deploy
 
 #### Discord application
