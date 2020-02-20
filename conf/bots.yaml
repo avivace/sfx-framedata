@@ -1,29 +1,17 @@
+steam:
+  user: ''
+  pass: ''
 discord:
   token: 'some_token'
   max_retries: 10
 frame_data:
   url: 'someurl'
 blacklist_file: 'blacklist_file.txt'
-irc:
-  channels:
-    - '#'
 stats:
   url: https://bots.discord.pw/api/bots/{bot_id}/stats
   token: 'some_other_token'
 admins:
   - ''
-frinkiac:
-    # 31 * 200
-    max_timespan: 6200
-    max_count: 31
-    interval: 300
-    api_url:
-    gif_url:
-    caption_url:
-add_commands:
-  file: additional_commands.txt
-arbitary:
-  skins: filename
 common_actions:
   # commands: Help text
   '!frames': >
@@ -31,6 +19,8 @@ common_actions:
     works with stats of the char like fdash, bdash, throw range etc.
     Use optional parameter -v for more info on the move.
     Usage: ```!frames Ryu cr.mk``` ```!frames Nash phrase``` ```!frames-v Ryu shoryu```
+  '!info': >
+    'Contacts to get support, provide feedback or fork our code. Shows bot version and some other diagnostic data.'
   '?help': 'Get help on a command. Usage ```?help command_name```'
 admin_actions:
   '!blacklist': 'Blacklists a user. Usage ```!blacklist user1 [user2 user3]```'
