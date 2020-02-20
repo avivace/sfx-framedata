@@ -1,7 +1,9 @@
 #!/usr/bin/python
 import aiofiles
+import discord
 from fuzzywuzzy import process
-from commands.utilities import register
+from commands.utilities import register, generate_discord_color, get_last_commit
+
 
 class Help():
 
@@ -27,6 +29,24 @@ class Help():
                 return available_commands[cmd]
         else:
             return 'Dict of commands missing :/ .'
+
+    @register('!info')
+    async def get_info(self, msg, *args, **kwargs):
+        title = "SFX-Framedata"
+        url = self.config['repo_url']
+        desc = f"""
+            _Street Fighter V Discord bot by
+            [ricki122](https://twitter.com/ricki122), [Antonio Vivace](https://twitter.com/avivace4), [dennib](https://twitter.com/dennibevilacqua)_
+
+            For feedbacks and contributions please visit
+            {url}
+        """
+        lastCommit = get_last_commit()
+        embed = discord.Embed(
+            title=title, colour=generate_discord_color(), description=desc, url=url)
+        embed.set_footer(
+            text=f"Version: {self.config['version']} - Last commit: {lastCommit}")
+        return (None, embed)
 
 
 class Blacklist():

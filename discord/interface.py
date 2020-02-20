@@ -112,6 +112,7 @@ class Interface():
             # to pass in the available commands.
             if command == '?help':
                 kwargs['commands_dict'] = self.non_admin_actions
+                kwargs['config'] = self.config
             # Another special case for the blacklist commands that requires
             # current list of blacklisted to be passed in so it can be updated.
             # Could instead have a seperate thread that periodically reads from
