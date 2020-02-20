@@ -4,17 +4,29 @@ Un bottino per i combattenti di strada cinque. Runs on discord-py 1.31 or more r
 
 Built and mantained by [ricki122](https://twitter.com/ricki122), [Antonio Vivace](https://twitter.com/avivace4), [d3nnib](https://twitter.com/dennibevilacqua)
 
-## Deploy
+## Run
 
-#### Discord application
+#### Data pulling
+
+pup-sfx is a Puppeteer script to pull raw HTML pages from capcom website. Handles the steam login.
+
+Get things ready:
+
+```
+cd pup
+sudo sysctl -w kernel.unprivileged_userns_clone=1
+npm install
+```
+
+Run:
+
+```
+node index.js
+```
+
+#### Discord Bot
 
 [Create a Discord Bot](https://discordpy.readthedocs.io/en/latest/discord.html). Put the token (not the secret) in the `conf/bots.yaml` configuration file.
-
-#### Steam authentication
-
-TODO
-
-#### Run the bot
 
 ```bash
 python3 -m venv .
