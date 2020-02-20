@@ -61,7 +61,7 @@ async def change_status(config):
         config.get('discord_actions', {}).keys()
     )
     for cmd in itertools.cycle(commands):
-        display_cmd = '?help | %s' % cmd
+        display_cmd = '!help | %s' % cmd
         game = discord.Game(name=display_cmd)
         try:
             await client.change_presence(game=game)

@@ -110,7 +110,7 @@ class Interface():
 
             # Special case if its the help command that requires you
             # to pass in the available commands.
-            if command == '?help':
+            if command == '!help':
                 kwargs['commands_dict'] = self.non_admin_actions
                 kwargs['config'] = self.config
             # Another special case for the blacklist commands that requires
