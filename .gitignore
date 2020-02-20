@@ -1,7 +1,9 @@
+# python venv
 bin/
 lib64
 pyvenv.cfg
 share/
+Scripts
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
