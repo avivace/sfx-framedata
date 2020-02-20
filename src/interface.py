@@ -9,7 +9,7 @@ creates a dictionary of commands and the functions, call_command which
 handles each valid command received by the bot and user_has_permission
 which checks if the user has permission to call the specific command.
 '''
-from commands import ifgc, voting, actions
+from commands import ifgc, actions
 from commands import utilities
 from graphiteudp import GraphiteUDPClient
 import logging
@@ -23,7 +23,7 @@ class Interface():
         self._func_mapping = {}
         self._class_mapping = {}
         self.no_cache_pattern = r'--nocache'
-        self._modules = [ifgc, voting, actions]
+        self._modules = [ifgc, actions]
         self.config = config
         self.registered_commands = bot_commands
 
