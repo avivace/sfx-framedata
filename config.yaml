@@ -25,3 +25,5 @@ common_actions:
 admin_actions:
   '!blacklist': 'Blacklists a user. Usage ```!blacklist user1 [user2 user3]```'
   '!unblacklist': 'Unblacklists a user. Usage ```!unblacklist user1 [user2 user3]```'
+version: "0.0.0"
+repo_url: "https://github.com/avivace/sfx-framedata"
