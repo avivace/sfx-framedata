@@ -1,13 +1,9 @@
-vs_names = {
-    # [VS1] and [VS2] are automatically prepended
-    'Ryu': ['Name of VS1', 'Name of VS2'],
-}
-
 vs1_aliases = ["V-Skill 1", "vs1", "vskill1", "v-skill1"]
+# -> [VS1]
 vs2_aliases = ["V-Skill 2", "vs2", "vskill2", "v-skill2"]
+# -> [VS2]
 
-aliasdict = {
-
+basedict = {
     # "TABLE NAME" : ["FRIENDLY OFFICIAL NAME", "FRIENDLY ALIAS 1", "FRIENDLY ALIAS 2", [...]]
 	# SHARED ALIASES
    	"Standing LP": ["LP", "lp", "jab"],
@@ -28,7 +24,10 @@ aliasdict = {
     "Jumping LK": ["j.LK", "j.lk", "jlk", "j.short"],
     "Jumping MK": ["j.MK", "j.mk", "jmk", "j.forward"],
     "Jumping HK": ["j.HK", "j.hk", "jhk", "j.roundhouse"],
+}
 
+
+other = {
 	# CHARACTER: RYU
     # V-TRIGGER 1
     "Collarbone Breaker": ["f+MP", "f+mp", "f.mp", "fmp", "overhead"],
