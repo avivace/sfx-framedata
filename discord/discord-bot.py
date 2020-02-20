@@ -164,7 +164,7 @@ async def send_message(response, message):
 
 def main():
     config_path = os.path.join(os.path.dirname(__file__),
-                               '../conf/bots.yaml')
+                               '../config.yaml')
     config = yaml.load(open(config_path).read())
     client.commands = config.get('common_actions', {}).copy()
     client.commands.update(config.get('discord_actions', {}))
