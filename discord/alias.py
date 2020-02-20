@@ -26,6 +26,8 @@ basedict = {
     "Jumping HK": ["j.HK", "j.hk", "jhk", "j.roundhouse"],
 }
 
+# Le regex sono il male nocivo te lo giuro
+hadoken = "([L|M|H]|EX)\s(Fireball|hadoken)"
 
 other = {
 	# CHARACTER: RYU
