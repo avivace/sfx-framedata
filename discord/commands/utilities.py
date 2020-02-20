@@ -8,6 +8,7 @@ import asyncio
 import time
 import random
 import discord
+import subprocess
 
 
 def rate_limit(time_gap):
@@ -136,3 +137,8 @@ def generate_discord_color():
     randomColor = generate_color()
     discordColour = discord.Colour.from_rgb(randomColor[0], randomColor[1], randomColor[2])
     return discordColour
+
+def get_last_commit(format="short"):
+    command = ["git", "rev-parse", f"--{format}", "HEAD"]
+    lastCommit = subprocess.check_output(command).decode("utf-8").strip()
+    return lastCommit
