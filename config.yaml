@@ -20,8 +20,8 @@ common_actions:
     Use optional parameter -v for more info on the move.
     Usage: ```!frames Ryu cr.mk``` ```!frames Nash phrase``` ```!frames-v Ryu shoryu```
   '!info': >
-    'Contacts to get support, provide feedback or fork our code. Shows bot version and some other diagnostic data.'
-  '?help': 'Get help on a command. Usage ```?help command_name```'
+    Contacts to get support, provide feedback or fork our code. Shows bot version and some other diagnostic data.
+  '!help': 'Get help on a command. Usage ```!help command_name```'
 admin_actions:
   '!blacklist': 'Blacklists a user. Usage ```!blacklist user1 [user2 user3]```'
   '!unblacklist': 'Unblacklists a user. Usage ```!unblacklist user1 [user2 user3]```'
