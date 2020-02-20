@@ -6,6 +6,8 @@ import requests
 import aiohttp
 import asyncio
 import time
+import random
+import discord
 
 
 def rate_limit(time_gap):
@@ -122,3 +124,15 @@ async def get_request(url, json=False):
                     return await resp.text()
             else:
                 return False
+
+def generate_color():
+    r = random.randint(0,255)
+    g = random.randint(0,255)
+    b = random.randint(0,255)
+    rgb = [r,g,b]
+    return rgb
+
+def generate_discord_color():
+    randomColor = generate_color()
+    discordColour = discord.Colour.from_rgb(randomColor[0], randomColor[1], randomColor[2])
+    return discordColour
