@@ -1,8 +1,10 @@
-# Move name solver
-
-prefixdict = {
-    "Crouching": ["cb"]
+vs_names = {
+    # [VS1] and [VS2] are automatically prepended
+    'Ryu': ['Name of VS1', 'Name of VS2'],
 }
+
+vs1_aliases = ["V-Skill 1", "vs1", "vskill1", "v-skill1"]
+vs2_aliases = ["V-Skill 2", "vs2", "vskill2", "v-skill2"]
 
 aliasdict = {
 
