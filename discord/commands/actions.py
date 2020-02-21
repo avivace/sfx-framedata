@@ -45,7 +45,7 @@ class Help():
         embed = discord.Embed(
             title=title, colour=generate_discord_color(), description=desc, url=url)
         embed.set_footer(
-            text=f"Version: {self.config['version']} - Last commit: {lastCommit}")
+            text=f"Running version: {self.config['version']} - Commit hash: {lastCommit}")
         return (None, embed)
 
 
