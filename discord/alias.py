@@ -1,3 +1,5 @@
+import re
+
 vs1_aliases = ["V-Skill 1", "vs1", "vskill1", "v-skill1"]
 # -> [VS1]
 vs2_aliases = ["V-Skill 2", "vs2", "vskill2", "v-skill2"]
@@ -28,6 +30,16 @@ basedict = {
 
 # Le regex sono il male nocivo te lo giuro
 hadoken = "([L|M|H]|EX)\s(Fireball|hadoken)"
+
+textinput = "l fireball"
+
+m = re.search(hadoken, textinput, re.IGNORECASE)
+if m:
+    # (0) is for the first match
+    # [0] is the first group matched
+    result = m.groups(0)[0].upper() + " Hadoken"
+    print(result)
+
 
 other = {
 	# CHARACTER: RYU
@@ -78,7 +90,7 @@ other = {
     # V-TRIGGER 1
 	"Diagonal Jumping HK": ["jf.HK", "jf.hk", "jfhk", "jf.roundhouse", "jb.hk", "jbhk", "jb.roundhouse"],
 
-
+}
 
 def findAlias(text):
     for move in aliasdict:
