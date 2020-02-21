@@ -28,7 +28,7 @@ basedict = {
     "Jumping HK": ["j.HK", "j.hk", "jhk", "j.roundhouse"],
 }
 
-textinput = "hcf+lk"
+textinput = "qcf+lp"
 
 # Le regex sono il male nocivo te lo giuro
 # ricerca con "fireball|hadoken"
@@ -64,8 +64,8 @@ if m:
     print(result)
 
 
-# ricerca con "tatsu"
-tatsu = "([L|M|H]|EX)\s(tatsu)"
+# ricerca con "tatsu|tatsumaki"
+tatsu = "([L|M|H]|EX)\s(tatsu|tatsumaki)"
 
 m = re.search(tatsu, textinput, re.IGNORECASE)
 if m:
@@ -121,13 +121,7 @@ other = {
     "Jodan Sanrengeki": ["MP>HP>HK", "mp+hp+hk", "mp hp hk"],
     "Shoulder Throw": ["throw", "lp+lk", "lplk", "throw"],
     "Somersault Throw": ["b+throw", "b+lp+lk", "blplk", "bthrow", "b+throw", "back throw"],
-  
-    "[VS1] Mind's Eye": ["V-Skill 1", "vs1", "vskill1", "v-skill1"],
-    "[VS2] Thust Strike": ["V-Skill 2", "vs2", "vskill2", "v-skill2"],
- 
-    # da dare come risultato assieme a "[VS2] Thust Strike":
-	# "[VS2] Thust Strike (upon successful parry)"
-	"Denjin Renki": ["V-Trigger 1", "vt1", "vtrigger1", "v-trigger1"],
+    "Denjin Renki": ["V-Trigger 1", "vt1", "vtrigger1", "v-trigger1"],
     "Hashogeki": ["V-reversal", "vreversal", "v-reversal"],
  
 
