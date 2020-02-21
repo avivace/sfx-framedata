@@ -7,28 +7,10 @@ vs2_aliases = ["V-Skill 2", "vs2", "vskill2", "v-skill2"]
 
 basedict = {
     # "TABLE NAME" : ["FRIENDLY OFFICIAL NAME", "FRIENDLY ALIAS 1", "FRIENDLY ALIAS 2", [...]]
-	# SHARED ALIASES
-   	"Standing LP": ["LP", "lp", "jab"],
-    "Standing MP": ["MP", "mp", "strong"],
-    "Standing HP": ["HP", "hp", "fierce"],
-    "Standing LK": ["LK", "lk", "short"],
-    "Standing MK": ["MK", "mk", "forward"],
-    "Standing HK": ["HK", "hk", "roundhouse"],
-    "Crouching LP": ["cr.LP", "cr.lp", "crlp", "cr.jab"],
-    "Crouching MP": ["cr.MP", "cr.mp", "crmp", "cr.strong"],
-    "Crouching HP": ["cr.HP", "cr.hp", "crhp", "cr.fierce"],
-    "Crouching LK": ["cr.LK", "cr.lk", "crlk", "cr.short"],
-    "Crouching MK": ["cr.MK", "cr.mk", "crmk", "cr.forward"],
-    "Crouching HK": ["cr.HK", "cr.hk", "crhk", "sweep", "spazzata"],
-    "Jumping LP": ["j.LP", "j.lp", "jlp", "j.jab"],
-    "Jumping MP": ["j.MP", "j.mp", "jmp", "j.strong"],
-    "Jumping HP": ["j.HP", "j.hp", "jhp", "j.fierce"],
-    "Jumping LK": ["j.LK", "j.lk", "jlk", "j.short"],
-    "Jumping MK": ["j.MK", "j.mk", "jmk", "j.forward"],
-    "Jumping HK": ["j.HK", "j.hk", "jhk", "j.roundhouse"],
+
 }
 
-userInput = "ryu qcf+lp"
+userInput = "ryu l tatsu"
 
 print("userinput is", userInput, "\n")
 
@@ -50,7 +32,16 @@ if m:
 print("\n")
 
 # Le regex sono il male nocivo te lo giuro
-# ricerca con "fireball|hadoken"
+
+
+# normals = "(cr|j|st){0,1}.{0,1}([L|M|H]{1})(p|k)"
+
+# m = re.search(normals, move, re.IGNORECASE)
+
+
+
+
+# matching with "fireball|hadoken"
 hadoken = "([L|M|H]|EX)\s(fireball|hadoken)"
 
 m = re.search(hadoken, move, re.IGNORECASE)
@@ -60,7 +51,7 @@ if m:
     result = m.groups(0)[0].upper() + " Hadoken"
 
 
-# ricerca con "qcf"
+# matching with "qcf"
 hadoken2 = "qcf\+([L|M|H|P]{1})p"
 
 m = re.search(hadoken2, move, re.IGNORECASE)
@@ -70,7 +61,7 @@ if m:
     result = m.groups(0)[0].upper() + " Hadoken"
 
 
-# ricerca con "shoryuken|dragon punch|dp"
+# matching with "shoryuken|dragon punch|dp"
 shoryuken = "([L|M|H]|EX)\s(shoryuken|dragon punch|dp)"
 
 m = re.search(shoryuken, move, re.IGNORECASE)
@@ -80,7 +71,7 @@ if m:
     result = m.groups(0)[0].upper() + " Shoryuken"
 
 
-# ricerca con "tatsu|tatsumaki"
+# matching with "tatsu|tatsumaki"
 tatsu = "([L|M|H]|EX)\s(tatsu|tatsumaki)"
 
 m = re.search(tatsu, move, re.IGNORECASE)
@@ -90,7 +81,7 @@ if m:
     result = m.groups(0)[0].upper() + " Tatsumaki Senpukyaku"
 
 
-# ricerca con "qcb"
+# matching with "qcb"
 tatsu2 = "qcb\+([L|M|H|K]{1})k"
 
 m = re.search(tatsu2, move, re.IGNORECASE)
@@ -100,8 +91,8 @@ if m:
     result = m.groups(0)[0].upper() + " Tatsumaki Senpukyaku"
 
 
-# ricerca con "donkey kick"
-donkey = "([L|M|H]|EX)\s(donkey kick)"
+# matching with "donkey kick|donkey"
+donkey = "([L|M|H]|EX)\s(donkey kick|donkey)"
 
 m = re.search(donkey, move, re.IGNORECASE)
 if m:
@@ -110,7 +101,7 @@ if m:
     result = m.groups(0)[0].upper() + " Jodan Sokutou Geri"
 
 
-# ricerca con "qcb"
+# matching with "hcf"
 donkey2 = "hcf\+([L|M|H|K]{1})k"
 
 m = re.search(donkey2, move, re.IGNORECASE)
@@ -162,9 +153,6 @@ other = {
 	# "Isshin (Attack)"
 
 
-	# CHARACTER: CHUN-LI
-    # V-TRIGGER 1
-	"Diagonal Jumping HK": ["jf.HK", "jf.hk", "jfhk", "jf.roundhouse", "jb.hk", "jbhk", "jb.roundhouse"],
 
 }
 
