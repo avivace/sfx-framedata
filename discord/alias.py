@@ -28,87 +28,109 @@ basedict = {
     "Jumping HK": ["j.HK", "j.hk", "jhk", "j.roundhouse"],
 }
 
-textinput = "qcf+lp"
+userInput = "ryu qcf+lp"
+
+print("userinput is", userInput, "\n")
+
+outer = "(ryu|nash)\s([A-Za-z\+]*)\s*(vt1|vt2){0,1}"
+m = re.search(outer, userInput, re.IGNORECASE)
+if m:
+    char = m.groups(0)[0]
+    move = m.groups(0)[1]
+    if m.groups(0)[2]:
+        vt = m.groups(0)[2].upper()
+    else:
+        vt = "VT1"
+
+    print("MATCHED outer expression")
+    print("char:\t", char)
+    print("move:\t", move)
+    print("vt:\t",vt)
+
+print("\n")
 
 # Le regex sono il male nocivo te lo giuro
 # ricerca con "fireball|hadoken"
 hadoken = "([L|M|H]|EX)\s(fireball|hadoken)"
 
-m = re.search(hadoken, textinput, re.IGNORECASE)
+m = re.search(hadoken, move, re.IGNORECASE)
 if m:
     # (0) is for the first match
     # [0] is the first group matched
     result = m.groups(0)[0].upper() + " Hadoken"
-    print(result)
 
 
 # ricerca con "qcf"
 hadoken2 = "qcf\+([L|M|H|P]{1})p"
 
-m = re.search(hadoken2, textinput, re.IGNORECASE)
+m = re.search(hadoken2, move, re.IGNORECASE)
 if m:
     # (0) is for the first match
     # [0] is the first group matched
     result = m.groups(0)[0].upper() + " Hadoken"
-    print(result)
 
 
 # ricerca con "shoryuken|dragon punch|dp"
 shoryuken = "([L|M|H]|EX)\s(shoryuken|dragon punch|dp)"
 
-m = re.search(shoryuken, textinput, re.IGNORECASE)
+m = re.search(shoryuken, move, re.IGNORECASE)
 if m:
     # (0) is for the first match
     # [0] is the first group matched
     result = m.groups(0)[0].upper() + " Shoryuken"
-    print(result)
 
 
 # ricerca con "tatsu|tatsumaki"
 tatsu = "([L|M|H]|EX)\s(tatsu|tatsumaki)"
 
-m = re.search(tatsu, textinput, re.IGNORECASE)
+m = re.search(tatsu, move, re.IGNORECASE)
 if m:
     # (0) is for the first match
     # [0] is the first group matched
     result = m.groups(0)[0].upper() + " Tatsumaki Senpukyaku"
-    print(result)
 
 
 # ricerca con "qcb"
 tatsu2 = "qcb\+([L|M|H|K]{1})k"
 
-m = re.search(tatsu2, textinput, re.IGNORECASE)
+m = re.search(tatsu2, move, re.IGNORECASE)
 if m:
     # (0) is for the first match
     # [0] is the first group matched
     result = m.groups(0)[0].upper() + " Tatsumaki Senpukyaku"
-    print(result)
 
 
 # ricerca con "donkey kick"
 donkey = "([L|M|H]|EX)\s(donkey kick)"
 
-m = re.search(donkey, textinput, re.IGNORECASE)
+m = re.search(donkey, move, re.IGNORECASE)
 if m:
     # (0) is for the first match
     # [0] is the first group matched
     result = m.groups(0)[0].upper() + " Jodan Sokutou Geri"
-    print(result)
 
 
 # ricerca con "qcb"
 donkey2 = "hcf\+([L|M|H|K]{1})k"
 
-m = re.search(donkey2, textinput, re.IGNORECASE)
+m = re.search(donkey2, move, re.IGNORECASE)
 if m:
     # (0) is for the first match
     # [0] is the first group matched
     result = m.groups(0)[0].upper() + " Jodan Sokutou Geri"
-    print(result)
 
 
+print("translated movename:", result)
 
+# TODO
+charsolved = char
+# TODO: wrap the matchings
+movesolved = result
+# TODO
+vtsolved = vt
+
+finalkey = charsolved +" "+ movesolved +" " +vtsolved
+print("\nFinal key:", finalkey)
 
 
 other = {
