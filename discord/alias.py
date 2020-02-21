@@ -28,10 +28,11 @@ basedict = {
     "Jumping HK": ["j.HK", "j.hk", "jhk", "j.roundhouse"],
 }
 
-# Le regex sono il male nocivo te lo giuro
-hadoken = "([L|M|H]|EX)\s(Fireball|hadoken)"
+textinput = "hcf+lk"
 
-textinput = "l fireball"
+# Le regex sono il male nocivo te lo giuro
+# ricerca con "fireball|hadoken"
+hadoken = "([L|M|H]|EX)\s(fireball|hadoken)"
 
 m = re.search(hadoken, textinput, re.IGNORECASE)
 if m:
@@ -39,6 +40,75 @@ if m:
     # [0] is the first group matched
     result = m.groups(0)[0].upper() + " Hadoken"
     print(result)
+
+
+# ricerca con "qcf"
+hadoken2 = "qcf\+([L|M|H|P]{1})p"
+
+m = re.search(hadoken2, textinput, re.IGNORECASE)
+if m:
+    # (0) is for the first match
+    # [0] is the first group matched
+    result = m.groups(0)[0].upper() + " Hadoken"
+    print(result)
+
+
+# ricerca con "shoryuken|dragon punch|dp"
+shoryuken = "([L|M|H]|EX)\s(shoryuken|dragon punch|dp)"
+
+m = re.search(shoryuken, textinput, re.IGNORECASE)
+if m:
+    # (0) is for the first match
+    # [0] is the first group matched
+    result = m.groups(0)[0].upper() + " Shoryuken"
+    print(result)
+
+
+# ricerca con "tatsu"
+tatsu = "([L|M|H]|EX)\s(tatsu)"
+
+m = re.search(tatsu, textinput, re.IGNORECASE)
+if m:
+    # (0) is for the first match
+    # [0] is the first group matched
+    result = m.groups(0)[0].upper() + " Tatsumaki Senpukyaku"
+    print(result)
+
+
+# ricerca con "qcb"
+tatsu2 = "qcb\+([L|M|H|K]{1})k"
+
+m = re.search(tatsu2, textinput, re.IGNORECASE)
+if m:
+    # (0) is for the first match
+    # [0] is the first group matched
+    result = m.groups(0)[0].upper() + " Tatsumaki Senpukyaku"
+    print(result)
+
+
+# ricerca con "donkey kick"
+donkey = "([L|M|H]|EX)\s(donkey kick)"
+
+m = re.search(donkey, textinput, re.IGNORECASE)
+if m:
+    # (0) is for the first match
+    # [0] is the first group matched
+    result = m.groups(0)[0].upper() + " Jodan Sokutou Geri"
+    print(result)
+
+
+# ricerca con "qcb"
+donkey2 = "hcf\+([L|M|H|K]{1})k"
+
+m = re.search(donkey2, textinput, re.IGNORECASE)
+if m:
+    # (0) is for the first match
+    # [0] is the first group matched
+    result = m.groups(0)[0].upper() + " Jodan Sokutou Geri"
+    print(result)
+
+
+
 
 
 other = {
@@ -51,30 +121,20 @@ other = {
     "Jodan Sanrengeki": ["MP>HP>HK", "mp+hp+hk", "mp hp hk"],
     "Shoulder Throw": ["throw", "lp+lk", "lplk", "throw"],
     "Somersault Throw": ["b+throw", "b+lp+lk", "blplk", "bthrow", "b+throw", "back throw"],
+  
     "[VS1] Mind's Eye": ["V-Skill 1", "vs1", "vskill1", "v-skill1"],
     "[VS2] Thust Strike": ["V-Skill 2", "vs2", "vskill2", "v-skill2"],
+ 
     # da dare come risultato assieme a "[VS2] Thust Strike":
 	# "[VS2] Thust Strike (upon successful parry)"
 	"Denjin Renki": ["V-Trigger 1", "vt1", "vtrigger1", "v-trigger1"],
     "Hashogeki": ["V-reversal", "vreversal", "v-reversal"],
-    "L Hadoken": ["L Fireball", "qcf+lp", "l hadoken"],
-    "M Hadoken": ["M Fireball", "qcf+mp", "m hadoken"],
-    "H Hadoken": ["H Fireball", "qcf+hp", "h hadoken"],
-    "EX Hadoken": ["EX Fireball", "qcf+pp", "ex hadoken"],
-    "L Shoryuken": ["L Dragon Punch", "l dp", "l shoryuken"],
-    "M Shoryuken": ["M Dragon Punch", "m dp", "m shoryuken"],
-    "H Shoryuken": ["H Dragon Punch", "h dp", "h shoryuken"],
-    "EX Shoryuken": ["EX Dragon Punch", "ex dp", "ex shoryuken", "giallata"],
-    "L Tatsumaki Senpukyaku": ["L Tornado Kick", "qcb+lk", "l tatsu"],
-    "M Tatsumaki Senpukyaku": ["M Tornado Kick", "qcb+mk", "m tatsu"],
-    "H Tatsumaki Senpukyaku": ["H Tornado Kick", "qcb+hk", "h tatsu"],
-    "EX Tatsumaki Senpukyaku": ["EX Tornado Kick", "qcb+kk", "ex tatsu"],
+ 
+
     "Airborne Tatsumaki Senpukyaku": ["Air Tatsu", "j.qcb+k", "air tatsu"],
     "EX Airborne Tatsumaki Senpukyaku": ["EX Air Tatsu", "j.qcb+kk", "ex air tatsu"],
-    "L Jodan Sokutou Geri": ["L Donkey Kick", "hcf+lk", "l donkey kick"],
-    "M Jodan Sokutou Geri": ["M Donkey Kick", "hcf+mk", "m donkey kick"],
-    "H Jodan Sokutou Geri": ["H Donkey Kick", "hcf+hk", "h donkey kick"],
-    "EX Jodan Sokutou Geri": ["EX Donkey Kick", "hcf+kk", "ex donkey kick"],
+ 
+
     "Shinku Hadoken": ["CA", "ca", "critical art", "super"],
     "Denjin Hadoken": ["CA VT1", "ca vt1", "critical art vt1", "super vt1"],
 
