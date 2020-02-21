@@ -40,7 +40,7 @@ if m:
     if m.groups(0)[2]:
         vt = m.groups(0)[2].upper()
     else:
-        vt = "VT1"
+        vt = "VT0"
 
     print("MATCHED outer expression")
     print("char:\t", char)
