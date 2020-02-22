@@ -47,7 +47,12 @@ def moveRegex(movestring):
     if m:
         # (0) is for the first match
         # [0] is the first group matched
-        return m.groups(0)[0].upper() + " Hadoken"
+      if m.groups(0)[0] == "p":
+        mod = "EX"
+      else:
+        mod = m.groups(0)[0]
+        
+      return mod.upper() + " Hadoken"
 
     # matching with "qcb"
     tatsu2 = "qcb\+([L|M|H|K]{1})k"
@@ -70,7 +75,12 @@ def moveRegex(movestring):
     if m:
         # (0) is for the first match
         # [0] is the first group matched
-        return m.groups(0)[0].upper() + " Jodan Sokutou Geri"
+      if m.groups(0)[0] == "k":
+        mod = "EX"
+      else:
+        mod = m.groups(0)[0]
+        
+      return mod.upper() + " Jodan Sokutou Geri"
 
     # Le regex sono il male nocivo te lo giuro
     normals = "(cr|j|st){0,1}.{0,1}([L|M|H]{1})(p|k)"
