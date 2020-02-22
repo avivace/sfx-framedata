@@ -9,9 +9,16 @@ const fs = require('fs');
   await page.type('#steamPassword', "")
   await page.click('[id="imageLogin"]')
   await page.waitForNavigation()
-  await page.goto('https://game.capcom.com/cfn/sfv/character/juri/frame/table#vt1')
-  let bodyHTML = await page.evaluate(() => document.body.innerHTML);
-  fs.writeFileSync('test.html', bodyHTML);
+  let chars = ['ryu', 'chun-li', 'nash', 'mbison', 'cammy', 'birdie', 'ken', 'necalli', 'vega', 'rmika', 'rashid', 'karin', 'zangief', 'laura', 'dhalsim', 'fang', 'alex', 'guile', 'ibuki', 'balrog', 'juri', 'urien', 'akuma', 'kolin', 'ed', 'abigail', 'menat', 'zeku', 'sakura', 'blanka', 'falke', 'cody', 'g', 'sagat', 'kage', 'poison', 'ehonda', 'lucia', 'gill', 'seth']
+  for (var charname of chars) {
+    console.log(`Dumping ${charname}..`)
+    let url = `https://game.capcom.com/cfn/sfv/character/${charname}/frame/table#vt1`
+    await page.goto(url)
+    let bodyHTML = await page.evaluate(() => document.body.innerHTML);
+    fs.writeFileSync(`htmldumps/${charname}.html`, bodyHTML); 
+  }
+  
+  // TODO: >30 seconds wait for navigation generates an UnhandledPromise
 
   browser.close()
 })()

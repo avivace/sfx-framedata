@@ -51,3 +51,15 @@ A sample of the commands available to the bot, see [config file](conf/bots.yaml)
   
 
 Originally based on [Yaksha](https://github.com/ellipses/Yaksha) bot by [ellipses](https://github.com/ellipses)
+
+### Notes
+
+Rewriting history because Antuz commits passwords in clear:
+
+```
+git clone --bare git@github.com:avivace/sfx-framedata.git
+java -jar bfg-1.13.0.jar --replace-text password.txt sfx-framedata.git/
+git reflog expire --expire=now --all && git gc --prune=now --aggressive
+git push (-f ?)
+git grep PASSWORD $(git rev-list --all)
+```
