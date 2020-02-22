@@ -174,11 +174,11 @@ chunliexact = {
     "Tenshin Shushu": ["b+lp+lk", "blplk", "bthrow", "b+throw", "back throw"],
     "Ryuseiraku": ["j.lp+lk", "jlplk", "jthrow", "j.throw", "air throw"],
 
-    "[VS1] Rankyaku": ["vs1","vskill1","v-skill1"]
+    "[VS1] Rankyaku": ["vs1","vskill1","v-skill1"],
     # GROUP WITH:
     # "[VS1] Souseikyaku"
 
-    "[VS2] Hazansyu": ["vs2","vskill2","v-skill2"]
+    "[VS2] Hazansyu": ["vs2","vskill2","v-skill2"],
     "Renkiko": ["vt1", "vtrigger1", "v-trigger1"],
     "Sohakkei": ["vreversal", "v-reversal","vrev"],
     "Hoyokusen": ["ca", "critical art", "super"],
@@ -189,7 +189,7 @@ chunliexact = {
 
     # CHUN-LI REGEX:
 
-
+def chunli():
     # matching with "b,f+"
     kikoken2 = "b,f\+([L|M|H|P]{1})p"
     m = re.search(kikoken2, movestring, re.IGNORECASE)
