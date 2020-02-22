@@ -5,27 +5,25 @@ import codecs
 import json
 from bs4 import BeautifulSoup
 
-SOUP_INGREDIENTS = "pup/htmldumps/ryu.html"
-
-
 def main():
-    # Check if HTML target file exits
-    if (os.path.exists(SOUP_INGREDIENTS)):
-        try:
-            # Read HTML file
-            html_content = codecs.open(SOUP_INGREDIENTS, "r", "utf-8")
-            if (html_content):
-                # Extract data
-                cookAnHotSoup(html_content)
-                print("Soup is hot and ready to be tasted!")
-        except Exception as err:
-            print("ERROR: An error occured while trying to extract the data:")
-            print(err)
-    else:
-        print("\nERROR: Sorry, you don't have all the ingredients you need to cook your soup :(\n(No data source file present)")
+    for characterName in SOUP_INGREDIENTS:
+        INGREDIENT = SOUP_INGREDIENTS_PATH + characterName + ".html"
+        # Check if HTML target file exits
+        if (os.path.exists(INGREDIENT)):
+            try:
+                # Read HTML file
+                html_content = codecs.open(INGREDIENT, "r", "utf-8")
+                if (html_content):
+                    # Extract data
+                    cookAnHotSoup(html_content, characterName)
+                    print(f"{characterName.upper()}: soup is hot and ready to be tasted!")
+            except Exception as err:
+                print("ERROR: An error occured while trying to extract the data:")
+                print(err)
+        else:
+            print("\nERROR: Sorry, you don't have all the ingredients you need to cook your soup :(\n(No data source file present)")
 
-
-def cookAnHotSoup(html):
+def cookAnHotSoup(html, characterName):
     soup = BeautifulSoup(html, "lxml")
 
     # Get character name
@@ -113,7 +111,10 @@ def cookAnHotSoup(html):
                 data["vt" + str(tableIndex + 1)].append(move)
 
     # Present our delicious soup
-    with open('data.json', 'w') as outfile:
+    if not os.path.exists(DATA_OUTPUT_DIR):
+        os.makedirs(DATA_OUTPUT_DIR)
+
+    with open(f'{DATA_OUTPUT_DIR + characterName}.json', 'w') as outfile:
         json.dump(data, outfile, indent=4)
 
 def clean(dirtySoup):
@@ -123,5 +124,15 @@ def clean(dirtySoup):
         kbf.decompose()
     return cleanedSoup
 
+def getSoupIngredients():
+    soupIngredients = [] 
+    for file in os.listdir("pup/htmldumps/"):
+        if (file.endswith(".html")):
+            soupIngredients.append(file.replace(".html", ""))
+    return soupIngredients
+
 if __name__ == "__main__":
+    SOUP_INGREDIENTS_PATH = "pup/htmldumps/"
+    SOUP_INGREDIENTS = getSoupIngredients()
+    DATA_OUTPUT_DIR = "data/extracted/"
     main()
