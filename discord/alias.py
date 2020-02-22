@@ -111,16 +111,16 @@ def moveRegex(movestring):
 
         return f'{mod} {m.groups(0)[1].upper()}{m.groups(0)[2].upper()}'
 
-    # matching with "fireball|hadoken|hado"
-    hadoken = "([L|M|H]|EX)\s(fireball|hadoken|hado)"
+    # matching with "hadoken|hado"
+    hadoken = "([L|M|H]|EX)\s(hadoken|hado)"
     m = re.search(hadoken, movestring, re.IGNORECASE)
     if m:
         # (0) is for the first match
         # [0] is the first group matched
         return m.groups(0)[0].upper() + " Hadoken"
 
-    # matching with "shoryuken|shoryu|dragon punch|dp"
-    shoryuken = "([L|M|H]|EX)\s(shoryuken|shoryu|dragon punch|dp)"
+    # matching with "shoryu|dragon punch|dp"
+    shoryuken = "([L|M|H]|EX)\s(shoryu|dragon punch|dp)"
 
     m = re.search(shoryuken, movestring, re.IGNORECASE)
     if m:
@@ -182,6 +182,14 @@ chunliexact = {
     "Renkiko": ["vt1", "vtrigger1", "v-trigger1"],
     "Sohakkei": ["vreversal", "v-reversal","vrev"],
     "Hoyokusen": ["ca", "critical art", "super"],
+    
+    
+    # V-TRIGGER 2
+    "Kikosho": ["vt2", "vtrigger2", "v-trigger2"]
+    # ANOTHER "Kikosho" IS PRESENT
+    # GROUP WITH:
+    # "Kikosho" (the second one)
+    # "Kikosho (Charge)"
 
 }
 
@@ -239,13 +247,13 @@ def chunli():
         else:
             mod = m.groups(0)[1]
 
-        return f'{mod} {m.groups(0)[1].upper()}{m.groups(0)[0].upper()} Hyakuretsukyaku'
+        return f'{mod} {m.groups(0)[1].upper()} {m.groups(0)[0].upper()} Hyakuretsukyaku'
         
       
 
 
-    # matching with "kikoken|kiko"
-    kikoken = "([L|M|H]|EX)\s(kikoken|kiko)"
+    # matching with "kiko"
+    kikoken = "([L|M|H]|EX)\s(kiko)"
     m = re.search(kikoken, movestring, re.IGNORECASE)
     if m:
         # (0) is for the first match
@@ -253,8 +261,8 @@ def chunli():
         return m.groups(0)[0].upper() + " Kikoken"
 
 
-    # matching with "hyakuretsukyaku|hyaku|legs"
-    hyaku = "([L|M|H]|EX)\s(hyakuretsukyaku|hyaku|legs)"
+    # matching with "hyaku|legs"
+    hyaku = "([L|M|H]|EX)\s(hyaku|legs)"
     m = re.search(hyaku, movestring, re.IGNORECASE)
     if m:
         # (0) is for the first match
@@ -262,8 +270,8 @@ def chunli():
         return m.groups(0)[0].upper() + " Hyakuretsukyaku"
 
 
-    # matching with "sbk|spinning|spinning bird kick"
-    sbk = "([L|M|H]|EX)\s(sbk|spinning|spinning bird kick)"
+    # matching with "sbk|spinning"
+    sbk = "([L|M|H]|EX)\s(sbk|spinning)"
     m = re.search(sbk, movestring, re.IGNORECASE)
     if m:
         # (0) is for the first match

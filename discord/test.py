@@ -1,5 +1,6 @@
 import alias
 
+
 def test_ryu():
     ryutests = [
         ['cRlp',  'Crouching LP'],
@@ -27,14 +28,51 @@ def test_ryu():
         ['solar plexus strike',  'Solar Plexus Strike'],
         ['bthrow',  'Somersault Throw'],
         ['super',  'Shinku Hadoken'],
-        ['f.hp',  'Solar Plexus Strike'],
+        ['fhp',  'Solar Plexus Strike'],
         ['f+hp',  'Solar Plexus Strike'],
         ['Jodan Nirengeki',  'Jodan Nirengeki'],
         ['Standing MP',  'Standing MP'],
         ['throw',  'Shoulder Throw'],
         ['ca',  'Shinku Hadoken']
     ]
-
     for userinput, result in ryutests:
         print("ryu " + userinput, result)
-        assert alias.resolveMoveName("ryu " + userinput)["move"].lower() == result.lower()
+        assert alias.resolveMoveName(
+            "ryu " + userinput)["move"].lower() == result.lower()
+
+
+def test_chunli():
+    chunlitests = [
+        ['cRlp',  'Crouching LP'],
+        ['cr.mk',  'Crouching MK'],
+        ['jhp',  'Jumping HP'],
+        ['Hk',  'Standing HK'],
+        ['mp',  'Standing MP'],
+        ['J.lk',  'Jumping LK'],
+        ['st.mK',  'Standing MK'],
+        ['stlp',  'Standing LP'],
+        ['hp',  'Standing HP'],
+        ['j.hk', 'Diagonal Jumping HK'],
+        ['u+hk', 'Vertical Jump HK'],
+        ['split kicks', 'Vertical Jump HK'],
+        ['df+mk', 'Senenshu'],
+        ['b+mp', 'Tsuitotsuken'],
+        ['bHk', 'Hakkei'],
+        ['dfhk', 'Kakurakukyaku'],
+        ['throw', 'Koshuto'],
+        ['ca', 'Hoyokusen'],
+        ['vs1', '[VS1] Rankyaku'],
+        ['vt1', 'Renkiko'],
+        ['vreversal', 'Sohakkei'],
+        ['l kiko', 'L Kikoken'],
+        ['ex kiko', 'EX Kikoken'],
+        ['b,f+mp', 'M Kikoken'],
+        ['b,f+pp', 'EX Kikoken'],
+        ['', ''],
+        ['', ''],
+
+    ]
+    for userinput, result in chunlitests:
+        print("chun-li " + userinput, result)
+        assert alias.resolveMoveName(
+            "chun-li " + userinput)["move"].lower() == result.lower()
