@@ -53,6 +53,7 @@ def cookAnHotSoup(html, characterName):
                 row.append(colContent)
 
                 if (j == 0):
+                    colContent = colContent.replace("+", "")
                     move["name"] = colContent
                 elif (j == 1):
                     move["frame"]["startup"] = colContent
