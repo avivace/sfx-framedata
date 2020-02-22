@@ -8,7 +8,7 @@ vs1_aliases = ["V-Skill 1", "vs1", "vskill1", "v-skill1"]
 vs2_aliases = ["V-Skill 2", "vs2", "vskill2", "v-skill2"]
 # -> [VS2]
 
-other = {
+ryuexact = {
     # CHARACTER: RYU
     # V-TRIGGER 1
     "Collarbone Breaker": ["f+MP", "f+mp", "f.mp", "fmp", "overhead"],
@@ -132,13 +132,20 @@ def moveRegex(movestring):
         # [0] is the first group matched
         return m.groups(0)[0].upper() + " Jodan Sokutou Geri"
 
-    return "notmatched"
+    return ""
+
+def matchExact(text, data):
+    for move in data:
+        for alias in data[move]:
+            if text == alias:
+                return move
 
 def resolveMoveName(userstring):
     logging.info("userstring is %s")
-
-    outer = "(ryu|nash)\s(\w+|\w+\.\w+|\w+\s\w+|\w+\+\w+)\s*(vt1|vt2){0,1}$"
-    m = re.search(outer, userstring, re.IGNORECASE)
+    # product of dennitopolino typing blind:
+    holyregex = "(ryu|nash)\s(\w+|\w+\.\w+|\w+\s\w+|\w+\+\w+|\w+\s\w+\s\w+)\s*(vt1|vt2){0,1}$"
+    # ye, don't ask
+    m = re.search(holyregex, userstring, re.IGNORECASE)
     if m:
         char = m.groups(0)[0]
         move = m.groups(0)[1]
@@ -152,7 +159,11 @@ def resolveMoveName(userstring):
         logging.info("move:\t%s", move)
         logging.info("vt:\t%s", vt)
 
-    result = moveRegex(move)
+    result = matchExact(move, ryuexact)
+    if not result:
+      result = moveRegex(move)
+    if not result:
+      result = move
 
     logging.info("translated movename:%s", result)
 
@@ -175,8 +186,3 @@ def resolveMoveName(userstring):
     return resultdict
 
 
-def findAlias(text):
-    for move in aliasdict:
-        for alias in aliasdict[move]:
-            if text == alias:
-                return movestring, aliasdict[move][0]

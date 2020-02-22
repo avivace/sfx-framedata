@@ -5,7 +5,7 @@ import codecs
 import json
 from bs4 import BeautifulSoup
 
-SOUP_INGREDIENTS = "pup/htmldumps/akuma.html"
+SOUP_INGREDIENTS = "pup/htmldumps/ryu.html"
 
 
 def main():
