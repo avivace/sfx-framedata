@@ -23,7 +23,7 @@ class TestMoveMatching(unittest.TestCase):
             ['qcb+mk',  'M Tatsumaki Senpukyaku'],
             ['qcb+KK',  'EX Tatsumaki Senpukyaku'],
             ['H donkey',  'H Jodan Sokutou Geri'],
-            #['ex donkey kick',  'EX Jodan Sokutou Geri'],
+            ['ex donkey kick',  'EX Jodan Sokutou Geri'],
         ]
 
         for userinput, result in ryutests:
