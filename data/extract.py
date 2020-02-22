@@ -27,24 +27,7 @@ def cookAnHotSoup(html, characterName):
         for i, row in enumerate(rows):
             cols = row.find_all('td')
             row = []
-            move = {
-                'name': '',
-                'frame': {
-                    'startup': '',
-                    'active': '',
-                    'recovery': '',
-                },
-                'recovery': {},
-                'vTriggerCancelRecovery': {},
-                'cancelInfo': '',
-                'damage': '',
-                'stun': '',
-                'meterGain': '',
-                'properties': '',
-                'projectileNullification': '',
-                'airborneHurtbox': '',
-                'comments': ''
-            }
+            move = MOVE_STRUCTURE
             for j, col in enumerate(cols):
                 colContent = col.text.strip()
                 colContent = colContent.replace("\n", "")
@@ -91,6 +74,12 @@ def cookAnHotSoup(html, characterName):
 
     # Save character data in dictionary
     data[characterName] = characterData
+
+
+def getMoveStructure(path):
+    with open(path) as json_file:
+        structure = json.load(json_file)
+        return structure
 
 
 def clean(dirtySoup):
@@ -141,9 +130,11 @@ def main():
     print("\nDONE\nSoup is hot and ready to be tasted!")
     bringSoupToTheTable()
 
+
 if __name__ == "__main__":
     data = {}
     SOUP_INGREDIENTS_PATH = "pup/htmldumps/"
     SOUP_INGREDIENTS = getSoupIngredients()
+    MOVE_STRUCTURE = getMoveStructure('data/move-structure.json')
     DATA_OUTPUT_DIR = "data/extracted/"
     main()
