@@ -53,8 +53,6 @@ ryuexact = {
 
 
 def moveRegex(movestring):
-    movestring = movestring.lower()
-
     # matching with "qcf"
     hadoken2 = "qcf\+([L|M|H|P]{1})p"
     m = re.search(hadoken2, movestring, re.IGNORECASE)
@@ -96,21 +94,6 @@ def moveRegex(movestring):
 
         return mod.upper() + " Jodan Sokutou Geri"
 
-    # Le regex sono il male nocivo te lo giuro
-    normals = "(cr|j|st){0,1}.{0,1}([L|M|H]{1})(p|k)"
-    m = re.search(normals, movestring, re.IGNORECASE)
-    if m:
-        if m.groups(0)[0] == "cr":
-            mod = "Crouching"
-        elif m.groups(0)[0] == "j":
-            mod = "Jumping"
-        elif m.groups(0)[0] == "st":
-            mod = "Standing"
-        elif not m.groups(0)[0]:
-            mod = "Standing"
-
-        return f'{mod} {m.groups(0)[1].upper()}{m.groups(0)[2].upper()}'
-
     # matching with "hadoken|hado"
     hadoken = "([L|M|H]|EX)\s(hadoken|hado)"
     m = re.search(hadoken, movestring, re.IGNORECASE)
@@ -148,6 +131,24 @@ def moveRegex(movestring):
 
     return ""
 
+def commonRegex(movestring, char):
+    # Le regex sono il male nocivo te lo giuro
+    normals = "(cr|j|st){0,1}.{0,1}([L|M|H]{1})(p|k)"
+    m = re.search(normals, movestring, re.IGNORECASE)
+    if m:
+        if m.groups(0)[0] == "cr":
+            mod = "Crouching"
+        elif m.groups(0)[0] == "j":
+            mod = "Jumping"
+        elif m.groups(0)[0] == "st":
+            mod = "Standing"
+        elif not m.groups(0)[0]:
+            mod = "Standing"
+
+        move = f'{mod} {m.groups(0)[1].upper()}{m.groups(0)[2].upper()}'
+        if (move == "Jumping HK" and char == "chun-li"):
+            move = "Diagonal Jumping HK"
+        return move
 
 chunliexact = {
     # CHARACTER: CHUN-LI
@@ -197,7 +198,7 @@ chunliexact = {
 
     # CHUN-LI REGEX:
 
-def chunli():
+def chunli(movestring):
     # matching with "b,f+"
     kikoken2 = "b,f\+([L|M|H|P]{1})p"
     m = re.search(kikoken2, movestring, re.IGNORECASE)
@@ -293,12 +294,12 @@ def matchExact(text, data):
 def resolveMoveName(userstring):
     logging.info("userstring is %s")
     # product of dennitopolino typing blind:
-    holyregex = "(ryu|chun-li)\s(\w+|\w+\.\w+|\w+\s\w+|\w+\+\w+|\w+\s\w+\s\w+)\s*(vt1|vt2){0,1}$"
+    holyregex = "(ryu|chun-li|chunli)\s(\w+|\w+\.\w+|\w+\s\w+|\w+\+\w+|\w+\s\w+\s\w+)\s*(vt1|vt2){0,1}$"
     # ye, don't ask
     m = re.search(holyregex, userstring, re.IGNORECASE)
     if m:
         char = m.groups(0)[0]
-        move = m.groups(0)[1]
+        move = m.groups(0)[1].lower()
         if m.groups(0)[2]:
             vt = m.groups(0)[2].upper()
         else:
@@ -309,16 +310,30 @@ def resolveMoveName(userstring):
         logging.info("move:\t%s", move)
         logging.info("vt:\t%s", vt)
 
-    result = matchExact(move, ryuexact)
+    ## CHAR MATCHING
+    if char == "chunli":
+        char = "chun-li"
+
+    ## MOVE MATCHING
+    if char == "ryu":
+        result = matchExact(move, ryuexact)
+    elif char == "chun-li":
+        result = matchExact(move, chunliexact)
+
     if not result:
-        result = moveRegex(move)
+        if char == "ryu":
+            result = moveRegex(move)
+        elif (char == "chun-li" or char == "chunli"):
+            result = chunli(move)
+    if not result:
+        result = commonRegex(move, char)
     if not result:
         result = move
 
     logging.info("translated movename:%s", result)
 
-    # TODO
     charsolved = char
+
     # TODO: wrap the matchings
     movesolved = result
     # TODO
