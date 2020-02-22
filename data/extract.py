@@ -137,7 +137,7 @@ def main():
                 "\nERROR: Sorry, you don't have all the ingredients you need to cook your soup :(\n(No data source file present)")
 
     # Save file
-    print("\nDONE\nSoup is hot a ready to be tasted!")
+    print("\nDONE\nSoup is hot and ready to be tasted!")
     bringSoupToTheTable()
 
 if __name__ == "__main__":
