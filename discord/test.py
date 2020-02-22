@@ -24,6 +24,19 @@ class TestMoveMatching(unittest.TestCase):
             ['qcb+KK',  'EX Tatsumaki Senpukyaku'],
             ['H donkey',  'H Jodan Sokutou Geri'],
             ['ex donkey kick',  'EX Jodan Sokutou Geri'],
+            ['h hadoken',  'H Hadoken'],
+            ['qcf+pp',  'EX Hadoken'],
+            ['hcf+kk',  'EX Jodan Sokutou Geri'],
+            ['f+mp',  'Collarbone Breaker'],
+            ['solar plexus strike',  'Solar Plexus Strike'],
+            ['bthrow',  'Somersault Throw'],
+            ['super',  'Shinku Hadoken'],
+            ['f.hp',  'Solar Plexus Strike'],
+            ['f+hp',  'Solar Plexus Strike'],
+            ['Jodan Nirengeki',  'Jodan Nirengeki'],
+            ['Standing MP',  'Standing MP'],
+            ['throw',  'Shoulder Throw'],
+            ['ca',  'Shinku Hadoken']
         ]
 
         for userinput, result in ryutests:

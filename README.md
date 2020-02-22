@@ -4,12 +4,22 @@ Un bottino per i combattenti di strada cinque. Runs on discord-py 1.31 or more r
 
 Built and mantained by [ricki122](https://twitter.com/ricki122), [Antonio Vivace](https://twitter.com/avivace4), [d3nnib](https://twitter.com/dennibevilacqua)
 
+## Commands
+
+A sample of the commands available to the bot, see [config file](conf/bots.yaml) for the full list. 
+
+* !frames: 
+    Get SFV frame data for the specified char and move. ```!frames Ryu cr.mk```
+* !blacklist: Blacklists a user from using the bot functions ```!blacklist user1 [user2 user3]```
+* !help: 'Get help on a command. Usage ```!help command_name```
+* !info: 'Get suppport/feedback contacts and show some technical data. Usage ```!info```
+
 
 ## Run
 
 #### 1. Data pulling
 
-`pup` is a Puppeteer script to pull raw HTML pages from capcom website. Handles the steam login.
+`Giovannino` is a Puppeteer script to pull raw HTML pages from capcom website. Handles the steam login.
 
 Get things ready:
 
@@ -25,7 +35,12 @@ Run:
 node index.js
 ```
 
-#### 2. Discord Bot
+#### 2. Data scraping
+
+TODOCUMENT (`data/` folder)
+
+
+#### 3. Discord Bot
 
 [Create a Discord Bot](https://discordpy.readthedocs.io/en/latest/discord.html). Put the token (not the secret) in the `conf/bots.yaml` configuration file.
 
@@ -36,23 +51,31 @@ source bin/activate
 pip3 install -r requirements.txt
 python3 discord-bot.py
 ```
+#### 4. API
+
+Run
+
+```
+cd api
+python3 server.py
+```
+
+Endpoints:
+
+```
+localhost:8080/api/v1/$METHOD$
+localhost:8080/api/v1/ui
+```
+
+## Architecture
+
+<img src=".meta/sfx.svg">
 
 
-## Commands
-
-A sample of the commands available to the bot, see [config file](conf/bots.yaml) for the full list. 
-
-* !frames: 
-    Get SFV frame data for the specified char and move. ```!frames Ryu cr.mk```
-* !blacklist: Blacklists a user from using the bot functions ```!blacklist user1 [user2 user3]```
-* !help: 'Get help on a command. Usage ```!help command_name```
-* !info: 'Get suppport/feedback contacts and show some technical data. Usage ```!info```
-
-  
+### Notes
 
 Originally based on [Yaksha](https://github.com/ellipses/Yaksha) bot by [ellipses](https://github.com/ellipses)
 
-### Notes
 
 Rewriting history because Antuz commits passwords in clear:
 
