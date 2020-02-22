@@ -39,23 +39,57 @@ other = {
 
 
 def moveRegex(movestring):
-    # Le regex sono il male nocivo te lo giuro
-    normals = "(cr|j|st){0,1}.{0,1}([L|M|H]{1})(p|k)"
-    m = re.search(normals, movestring, re.IGNORECASE)
-    if m:
-      return "TODO"
+    movestring = movestring.lower()
 
-    # matching with "fireball|hadoken"
-    hadoken = "([L|M|H]|EX)\s(fireball|hadoken)"
-    m = re.search(hadoken, movestring, re.IGNORECASE)
+    # matching with "qcf"
+    hadoken2 = "qcf\+([L|M|H|P]{1})p"
+    m = re.search(hadoken2, movestring, re.IGNORECASE)
     if m:
         # (0) is for the first match
         # [0] is the first group matched
         return m.groups(0)[0].upper() + " Hadoken"
 
-    # matching with "qcf"
-    hadoken2 = "qcf\+([L|M|H|P]{1})p"
-    m = re.search(hadoken2, movestring, re.IGNORECASE)
+    # matching with "qcb"
+    tatsu2 = "qcb\+([L|M|H|K]{1})k"
+
+    m = re.search(tatsu2, movestring, re.IGNORECASE)
+    if m:
+        # (0) is for the first match
+        # [0] is the first group matched
+      if m.groups(0)[0] == "k":
+        mod = "EX"
+      else:
+        mod = m.groups(0)[0]
+        
+      return mod.upper() + " Tatsumaki Senpukyaku"
+
+    # matching with "hcf"
+    donkey2 = "hcf\+([L|M|H|K]{1})k"
+
+    m = re.search(donkey2, movestring, re.IGNORECASE)
+    if m:
+        # (0) is for the first match
+        # [0] is the first group matched
+        return m.groups(0)[0].upper() + " Jodan Sokutou Geri"
+
+    # Le regex sono il male nocivo te lo giuro
+    normals = "(cr|j|st){0,1}.{0,1}([L|M|H]{1})(p|k)"
+    m = re.search(normals, movestring, re.IGNORECASE)
+    if m:
+      if m.groups(0)[0] == "cr":
+        mod = "Crouching"
+      elif m.groups(0)[0] == "j":
+        mod = "Jumping"
+      elif m.groups(0)[0] == "st":
+        mod = "Standing"
+      elif not m.groups(0)[0]:
+        mod = "Standing"
+
+      return f'{mod} {m.groups(0)[1].upper()}{m.groups(0)[2].upper()}'
+
+    # matching with "fireball|hadoken"
+    hadoken = "([L|M|H]|EX)\s(fireball|hadoken)"
+    m = re.search(hadoken, movestring, re.IGNORECASE)
     if m:
         # (0) is for the first match
         # [0] is the first group matched
@@ -79,28 +113,10 @@ def moveRegex(movestring):
         # [0] is the first group matched
         return m.groups(0)[0].upper() + " Tatsumaki Senpukyaku"
 
-    # matching with "qcb"
-    tatsu2 = "qcb\+([L|M|H|K]{1})k"
-
-    m = re.search(tatsu2, movestring, re.IGNORECASE)
-    if m:
-        # (0) is for the first match
-        # [0] is the first group matched
-        return m.groups(0)[0].upper() + " Tatsumaki Senpukyaku"
-
     # matching with "donkey kick|donkey"
     donkey = "([L|M|H]|EX)\s(donkey kick|donkey)"
 
     m = re.search(donkey, movestring, re.IGNORECASE)
-    if m:
-        # (0) is for the first match
-        # [0] is the first group matched
-        return m.groups(0)[0].upper() + " Jodan Sokutou Geri"
-
-    # matching with "hcf"
-    donkey2 = "hcf\+([L|M|H|K]{1})k"
-
-    m = re.search(donkey2, movestring, re.IGNORECASE)
     if m:
         # (0) is for the first match
         # [0] is the first group matched

@@ -56,10 +56,14 @@ Originally based on [Yaksha](https://github.com/ellipses/Yaksha) bot by [ellipse
 
 Rewriting history because Antuz commits passwords in clear:
 
-```
+```bash
 git clone --bare git@github.com:avivace/sfx-framedata.git
 java -jar bfg-1.13.0.jar --replace-text password.txt sfx-framedata.git/
 git reflog expire --expire=now --all && git gc --prune=now --aggressive
 git push (-f ?)
 git grep PASSWORD $(git rev-list --all)
+# not working 
+# ! [remote rejected] refs/pull/1/head -> refs/pull/1/head (deny updating a hidden ref)
+# probably for the previous commits (PR?)
+
 ```
