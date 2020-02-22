@@ -5,34 +5,12 @@ import codecs
 import json
 from bs4 import BeautifulSoup
 
-def main():
-    for characterName in SOUP_INGREDIENTS:
-        INGREDIENT = SOUP_INGREDIENTS_PATH + characterName + ".html"
-        # Check if HTML target file exits
-        if (os.path.exists(INGREDIENT)):
-            try:
-                # Read HTML file
-                html_content = codecs.open(INGREDIENT, "r", "utf-8")
-                if (html_content):
-                    # Extract data
-                    cookAnHotSoup(html_content, characterName)
-                    print(f"{characterName.upper()}: soup is hot and ready to be tasted!")
-            except Exception as err:
-                print("ERROR: An error occured while trying to extract the data:")
-                print(err)
-        else:
-            print("\nERROR: Sorry, you don't have all the ingredients you need to cook your soup :(\n(No data source file present)")
 
 def cookAnHotSoup(html, characterName):
     soup = BeautifulSoup(html, "lxml")
 
-    # Get character name
-    character = soup.select(".titleName")[0].get_text(
-        strip=True).replace("Frame List|", "").lower()
-
     # Build a basic data dictionary
-    data = {}
-    data['character'] = character
+    characterData = {}
 
     # Prelimary cleaning
     soup = clean(soup)
@@ -41,7 +19,7 @@ def cookAnHotSoup(html, characterName):
     vTriggerTables = soup.find_all("table", {"class": "frameTbl"})
 
     for i in range(0, len(vTriggerTables)):
-        data['vt' + str(i + 1)] = []
+        characterData['vt' + str(i + 1)] = []
 
     # Extract all table body rows (our actual data)
     for tableIndex, triggerTable in enumerate(vTriggerTables):
@@ -108,14 +86,11 @@ def cookAnHotSoup(html, characterName):
                     move["comments"] = colContent
 
             if (len(row) > 0):
-                data["vt" + str(tableIndex + 1)].append(move)
+                characterData["vt" + str(tableIndex + 1)].append(move)
 
-    # Present our delicious soup
-    if not os.path.exists(DATA_OUTPUT_DIR):
-        os.makedirs(DATA_OUTPUT_DIR)
+    # Save character data in dictionary
+    data[characterName] = characterData
 
-    with open(f'{DATA_OUTPUT_DIR + characterName}.json', 'w') as outfile:
-        json.dump(data, outfile, indent=4)
 
 def clean(dirtySoup):
     cleanedSoup = dirtySoup
@@ -124,14 +99,47 @@ def clean(dirtySoup):
         kbf.decompose()
     return cleanedSoup
 
+
 def getSoupIngredients():
-    soupIngredients = [] 
+    soupIngredients = []
     for file in os.listdir("pup/htmldumps/"):
         if (file.endswith(".html")):
             soupIngredients.append(file.replace(".html", ""))
     return soupIngredients
 
+
+def bringSoupToTheTable():
+    # Present our delicious soup
+    if not os.path.exists(DATA_OUTPUT_DIR):
+        os.makedirs(DATA_OUTPUT_DIR)
+
+    with open(f'{DATA_OUTPUT_DIR}data.json', 'w') as outfile:
+        json.dump(data, outfile, indent=4)
+
+
+def main():
+    for characterName in SOUP_INGREDIENTS:
+        INGREDIENT = SOUP_INGREDIENTS_PATH + characterName + ".html"
+        # Check if HTML target file exits
+        if (os.path.exists(INGREDIENT)):
+            try:
+                # Read HTML file
+                html_content = codecs.open(INGREDIENT, "r", "utf-8")
+                if (html_content):
+                    # Extract data
+                    cookAnHotSoup(html_content, characterName)
+            except Exception as err:
+                print("ERROR: An error occured while trying to extract the data:")
+                print(err)
+        else:
+            print(
+                "\nERROR: Sorry, you don't have all the ingredients you need to cook your soup :(\n(No data source file present)")
+
+    # Save file
+    bringSoupToTheTable()
+
 if __name__ == "__main__":
+    data = {}
     SOUP_INGREDIENTS_PATH = "pup/htmldumps/"
     SOUP_INGREDIENTS = getSoupIngredients()
     DATA_OUTPUT_DIR = "data/extracted/"
