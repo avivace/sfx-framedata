@@ -17,8 +17,6 @@ A sample of the commands available to the bot, see [config file](conf/bots.yaml)
 
 ## Run
 
-<img src=".meta/sfx.svg">
-
 #### 1. Data pulling
 
 `Giovannino` is a Puppeteer script to pull raw HTML pages from capcom website. Handles the steam login.
@@ -68,11 +66,16 @@ Endpoints:
 localhost:8080/api/v1/$METHOD$
 localhost:8080/api/v1/ui
 ```
-  
+
+## Architecture
+
+<img src=".meta/sfx.svg">
+
+
+### Notes
 
 Originally based on [Yaksha](https://github.com/ellipses/Yaksha) bot by [ellipses](https://github.com/ellipses)
 
-### Notes
 
 Rewriting history because Antuz commits passwords in clear:
 
