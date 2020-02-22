@@ -8,18 +8,37 @@ Built and mantained by [ricki122](https://twitter.com/ricki122), [Antonio Vivace
 
 A sample of the commands available to the bot, see [config file](conf/bots.yaml) for the full list. 
 
-* !frames: 
+* `!frames`: 
     Get SFV frame data for the specified char and move. ```!frames Ryu cr.mk```
-* !blacklist: Blacklists a user from using the bot functions ```!blacklist user1 [user2 user3]```
-* !help: 'Get help on a command. Usage ```!help command_name```
-* !info: 'Get suppport/feedback contacts and show some technical data. Usage ```!info```
+* `!blacklist`: Blacklists a user from using the bot functions ```!blacklist user1 [user2 user3]```
+* `!help`: 'Get help on a command. Usage ```!help command_name```
+* `!info`: 'Get suppport/feedback contacts and show some technical data. Usage ```!info```
 
 
 ## Run
 
+#### 0. Requirements
+
+Python3 and a recent version of Node are required.
+
+```
+# Clone the repository
+git clone https://github.com/avivace/sfx-framedata
+cd sfx-framedata
+
+# Install pipenv
+pip install --user pipenv
+
+# Activate the virtualenv
+pipenv shell
+# Install python dependencies
+```
+
+You should now be ready to run everything.
+
 #### 1. Data pulling
 
-`Giovannino` is a Puppeteer script to pull raw HTML pages from capcom website. Handles the steam login.
+`Giovannino` is a node script powered by Puppeteer to pull raw HTML pages from capcom website. Handles the steam login.
 
 Get things ready:
 
