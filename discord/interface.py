@@ -126,7 +126,7 @@ class Interface():
                                   channel, *args, **kwargs)
             except Exception:
                 logging.exception('Yaksha Error')
-                return "Sorry, that command didn't work. Ask Tom to fix it."
+                return "Sorry, quel comando è una giulioversione"
 
     def user_has_permission(self, user, command):
         '''
