@@ -119,8 +119,8 @@ def moveRegex(movestring):
         # [0] is the first group matched
         return m.groups(0)[0].upper() + " Hadoken"
 
-    # matching with "shoryuken|dragon punch|dp"
-    shoryuken = "([L|M|H]|EX)\s(shoryuken|dragon punch|dp)"
+    # matching with "shoryuken|shoryu|dragon punch|dp"
+    shoryuken = "([L|M|H]|EX)\s(shoryuken|shoryu|dragon punch|dp)"
 
     m = re.search(shoryuken, movestring, re.IGNORECASE)
     if m:
@@ -183,6 +183,9 @@ chunliexact = {
     "Sohakkei": ["vreversal", "v-reversal","vrev"],
     "Hoyokusen": ["ca", "critical art", "super"],
 
+}
+
+
 
     # CHUN-LI REGEX:
 
@@ -201,9 +204,9 @@ chunliexact = {
         return mod.upper() + " Kikoken"
 
 
-    # matching with "qcf"
-    hyaku2 = "qcf\+([L|M|H|K]{1})k"
-    m = re.search(hyaku2, movestring, re.IGNORECASE)
+    # matching with "d,u+"
+    sbk2 = "d,u\+([L|M|H|k]{1})k"
+    m = re.search(sbk2, movestring, re.IGNORECASE)
     if m:
         # (0) is for the first match
         # [0] is the first group matched
@@ -212,7 +215,33 @@ chunliexact = {
         else:
             mod = m.groups(0)[0]
 
-        return mod.upper() + " Hyakuretsukyaku"
+        return mod.upper() + " Spinning Bird Kick"
+
+
+
+    # I TRIED
+
+    # matching with "qcf"
+    hyaku2 = "(j.|j){0,1}qcf\+([L|M|H|K]{1})k"
+    m = re.search(hyaku2, movestring, re.IGNORECASE)
+    if m:
+        # (0) is for the first match
+        # [0] is the first group matched
+        if m.groups(0)[0] == "j":
+            mod = "Airborne"
+        elif m.groups(0)[0] == "j.":
+            mod = "Airborne"
+        elif not m.groups(0)[0]:
+            mod = ""
+
+        if m.groups(0)[1] == "k":
+            mod = "EX"
+        else:
+            mod = m.groups(0)[1]
+
+        return f'{mod} {m.groups(0)[1].upper()}{m.groups(0)[0].upper()} Hyakuretsukyaku'
+        
+      
 
 
     # matching with "kikoken|kiko"
@@ -224,8 +253,8 @@ chunliexact = {
         return m.groups(0)[0].upper() + " Kikoken"
 
 
-    # matching with "hyakuretsukyaku|hyaku"
-    hyaku = "([L|M|H]|EX)\s(hyakuretsukyaku|hyaku)"
+    # matching with "hyakuretsukyaku|hyaku|legs"
+    hyaku = "([L|M|H]|EX)\s(hyakuretsukyaku|hyaku|legs)"
     m = re.search(hyaku, movestring, re.IGNORECASE)
     if m:
         # (0) is for the first match
@@ -233,10 +262,17 @@ chunliexact = {
         return m.groups(0)[0].upper() + " Hyakuretsukyaku"
 
 
+    # matching with "sbk|spinning|spinning bird kick"
+    sbk = "([L|M|H]|EX)\s(sbk|spinning|spinning bird kick)"
+    m = re.search(sbk, movestring, re.IGNORECASE)
+    if m:
+        # (0) is for the first match
+        # [0] is the first group matched
+        return m.groups(0)[0].upper() + " Spinning Bird Kick"
 
 
 
-}
+
 
 
 def matchExact(text, data):
