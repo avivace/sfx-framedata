@@ -14,7 +14,7 @@ userInput = "ryu l tatsu"
 
 print("userinput is", userInput, "\n")
 
-outer = "(ryu|nash)\s([A-Za-z\+]*)\s*(vt1|vt2){0,1}"
+outer = "(ryu|nash)\s(\w+|\w+\.\w+|\w+\s\w+|\w+\+\w+)\s*(vt1|vt2){0,1}$"
 m = re.search(outer, userInput, re.IGNORECASE)
 if m:
     char = m.groups(0)[0]
