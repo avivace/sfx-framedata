@@ -1,6 +1,0 @@
-
-connexion
-connexion[swagger-ui]
-tornado
-flask_cors
-flask
