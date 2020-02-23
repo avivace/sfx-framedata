@@ -11,7 +11,7 @@ def matchExact(text, data):
             if text == alias:
                 return move
 
-with open('data/extracted/data.json', 'r') as f:
+with open('../data/extracted/data.json', 'r') as f:
     data = json.load(f)
 
 ## Exact matching
@@ -348,7 +348,7 @@ def nashRegex(movestring):
         return mod.upper() + " Moonsault Slash"
 
     # matching with "qcb"
-    scythe = "qcb\+([L|M|H|K]{1})k(\svs2){0,1}"
+    scythe = "qcb\+([L|M|H|K]{1})k\s*(vs2){0,1}"
 
     m = re.search(scythe, movestring, re.IGNORECASE)
     if m:
@@ -359,11 +359,11 @@ def nashRegex(movestring):
         else:
             mod = m.groups(0)[0]
     
-        if m.groups(0)[1] == "\svs2":
-            mod2 = "(VS2 Ver.)"
+        if m.groups(0)[1] == "vs2":
+            mod2 = " (VS2 Ver.)"
         else:
             mod2 = ""
-        return f'{mod.upper()} Sonic Scythe {mod2}'
+        return f'{mod.upper()} Sonic Scythe{mod2}'
 
     # matching with "moonsault|moon"
     moon = "([L|M|H]|EX)\s(moonsault|moon)"

@@ -359,7 +359,13 @@ class Frames():
 
         print(matched)
         for move in data[char][vt]:
-            if movename in move["name"]:
+            if movename == move["name"]:
                 result = str(move)
+
+        # this is not actually working
+        if not result:
+            for move in data[char][vt]:
+                if movename in move["name"]:
+                    result = str(move)
 
         return result
