@@ -36,9 +36,14 @@ pipenv shell
 
 You should now be ready to run everything.
 
+Run tests:
+```
+pytest discord/test.py
+```
+
 #### 1. Data pulling
 
-`Giovannino` is a node script powered by Puppeteer to pull raw HTML pages from capcom website. Handles the steam login.
+*Giovannino* is a node script powered by Puppeteer to pull raw HTML pages from capcom website. Handles the steam login.
 
 Get things ready:
 
@@ -54,7 +59,11 @@ Run:
 node index.js
 ```
 
+This stage produces a folder with a dumped HTML file for each character.
+
 #### 2. Data scraping
+
+This stage takes the HTML dumps and scrapes them, producing a JSON file containing every move (for VT1 and VT2) for every character, according to the `datamodel` JSON schema.
 
 TODOCUMENT (`data/` folder)
 
