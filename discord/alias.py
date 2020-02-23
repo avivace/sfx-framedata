@@ -239,8 +239,7 @@ def commonRegex(movestring, char):
             mod = "Standing"
 
         move = f'{mod} {m.groups(0)[1].upper()}{m.groups(0)[2].upper()}'
-        if (move == "Jumping HK" and char == "chun-li"):
-        elif (move == "Jumping HK" and char == "nash"):
+        if (move == "Jumping HK" and (char == "chun-li" or char == "nash")):
             move = "Diagonal Jumping HK"
         return move
 
@@ -434,7 +433,7 @@ def resolveMoveName(userstring):
         elif char == "chun-li":
             result = chunliRegex(move)
         elif char == "nash":
-            result = nashregex(move)
+            result = nashRegex(move)
     if not result:
         result = commonRegex(move, char)
     if not result:
