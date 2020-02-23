@@ -1,5 +1,8 @@
 import alias
+import json
 
+with open('data/extracted/data.json', 'r') as f:
+    data = json.load(f)
 
 def test_ryu():
     ryutests = [
@@ -81,3 +84,10 @@ def test_chunli():
         print("chun-li " + userinput, result)
         assert alias.resolveMoveName(
             "chun-li " + userinput)["move"].lower() == result.lower()
+
+
+def exactMatches():
+    for char in data:
+        for vt in data[char]:
+            for move in data[char][vt]:
+                assert alias.resolveMoveName(char + " " + move["name"])["move"] == move["name"]
