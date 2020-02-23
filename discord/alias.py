@@ -3,7 +3,14 @@ import re
 
 logging.basicConfig(level=logging.DEBUG)
 
+## Utility
+def matchExact(text, data):
+    for move in data:
+        for alias in data[move]:
+            if text == alias:
+                return move
 
+## Exact matching
 ryuexact = {
     # CHARACTER: RYU
     # V-TRIGGER 1
@@ -51,8 +58,51 @@ ryuexact = {
     # "Isshin (Attack)"
 }
 
+chunliexact = {
+    # CHARACTER: CHUN-LI
+    # V-TRIGGER 1
+    
+    "Diagonal Jumping HK": ["uf+hk","ufhk","ub+hk","ubhk"],
+    # NEED TO TRANSLATE TO:
+    # "Jumping HK"
 
-def moveRegex(movestring):
+    "Vertical Jump HK": ["u+hk","uhk","split kicks","split"],
+    "Senenshu": ["df+mk", "dfmk", "overhead"],
+    "Tsuitotsuken": ["b+mp","bmp","f+mp","fmp"],
+    "Hakkei": ["b+hp","bhp","hey","ey"],
+    "Kakurakukyaku": ["df+hk","dfhk"],
+    "Tenkukyaku": ["b+hk","bhk"],
+    "Yokusenkyaku": ["f+hk","fhk"],
+    
+    "Yosokyaku": ["j.d+mk","jd+mk","jdmk","air stomp","stomp"],
+    # GROUP WITH:
+    # Yosokyaku (2)
+    # Yosokyaku (3)
+    
+    "Koshuto": ["lp+lk", "lplk", "throw"],
+    "Tenshin Shushu": ["b+lp+lk", "blplk", "bthrow", "b+throw", "back throw"],
+    "Ryuseiraku": ["j.lp+lk", "jlplk", "jthrow", "j.throw", "air throw"],
+
+    "[VS1] Rankyaku": ["vs1","vskill1","v-skill1"],
+    # GROUP WITH:
+    # "[VS1] Souseikyaku"
+
+    "[VS2] Hazansyu": ["vs2","vskill2","v-skill2"],
+    "Renkiko": ["vt1", "vtrigger1", "v-trigger1"],
+    "Sohakkei": ["vreversal", "v-reversal","vrev"],
+    "Hoyokusen": ["ca", "critical art", "super"],
+    
+    
+    # V-TRIGGER 2
+    "Kikosho": ["vt2", "vtrigger2", "v-trigger2"]
+    # ANOTHER "Kikosho" IS PRESENT
+    # GROUP WITH:
+    # "Kikosho" (the second one)
+    # "Kikosho (Charge)"
+}
+
+## Regex matching
+def ryuRegex(movestring):
     # matching with "qcf"
     hadoken2 = "qcf\+([L|M|H|P]{1})p"
     m = re.search(hadoken2, movestring, re.IGNORECASE)
@@ -150,55 +200,7 @@ def commonRegex(movestring, char):
             move = "Diagonal Jumping HK"
         return move
 
-chunliexact = {
-    # CHARACTER: CHUN-LI
-    # V-TRIGGER 1
-    
-    "Diagonal Jumping HK": ["uf+hk","ufhk","ub+hk","ubhk"],
-    # NEED TO TRANSLATE TO:
-    # "Jumping HK"
-
-    "Vertical Jump HK": ["u+hk","uhk","split kicks","split"],
-    "Senenshu": ["df+mk", "dfmk", "overhead"],
-    "Tsuitotsuken": ["b+mp","bmp","f+mp","fmp"],
-    "Hakkei": ["b+hp","bhp","hey","ey"],
-    "Kakurakukyaku": ["df+hk","dfhk"],
-    "Tenkukyaku": ["b+hk","bhk"],
-    "Yokusenkyaku": ["f+hk","fhk"],
-    
-    "Yosokyaku": ["j.d+mk","jd+mk","jdmk","air stomp","stomp"],
-    # GROUP WITH:
-    # Yosokyaku (2)
-    # Yosokyaku (3)
-    
-    "Koshuto": ["lp+lk", "lplk", "throw"],
-    "Tenshin Shushu": ["b+lp+lk", "blplk", "bthrow", "b+throw", "back throw"],
-    "Ryuseiraku": ["j.lp+lk", "jlplk", "jthrow", "j.throw", "air throw"],
-
-    "[VS1] Rankyaku": ["vs1","vskill1","v-skill1"],
-    # GROUP WITH:
-    # "[VS1] Souseikyaku"
-
-    "[VS2] Hazansyu": ["vs2","vskill2","v-skill2"],
-    "Renkiko": ["vt1", "vtrigger1", "v-trigger1"],
-    "Sohakkei": ["vreversal", "v-reversal","vrev"],
-    "Hoyokusen": ["ca", "critical art", "super"],
-    
-    
-    # V-TRIGGER 2
-    "Kikosho": ["vt2", "vtrigger2", "v-trigger2"]
-    # ANOTHER "Kikosho" IS PRESENT
-    # GROUP WITH:
-    # "Kikosho" (the second one)
-    # "Kikosho (Charge)"
-
-}
-
-
-
-    # CHUN-LI REGEX:
-
-def chunli(movestring):
+def chunliRegex(movestring):
     # matching with "b,f+"
     kikoken2 = "b,f\+([L|M|H|P]{1})p"
     m = re.search(kikoken2, movestring, re.IGNORECASE)
@@ -279,22 +281,10 @@ def chunli(movestring):
         # [0] is the first group matched
         return m.groups(0)[0].upper() + " Spinning Bird Kick"
 
-
-
-
-
-
-def matchExact(text, data):
-    for move in data:
-        for alias in data[move]:
-            if text == alias:
-                return move
-
-
 def resolveMoveName(userstring):
-    logging.info("userstring is %s")
+    logging.info(userstring)
     # product of dennitopolino typing blind:
-    holyregex = "(ryu|chun-li|chunli)\s(\w+|\w+\.\w+|\w+\s\w+|\w+\+\w+|\w+\s\w+\s\w+)\s*(vt1|vt2){0,1}$"
+    holyregex = "(ryu|chun-li|chunli)\s(\w+|\w+\.\w+|\w+\s\w+|\w+\+\w+|\w+\s\w+\s\w+|\w+,\w+\+\w+)\s*(vt1|vt2){0,1}$"
     # ye, don't ask
     m = re.search(holyregex, userstring, re.IGNORECASE)
     if m:
@@ -310,6 +300,7 @@ def resolveMoveName(userstring):
         logging.info("move:\t%s", move)
         logging.info("vt:\t%s", vt)
 
+
     ## CHAR MATCHING
     if char == "chunli":
         char = "chun-li"
@@ -322,9 +313,9 @@ def resolveMoveName(userstring):
 
     if not result:
         if char == "ryu":
-            result = moveRegex(move)
-        elif (char == "chun-li" or char == "chunli"):
-            result = chunli(move)
+            result = ryuRegex(move)
+        elif char == "chun-li":
+            result = chunliRegex(move)
     if not result:
         result = commonRegex(move, char)
     if not result:
