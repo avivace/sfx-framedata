@@ -13,7 +13,7 @@ def cookAnHotSoup(html, characterName):
     characterData = {}
 
     # Prelimary cleaning
-    soup = clean(soup)
+    soup = preClean(soup)
 
     # Get main tables (V-Trigger tables)
     vTriggerTables = soup.find_all("table", {"class": "frameTbl"})
@@ -82,11 +82,24 @@ def getMoveStructure(path):
         return structure
 
 
-def clean(dirtySoup):
+def preClean(dirtySoup):
     cleanedSoup = dirtySoup
+
+    # Remove move level symbol in moves name
     keyBlockFrames = cleanedSoup.find_all("p", {"class": "keyBlockFrm"})
     for kbf in keyBlockFrames:
         kbf.decompose()
+
+    # Remove duplicates for Damage values
+    duplicateDamages = cleanedSoup.find_all("span", { "class": "damageTotalOnly"})
+    for duplicateDamage in duplicateDamages:
+        duplicateDamage.decompose()
+    
+    # Remove duplicates for Stun values
+    duplicateStuns = cleanedSoup.find_all("span", { "class": "stunTotalOnly"})
+    for duplicateStun in duplicateStuns:
+        duplicateStun.decompose()
+
     return cleanedSoup
 
 
