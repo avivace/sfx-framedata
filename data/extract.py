@@ -27,7 +27,7 @@ def cookAnHotSoup(html, characterName):
         for i, row in enumerate(rows):
             cols = row.find_all('td')
             row = []
-            move = MOVE_STRUCTURE
+            move = getMoveStructure(MOVE_STRUCTURE_PATH)
             for j, col in enumerate(cols):
                 colContent = col.text.strip()
                 colContent = colContent.replace("\n", "")
@@ -135,6 +135,6 @@ if __name__ == "__main__":
     data = {}
     SOUP_INGREDIENTS_PATH = "pup/htmldumps/"
     SOUP_INGREDIENTS = getSoupIngredients()
-    MOVE_STRUCTURE = getMoveStructure('data/move-structure.json')
     DATA_OUTPUT_DIR = "data/extracted/"
+    MOVE_STRUCTURE_PATH = "data/move-structure.json"
     main()
