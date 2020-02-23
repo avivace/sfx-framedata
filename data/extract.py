@@ -30,9 +30,9 @@ def cookAnHotSoup(html, characterName):
             move = getMoveStructure(MOVE_STRUCTURE_PATH)
             for j, col in enumerate(cols):
                 colContent = col.text.strip()
-                colContent = colContent.replace("\n", "")
-                colContent = colContent.replace("\r", "")
-                re.sub(r"\s\s", " ", colContent)
+                colContent = colContent.replace("\n", " ")
+                colContent = colContent.replace("\r", " ")
+                colContent = re.sub(r"\s+", " ", colContent)
                 row.append(colContent)
 
                 if (j == 0):
