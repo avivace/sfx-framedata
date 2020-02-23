@@ -63,7 +63,8 @@ def cookAnHotSoup(html, characterName):
                 elif (j == 12):
                     move["properties"] = colContent
                 elif (j == 13):
-                    move["projectileNullification"] = colContent
+                    if (colContent):
+                        move["projectileNullification"] = colContent and "Yes"
                 elif (j == 14):
                     move["airborneHurtbox"] = colContent
                 elif (j == 15):
