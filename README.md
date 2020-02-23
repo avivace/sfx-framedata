@@ -32,6 +32,7 @@ pip install --user pipenv
 # Activate the virtualenv
 pipenv shell
 # Install python dependencies
+pipenv install
 ```
 
 You should now be ready to run everything.
