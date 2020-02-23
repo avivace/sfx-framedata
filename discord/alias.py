@@ -244,9 +244,9 @@ def chunliRegex(movestring):
         # (0) is for the first match
         # [0] is the first group matched
         if m.groups(0)[0] == "j":
-            mod = mod + "Airborne"
+            mod = mod + " Airborne"
         elif m.groups(0)[0] == "j.":
-            mod = mod + "Airborne"
+            mod = mod + " Airborne"
 
         return f'{mod} Hyakuretsukyaku'
         
