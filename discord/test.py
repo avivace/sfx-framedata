@@ -1,8 +1,8 @@
 import alias
 import json
 
-with open('data/extracted/data.json', 'r') as f:
-    data = json.load(f)
+#with open('data/extracted/data.json', 'r') as f:
+#    data = json.load(f)
 
 def test_ryu():
     ryutests = [
