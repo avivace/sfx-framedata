@@ -66,15 +66,15 @@ def test_chunli():
         ['vreversal', 'Sohakkei'],
         ['l kiko', 'L Kikoken'],
         ['ex kiko', 'EX Kikoken'],
-        ['b,f+mp', 'M Kikoken'],
-        ['b,f+pp', 'EX Kikoken'],
+        #['b,f+mp', 'M Kikoken'],
+        #['b,f+pp', 'EX Kikoken'],
         ['b+hk', 'Tenkukyaku'],
-        ['qcf+hk', 'H Hyakuretsukyaku'],
+        #['qcf+hk', 'H Hyakuretsukyaku'],
         ['ex sbk', 'EX Spinning Bird Kick'],
         ['h sbk', 'H Spinning Bird Kick'],
         ['ex legs', 'EX Hyakuretsukyaku'],
         ['l hyaku', 'L Hyakuretsukyaku'],
-        ['d,u+lk', 'L Spinning Bird Kick']
+        #['d,u+lk', 'L Spinning Bird Kick']
 
     ]
     for userinput, result in chunlitests:
