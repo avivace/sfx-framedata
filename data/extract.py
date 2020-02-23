@@ -90,6 +90,11 @@ def preClean(dirtySoup):
     for kbf in keyBlockFrames:
         kbf.decompose()
 
+    # Remove additional move info (text between parenthesis)
+    addInfoTexts = cleanedSoup.find_all("span", { "class": "cmdPartsText"})
+    for addInfoText in addInfoTexts:
+        addInfoText.decompose()
+
     # Remove duplicates for Damage values
     duplicateDamages = cleanedSoup.find_all("span", { "class": "damageTotalOnly"})
     for duplicateDamage in duplicateDamages:
