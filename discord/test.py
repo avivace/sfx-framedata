@@ -57,7 +57,7 @@ def test_chunli():
         ['split kicks', 'Vertical Jump HK'],
         ['df+mk', 'Senenshu'],
         ['b+mp', 'Tsuitotsuken'],
-        ['bHk', 'Hakkei'],
+        ['bHp', 'Hakkei'],
         ['dfhk', 'Kakurakukyaku'],
         ['throw', 'Koshuto'],
         ['ca', 'Hoyokusen'],
@@ -68,8 +68,13 @@ def test_chunli():
         ['ex kiko', 'EX Kikoken'],
         ['b,f+mp', 'M Kikoken'],
         ['b,f+pp', 'EX Kikoken'],
-        ['', ''],
-        ['', ''],
+        ['b+hk', 'Tenkukyaku'],
+        ['qcf+hk', 'H Hyakuretsukyaku'],
+        ['ex sbk', 'EX Spinning Bird Kick'],
+        ['h sbk', 'H Spinning Bird Kick'],
+        ['ex legs', 'EX Hyakuretsukyaku'],
+        ['l hyaku', 'L Hyakuretsukyaku'],
+        ['d,u+lk', 'L Spinning Bird Kick']
 
     ]
     for userinput, result in chunlitests:
