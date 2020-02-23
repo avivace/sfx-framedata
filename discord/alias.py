@@ -1,5 +1,6 @@
 import logging
 import re
+import json
 
 logging.basicConfig(level=logging.DEBUG)
 
@@ -9,6 +10,9 @@ def matchExact(text, data):
         for alias in data[move]:
             if text == alias:
                 return move
+
+with open('data/extracted/data.json', 'r') as f:
+    data = json.load(f)
 
 ## Exact matching
 ryuexact = {
@@ -282,7 +286,7 @@ def chunliRegex(movestring):
 def resolveMoveName(userstring):
     logging.info("USERSTRING"+userstring)
     # product of dennitopolino typing blind:
-    holyregex = "(\w+\-*\w+)\s(\w+|\w+\.\w+|\w+\s\w+|\w+\+\w+|\w+\s\w+\s\w+|\w+,\w+\+\w+)\s*(vt1|vt2){0,1}$"
+    holyregex = "^(\S+)\s(\S+|\S+\s\S+|\S+\s\S+\s\S+)\s*(vt1|vt2){0,1}$"
     # ye, don't ask
     m = re.search(holyregex, userstring, re.IGNORECASE)
     if m:
@@ -291,7 +295,7 @@ def resolveMoveName(userstring):
         if m.groups(0)[2]:
             vt = m.groups(0)[2].upper()
         else:
-            vt = "VT0"
+            vt = "vt1"
 
         logging.info("MATCHED outer expression")
         logging.info("char:\t%s", char)
@@ -304,12 +308,18 @@ def resolveMoveName(userstring):
     ## CHAR MATCHING
     if char == "chunli":
         char = "chun-li"
-
+    
+    ## Exactly exact matching
+    for moveExact in data[char][vt]:
+        if move.lower() == moveExact["name"].lower():
+            result = move
+    
     ## MOVE MATCHING
-    if char == "ryu":
-        result = matchExact(move, ryuexact)
-    elif char == "chun-li":
-        result = matchExact(move, chunliexact)
+    if not result:
+        if char == "ryu":
+            result = matchExact(move, ryuexact)
+        elif char == "chun-li":
+            result = matchExact(move, chunliexact)
 
     if not result:
         if char == "ryu":

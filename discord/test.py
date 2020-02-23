@@ -90,4 +90,4 @@ def exactMatches():
     for char in data:
         for vt in data[char]:
             for move in data[char][vt]:
-                assert alias.resolveMoveName(char + " " + move["name"])["move"] == move["name"]
+                assert alias.resolveMoveName(char + " " + move["name"])["move"].lower() == move["name"].lower()
