@@ -236,21 +236,19 @@ def chunliRegex(movestring):
     hyaku2 = "(j.|j){0,1}qcf\+([L|M|H|K]{1})k"
     m = re.search(hyaku2, movestring, re.IGNORECASE)
     if m:
+        if m.groups(0)[1].lower() == "k":
+            mod = "EX"
+        else:
+            mod = m.groups(0)[1].upper()
+
         # (0) is for the first match
         # [0] is the first group matched
         if m.groups(0)[0] == "j":
-            mod = "Airborne"
+            mod = mod + "Airborne"
         elif m.groups(0)[0] == "j.":
-            mod = "Airborne"
-        elif not m.groups(0)[0]:
-            mod = ""
+            mod = mod + "Airborne"
 
-        if m.groups(0)[1] == "k":
-            mod = "EX"
-        else:
-            mod = m.groups(0)[1]
-
-        return f'{mod} {m.groups(0)[1].upper()} {m.groups(0)[0].upper()} Hyakuretsukyaku'
+        return f'{mod} Hyakuretsukyaku'
         
       
 
