@@ -14,7 +14,7 @@ sys.path.append('../')
 
 import alias
 
-with open('../data.json', 'r') as f:
+with open('../data/extracted/data.json', 'r') as f:
     data = json.load(f)
 
 class Frames():
@@ -350,10 +350,16 @@ class Frames():
 
     @register('!frames')
     async def get_frames(self, msg, user, *args, **kwargs):
-        matchedmove = alias.resolveMoveName(msg)["move"]
-        print(matchedmove)
-        for move in data["vt1"]:
-            if move["name"] == matchedmove:
+        matched = alias.resolveMoveName(msg)
+        char = matched["character"]
+        movename = matched["move"]
+        vt = matched["vt"].lower()
+        if (vt == "vt0"):
+            vt = "vt1"
+
+        print(matched)
+        for move in data[char][vt]:
+            if movename in move["name"]:
                 result = str(move)
 
         return result
