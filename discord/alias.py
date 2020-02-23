@@ -280,9 +280,9 @@ def chunliRegex(movestring):
         return m.groups(0)[0].upper() + " Spinning Bird Kick"
 
 def resolveMoveName(userstring):
-    logging.info(userstring)
+    logging.info("USERSTRING"+userstring)
     # product of dennitopolino typing blind:
-    holyregex = "(ryu|chun-li|chunli)\s(\w+|\w+\.\w+|\w+\s\w+|\w+\+\w+|\w+\s\w+\s\w+|\w+,\w+\+\w+)\s*(vt1|vt2){0,1}$"
+    holyregex = "(\w+\-*\w+)\s(\w+|\w+\.\w+|\w+\s\w+|\w+\+\w+|\w+\s\w+\s\w+|\w+,\w+\+\w+)\s*(vt1|vt2){0,1}$"
     # ye, don't ask
     m = re.search(holyregex, userstring, re.IGNORECASE)
     if m:
@@ -298,6 +298,8 @@ def resolveMoveName(userstring):
         logging.info("move:\t%s", move)
         logging.info("vt:\t%s", vt)
 
+    result = None
+    print(char)
 
     ## CHAR MATCHING
     if char == "chunli":
