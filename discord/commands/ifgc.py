@@ -348,7 +348,7 @@ class Frames():
 
         return text_output, embed_output
 
-    @register('!frames')
+    @register('!fd')
     async def get_frames(self, msg, user, *args, **kwargs):
         matched = alias.resolveMoveName(msg)
         char = matched["character"]

@@ -14,11 +14,11 @@ admins:
   - ''
 common_actions:
   # commands: Help text
-  '!frames': >
+  '!fd': >
     Get SFV frame data for the specified char and move. Also
     works with stats of the char like fdash, bdash, throw range etc.
     Use optional parameter -v for more info on the move.
-    Usage: ```!frames Ryu cr.mk``` ```!frames Nash phrase``` ```!frames-v Ryu shoryu```
+    Usage: ```!fd Ryu cr.mk``` ```!fd Nash phrase```
   '!info': >
     Contacts to get support, provide feedback or fork our code. Shows bot version and some other diagnostic data.
   '!help': 'Get help on a command. Usage ```!help command_name```'
