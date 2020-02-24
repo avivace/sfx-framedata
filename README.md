@@ -10,7 +10,6 @@ A sample of the commands available to the bot, see [config file](conf/bots.yaml)
 
 * `!fd`: 
     Get SFV frame data for the specified char and move. ```!fd Ryu cr.mk```
-* `!blacklist`: Blacklists a user from using the bot functions ```!blacklist user1 [user2 user3]```
 * `!help`: 'Get help on a command. Usage ```!help command_name```
 * `!info`: 'Get suppport/feedback contacts and show some technical data. Usage ```!info```
 

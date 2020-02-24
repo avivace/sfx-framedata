@@ -28,8 +28,6 @@ class Interface():
         self.registered_commands = bot_commands
 
         self.remap_functions()
-
-        self.blacklisted_users = self.get_blacklisted_users()
         self.admin_actions = self.config.get('admin_actions', {}).keys()
         self.non_admin_actions = {
             k: v for k, v in bot_commands.items()
@@ -113,19 +111,13 @@ class Interface():
             if command == '!help':
                 kwargs['commands_dict'] = self.non_admin_actions
                 kwargs['config'] = self.config
-            # Another special case for the blacklist commands that requires
-            # current list of blacklisted to be passed in so it can be updated.
-            # Could instead have a seperate thread that periodically reads from
-            # the file to update it, not sure. Suggestions welcome.
-            elif command in ['!blacklist', '!unblacklist']:
-                kwargs['blacklisted_users'] = self.blacklisted_users
             # Call the actual function passing the instance of the
             # class as the first argument.
             try:
                 return await func(self._class_mapping[class_name], msg, user,
                                   channel, *args, **kwargs)
             except Exception:
-                logging.exception('Yaksha Error')
+                logging.exception('Error')
                 return "Sorry, quel comando è una giulioversione"
 
     def user_has_permission(self, user, command):
@@ -143,9 +135,6 @@ class Interface():
             # username@ip. We use the ip to uniquely identify them.
             uid = user.split('@')[1]
 
-        # Check if the user has been blacklisted.
-        if uid in self.blacklisted_users:
-            return False
         # Check if the user is an admin and if the command is
         # an admin command.
         if command in self.admin_actions and uid not in self.admins:
@@ -173,16 +162,3 @@ class Interface():
                                           metric_name, 1)
             await future
 
-    def get_blacklisted_users(self):
-        '''
-        Updates the in-memory list of blacklisted users when
-        the bot starts up.
-        '''
-        try:
-            with open(self.config['blacklist_file'], 'r') as f:
-                users = f.readlines()
-        except IOError:
-            return []
-
-        # Return the list of users after stripping the new line char.
-        return [user[:-2] for user in users]

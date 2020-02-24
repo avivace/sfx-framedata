@@ -6,7 +6,6 @@ discord:
   max_retries: 10
 frame_data:
   url: 'someurl'
-blacklist_file: 'blacklist_file.txt'
 stats:
   url: https://bots.discord.pw/api/bots/{bot_id}/stats
   token: 'some_other_token'
@@ -22,8 +21,6 @@ common_actions:
   '!info': >
     Contacts to get support, provide feedback or fork our code. Shows bot version and some other diagnostic data.
   '!help': 'Get help on a command. Usage ```!help command_name```'
-admin_actions:
-  '!blacklist': 'Blacklists a user. Usage ```!blacklist user1 [user2 user3]```'
-  '!unblacklist': 'Unblacklists a user. Usage ```!unblacklist user1 [user2 user3]```'
+# admin_actions:
 version: "0.0.0"
 repo_url: "https://github.com/avivace/sfx-framedata"
