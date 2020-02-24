@@ -9,6 +9,7 @@ import time
 import random
 import discord
 import subprocess
+import json
 
 
 def rate_limit(time_gap):
@@ -142,3 +143,14 @@ def get_last_commit(format="short"):
     command = ["git", "rev-parse", f"--{format}", "HEAD"]
     lastCommit = subprocess.check_output(command).decode("utf-8").strip()
     return lastCommit
+
+def get_char_data(charname, field):
+        with open("../data/data-mapping.json") as json_file:
+            try:
+                data = json.load(json_file)
+                value = data["characters"][charname][field]
+            except:
+                value = ""
+                print(f"Error: couldn't find field {field} for {charname}")
+            
+            return value

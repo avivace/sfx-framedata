@@ -7,7 +7,7 @@ from itertools import chain
 from bs4 import BeautifulSoup
 from fuzzywuzzy import process
 from collections import OrderedDict
-from commands.utilities import memoize, get_request, register
+from commands.utilities import memoize, get_request, register, generate_discord_color, get_char_data
 import sys
 
 sys.path.append('../')
@@ -348,6 +348,38 @@ class Frames():
 
         return text_output, embed_output
 
+    def buildFrameEmbed(self, char, move):
+        title = move['name']
+        embed = discord.Embed(title=title, colour=generate_discord_color())
+        embed.set_author(name=get_char_data(char, "prettyName"))
+        embed.set_thumbnail(url=get_char_data(char, "image"))
+
+        if move["frame"]["startup"]:
+            embed.add_field(name="Startup", value=move["frame"]["startup"])
+
+        if move["frame"]["active"]:
+            embed.add_field(name="Active", value=move["frame"]["active"])
+
+        if move["frame"]["recovery"]:
+            embed.add_field(name="Recovery", value=move["frame"]["recovery"])
+
+        if move["recovery"]["onHit"]:
+            embed.add_field(name="On Hit", value=move["recovery"]["onHit"])
+
+        if move["recovery"]["onBlock"]:
+            embed.add_field(name="On Block", value=move["recovery"]["onBlock"])
+
+        if move["vTriggerCancelRecovery"]["onHit"]:
+            embed.add_field(name="vt1cOnBlock", value=move["vTriggerCancelRecovery"]["onHit"])
+
+        if move["vTriggerCancelRecovery"]["onBlock"]:
+            embed.add_field(name="vt1cOnHit", value=move["vTriggerCancelRecovery"]["onBlock"])
+
+        if move["comments"]:
+            embed.set_footer(text=move["comments"])
+
+        return embed
+
     @register('!fd')
     async def get_frames(self, msg, user, *args, **kwargs):
         matched = alias.resolveMoveName(msg)
@@ -361,6 +393,7 @@ class Frames():
         for move in data[char][vt]:
             if movename == move["name"]:
                 result = str(move)
+                embedResult = self.buildFrameEmbed(char, move)
 
         # this is not actually working
         if not result:
@@ -368,4 +401,4 @@ class Frames():
                 if movename in move["name"]:
                     result = str(move)
 
-        return result
+        return (result, embedResult)

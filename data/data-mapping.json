@@ -1,0 +1,16 @@
+{
+    "characters": {
+        "ryu": {
+            "prettyName": "Ryu",
+            "image": "https://i.imgur.com/gHkkXjn.jpg"
+        },
+        "chun-li": {
+            "prettyName": "Chun-Li",
+            "image": "https://i.imgur.com/UsrJJey.jpg"
+        },
+        "nash": {
+            "prettyName": "Nash",
+            "image": "https://i.imgur.com/uDNyprz.jpg"
+        }
+    }
+}
