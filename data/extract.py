@@ -68,6 +68,8 @@ def cookAnHotSoup(html, characterName):
                 elif (j == 14):
                     move["airborneHurtbox"] = colContent
                 elif (j == 15):
+                    # Remove Japanese characters
+                    colContent = colContent.encode('ascii', 'ignore').decode('unicode_escape')
                     move["comments"] = colContent
 
             if (len(row) > 0):
