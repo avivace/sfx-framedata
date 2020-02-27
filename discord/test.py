@@ -69,21 +69,97 @@ def test_chunli():
         ['vreversal', 'Sohakkei'],
         ['l kiko', 'L Kikoken'],
         ['ex kiko', 'EX Kikoken'],
-        #['b,f+mp', 'M Kikoken'],
-        #['b,f+pp', 'EX Kikoken'],
         ['b+hk', 'Tenkukyaku'],
-        #['qcf+hk', 'H Hyakuretsukyaku'],
+        ['qcf+hk', 'H Hyakuretsukyaku'],
         ['ex sbk', 'EX Spinning Bird Kick'],
         ['h sbk', 'H Spinning Bird Kick'],
         ['ex legs', 'EX Hyakuretsukyaku'],
-        ['l hyaku', 'L Hyakuretsukyaku'],
-        #['d,u+lk', 'L Spinning Bird Kick']
+        ['l hyaku', 'L Hyakuretsukyaku']
 
     ]
     for userinput, result in chunlitests:
         print("chun-li " + userinput, result)
         assert alias.resolveMoveName(
             "chun-li " + userinput)["move"].lower() == result.lower()
+
+
+def test_juri():
+    juritests = [
+        ['lp',  'Standing LP'],
+        ['mp',  'Standing MP'],
+        ['hp',  'Standing HP'],
+        ['lk',  'Standing LK'],
+        ['mk',  'Standing MK'],
+        ['hk',  'Standing HK'],
+        ['cr.lp',  'Crouching LP'],
+        ['cr.mp',  'Crouching MP'],
+        ['cr.hp',  'Crouching HP'],
+        ['cr.lk',  'Crouching Lk'],
+        ['cr.mk',  'Crouching MK'],
+        ['cr.hk',  'Crouching HK'],
+        ['j.lp',  'Jumping LP'],
+        ['j.mp',  'Jumping MP'],
+        ['j.hp',  'Jumping HP'],
+        ['j.lk',  'Jumping LK'],
+        ['j.mk',  'Jumping MK'],
+        ['j.hk',  'Jumping HK'],
+        ['f+mk',  'Senkaikyaku'],
+        ['b+hk',  'Korenzan'],
+        ['j.mp>hk',  'Enkushu'],
+        ['qcf+hk',  'H Fuharenkyaku'],
+        ['qcf+kk',  'EX Fuharenkyaku'],
+        ['dp+lp',  'L Tensenrin'],
+        ['dp+mp',  'M Tensenrin'],
+        ['dp+pp',  'EX Tensenrin'],
+        ['qcb+mk',  'M Ryodansatsu'],
+        ['qcb+kk',  'EX Ryodansatsu']
+
+
+    ]
+    for userinput, result in juritests:
+        print("juri " + userinput, result)
+        assert alias.resolveMoveName(
+            "juri " + userinput)["move"].lower() == result.lower()
+
+
+def test_akuma():
+    akumatests = [
+        ['lp',  'Standing LP'],
+        ['mp',  'Standing MP'],
+        ['hp',  'Standing HP'],
+        ['lk',  'Standing LK'],
+        ['mk',  'Standing MK'],
+        ['hk',  'Standing HK'],
+        ['cr.lp',  'Crouching LP'],
+        ['cr.mp',  'Crouching MP'],
+        ['cr.hp',  'Crouching HP'],
+        ['cr.lk',  'Crouching Lk'],
+        ['cr.mk',  'Crouching MK'],
+        ['cr.hk',  'Crouching HK'],
+        ['j.lp',  'Jumping LP'],
+        ['j.mp',  'Jumping MP'],
+        ['j.hp',  'Jumping HP'],
+        ['j.lk',  'Jumping LK'],
+        ['j.mk',  'Jumping MK'],
+        ['j.hk',  'Jumping HK'],
+        ['f+mp',  'Zugaihasatsu'],
+        ['b+hp',  'Tenha'],
+        ['hk>hk',  'Kikokurenzan'],
+        ['qcf+hp',  'H Gohadoken'],
+        ['qcf+pp',  'EX Gohadoken'],
+        ['hcb+lp',  'L Sekia Goshoha'],
+        ['dp+mp',  'M Goshoryuken'],
+        ['dp+pp',  'EX Goshoryuken'],
+        ['qcb+hk',  'H Tatsumaki Zankukyaku'],
+        ['hcf+mk',  'M Hyakkishu']
+
+
+    ]
+    for userinput, result in akumatests:
+        print("akuma " + userinput, result)
+        assert alias.resolveMoveName(
+            "akuma " + userinput)["move"].lower() == result.lower()
+
 
 
 def exactMatches():
