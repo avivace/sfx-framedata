@@ -12,7 +12,6 @@ which checks if the user has permission to call the specific command.
 from commands import ifgc, actions
 from commands import utilities
 from graphiteudp import GraphiteUDPClient
-import logging
 import asyncio
 import re
 

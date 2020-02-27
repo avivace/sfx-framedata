@@ -2,16 +2,17 @@
 import re
 import os
 import yaml
-import logging
 import discord
 import asyncio
 import requests
 import interface
 import functools
 import itertools
+import logging
 
+logger = logging.getLogger()
+logger.setLevel(level=logging.INFO)
 
-logging.basicConfig(level=logging.INFO)
 client = discord.Client()
 
 

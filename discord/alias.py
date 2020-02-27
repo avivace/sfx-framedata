@@ -11,7 +11,7 @@ def matchExact(text, data):
             if text == alias:
                 return move
 
-with open('../data/extracted/data.json', 'r') as f:
+with open('../data/extracted/data2.json', 'r') as f:
     data = json.load(f)
 
 ## Exact matching
@@ -142,7 +142,6 @@ nashexact = {
     "Judgement Saber": ["ca", "critical art", "super"]
     
 }
-
 
 ## Regex matching
 def ryuRegex(movestring):
@@ -388,7 +387,7 @@ def nashRegex(movestring):
 
 
 def resolveMoveName(userstring):
-    logging.info("USERSTRING"+userstring)
+    logging.info("USERSTRING "+userstring)
     # product of dennitopolino typing blind:
     holyregex = "^(\S+)\s(\S+|\S+\s\S+|\S+\s\S+\s\S+)\s*(vt1|vt2){0,1}$"
     # ye, don't ask
@@ -407,7 +406,6 @@ def resolveMoveName(userstring):
         logging.info("vt:\t%s", vt)
 
     result = None
-    print(char)
 
     ## CHAR MATCHING
     if char == "chunli":
@@ -415,46 +413,22 @@ def resolveMoveName(userstring):
     
     ## Exactly exact matching
     for moveExact in data[char][vt]:
-        if move.lower() == moveExact["name"].lower():
+        if move.lower() == moveExact["matchCol"].lower():
             result = move
-    
-    ## MOVE MATCHING
-    if not result:
-        if char == "ryu":
-            result = matchExact(move, ryuexact)
-        elif char == "chun-li":
-            result = matchExact(move, chunliexact)
-        elif char == "nash":
-            result = matchExact(move, nashexact)
 
-    if not result:
-        if char == "ryu":
-            result = ryuRegex(move)
-        elif char == "chun-li":
-            result = chunliRegex(move)
-        elif char == "nash":
-            result = nashRegex(move)
-    if not result:
-        result = commonRegex(move, char)
-    if not result:
-        result = move
-
-    logging.info("translated movename:%s", result)
 
     charsolved = char
-
     # TODO: wrap the matchings
     movesolved = result
     # TODO
     vtsolved = vt
-
-    finalkey = charsolved + " " + movesolved + " " + vtsolved
-    logging.info("Final key:%s", finalkey)
 
     resultdict = {
         'character': char,
         'move': movesolved,
         'vt': vtsolved
     }
+
+    logging.info("Final match:%s", resultdict)
 
     return resultdict
