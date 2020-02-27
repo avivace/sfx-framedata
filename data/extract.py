@@ -205,7 +205,7 @@ def bringSoupToTheTable():
 
 
 def main():
-    print("\nEXTRACTING DATA\nCooking a delicious soup...")
+    print(f"\nEXTRACTING DATA from {SOUP_INGREDIENTS_PATH}/*.html\nCooking a delicious soup...")
     for characterName in SOUP_INGREDIENTS:
         INGREDIENT = SOUP_INGREDIENTS_PATH + characterName + ".html"
         # Check if HTML target file exits
@@ -224,7 +224,7 @@ def main():
                 "\nERROR: Sorry, you don't have all the ingredients you need to cook your soup :(\n(No data source file present)")
 
     # Save file
-    print("\nDONE\nSoup is hot and ready to be tasted!")
+    print(f"\nDONE\nSoup is hot and ready to be tasted: {DATA_OUTPUT_DIR}data.json")
     bringSoupToTheTable()
 
 
