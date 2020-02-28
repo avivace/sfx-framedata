@@ -10,7 +10,7 @@ import random
 import discord
 import subprocess
 import json
-
+import discord
 
 def rate_limit(time_gap):
     '''
@@ -138,6 +138,16 @@ def generate_discord_color():
     randomColor = generate_color()
     discordColour = discord.Colour.from_rgb(randomColor[0], randomColor[1], randomColor[2])
     return discordColour
+
+def get_move_color(moveLevel):
+    color = discord.Colour.purple()
+    if moveLevel == "L":
+        color = discord.Colour.blue()
+    elif moveLevel == "M":
+        color = discord.Colour.gold()
+    if moveLevel == "H":
+        color = discord.Colour.red()
+    return color
 
 def get_last_commit(format="short"):
     command = ["git", "rev-parse", f"--{format}", "HEAD"]
