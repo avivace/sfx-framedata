@@ -7,7 +7,7 @@ from itertools import chain
 from bs4 import BeautifulSoup
 from fuzzywuzzy import process
 from collections import OrderedDict
-from commands.utilities import memoize, get_request, register, generate_discord_color, get_char_data
+from commands.utilities import memoize, get_request, register, generate_discord_color, get_char_data, get_move_color
 import sys
 
 sys.path.append('../')
@@ -350,7 +350,7 @@ class Frames():
 
     def buildFrameEmbed(self, char, move):
         title = move['name']
-        embed = discord.Embed(title=title, colour=generate_discord_color())
+        embed = discord.Embed(title=title, colour=get_move_color(move["moveLevels"]))
         embed.set_author(name=get_char_data(char, "prettyName"))
         embed.set_thumbnail(url=get_char_data(char, "image"))
 
