@@ -18,6 +18,21 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+* { color: #FFF;}
+
+.hello {
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: .5rem;
+  width: 500px;
+  margin: auto;
+  padding: 2.5rem;
+  margin-top: 2rem;
+}
+
+h1 {
+  margin: 0 auto 20px;
+}
+
 h3 {
   margin: 10px 0 0;
 }
