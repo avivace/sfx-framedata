@@ -375,6 +375,13 @@ class Frames():
         if move["vTriggerCancelRecovery"]["onBlock"]:
             embed.add_field(name="vt1cOnHit", value=move["vTriggerCancelRecovery"]["onBlock"])
 
+
+        if move["vTriggerCancelRecovery2"]["onHit"]:
+            embed.add_field(name="vt2cOnBlock", value=move["vTriggerCancelRecovery2"]["onHit"])
+
+        if move["vTriggerCancelRecovery2"]["onBlock"]:
+            embed.add_field(name="vt2cOnHit", value=move["vTriggerCancelRecovery2"]["onBlock"])
+
         if move["comments"]:
             embed.set_footer(text=move["comments"])
 
@@ -388,22 +395,34 @@ class Frames():
         vtd = matched["vt"].lower()
         if (vtd == "vt0"):
             vtd = "vt1"
+        if (vtd == "vt1"):
+            vtd_other = "vt2"
+        else:
+            vtd_other = "vt1"
 
         if matched["type"] == 0:
             target = "matchCol"
         else:
             target = "name"
 
-        for move in data[char][vtd.lower()]:
+        for i, move in enumerate(data[char][vtd.lower()]):
             if (matched["vt"].lower() == "vt0"):
                 if (movename.lower() == move[target].lower() and move["vTrigger"] == ""):
-                    result = str(move)
-                    embedResult = self.buildFrameEmbed(char, move)
+
+                    if move["vTriggerCancelRecovery"]["onHit"] != "":
+                        move["vTriggerCancelRecovery2"] = data[char][vtd_other][i]["vTriggerCancelRecovery"]
+
+                    stringmove = str(move)
+                    result = move
+                    break
             else:
                 if (movename.lower() == move[target].lower() and move["vTrigger"] == "Yes"):
-                    result = str(move)
-                    embedResult = self.buildFrameEmbed(char, move)                
+                    if move["vTriggerCancelRecovery"]["onHit"] != "":
+                        move["vTriggerCancelRecovery2"] = data[char][vtd_other][i]["vTriggerCancelRecovery"]
+                    stringmove = str(move)
+                    result = move
+                    break              
 
-        
+        embedResult = self.buildFrameEmbed(char, move)
 
-        return (result, embedResult)
+        return (stringmove, embedResult)
