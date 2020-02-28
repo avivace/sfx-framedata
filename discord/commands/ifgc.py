@@ -385,20 +385,19 @@ class Frames():
         matched = alias.resolveMoveName(msg)
         char = matched["character"]
         movename = matched["move"]
-        vt = matched["vt"].lower()
-        if (vt == "vt0"):
-            vt = "vt1"
+        vtd = matched["vt"].lower()
+        if (vtd == "vt0"):
+            vtd = "vt1"
 
-        print(matched)
-        for move in data[char][vt]:
-            if movename == move["name"]:
-                result = str(move)
-                embedResult = self.buildFrameEmbed(char, move)
-
-        # this is not actually working
-        if not result:
-            for move in data[char][vt]:
-                if movename in move["name"]:
+        for move in data[char][vtd.lower()]:
+            print(move["name"])
+            if (matched["vt"].lower() != "vt0"):
+                if (movename.lower() == move["matchCol"].lower() and move["vTrigger"] == "Yes"):
                     result = str(move)
+                    embedResult = self.buildFrameEmbed(char, move)
+            else:
+                if (movename.lower() == move["matchCol"].lower() and move["vTrigger"] == ""):
+                    result = str(move)
+                    embedResult = self.buildFrameEmbed(char, move)                
 
         return (result, embedResult)

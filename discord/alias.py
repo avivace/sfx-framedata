@@ -11,7 +11,7 @@ def matchExact(text, data):
             if text == alias:
                 return move
 
-with open('../data/extracted/data2.json', 'r') as f:
+with open('../data/extracted/data.json', 'r') as f:
     data = json.load(f)
 
 ## Exact matching
@@ -397,9 +397,10 @@ def resolveMoveName(userstring):
         move = m.groups(0)[1].lower()
         if m.groups(0)[2]:
             vt = m.groups(0)[2].upper()
+            vtd = vt
         else:
-            vt = "vt1"
-
+            vt = "vt0"
+            vtd = "vt1"
         logging.info("MATCHED outer expression")
         logging.info("char:\t%s", char)
         logging.info("move:\t%s", move)
@@ -412,7 +413,7 @@ def resolveMoveName(userstring):
         char = "chun-li"
     
     ## Exactly exact matching
-    for moveExact in data[char][vt]:
+    for moveExact in data[char][vtd.lower()]:
         if move.lower() == moveExact["matchCol"].lower():
             result = move
 
