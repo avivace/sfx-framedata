@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <img width="300px" alt="Stree Fighter V logo" src="./assets/logo.png">
+    <img width="300px" alt="Stree Fighter V logo" src="./assets/logo-2.png">
     <SFX />
   </div>
 </template>
@@ -36,6 +36,7 @@ html, body {
 
   width: 100%;
   height: 100vh;
-  background:url("assets/sfv-background.jpg");
+  background:url("assets/sfv-background-2.jpg") no-repeat center;
+  background-size: 100%;
 }
 </style>
