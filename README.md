@@ -95,6 +95,16 @@ localhost:8080/api/v1/$METHOD$
 localhost:8080/api/v1/ui
 ```
 
+#### 4. Web app
+
+```
+cd sfxweb
+npm install
+npm run serve
+npm run deploy
+```
+
+
 ## Architecture
 
 <img src=".meta/sfx.svg">
