@@ -101,7 +101,6 @@ chunliexact = {
     # "Kikosho (Charge)"
 }
 
-
 nashexact = {
     # CHARACTER: NASH
     # V-TRIGGER 1
@@ -139,8 +138,7 @@ nashexact = {
     "Sonic Move - Avoid": ["vreversal", "v-reversal","vrev"],
     # GROUP UNDER VT1?
     
-    "Judgement Saber": ["ca", "critical art", "super"]
-    
+    "Judgement Saber": ["ca", "critical art", "super"] 
 }
 
 ## Regex matching
@@ -318,7 +316,6 @@ def chunliRegex(movestring):
 
     return ""
 
-
 def nashRegex(movestring):
     # matching with "qcf+p"
     sonic2 = "qcf\+([L|M|H|P]{1})p"
@@ -383,9 +380,6 @@ def nashRegex(movestring):
 
     return ""
 
-
-
-
 def resolveMoveName(userstring):
     logging.info("USERSTRING "+userstring)
     # product of dennitopolino typing blind:
@@ -407,15 +401,26 @@ def resolveMoveName(userstring):
         logging.info("vt:\t%s", vt)
 
     result = None
+    matchtype = 0
 
     ## CHAR MATCHING
     if char == "chunli":
         char = "chun-li"
     
-    ## Exactly exact matching
+    ## direct key matching
     for moveExact in data[char][vtd.lower()]:
         if move.lower() == moveExact["matchCol"].lower():
             result = move
+
+    ## charmove matching
+    if not result:
+        matchtype = 1
+        if char == "ryu":
+            result = matchExact(move, ryuexact)
+        elif char == "chun-li":
+            result = matchExact(move, chunliexact)
+        elif char == "nash":
+            result = matchExact(move, nashexact)
 
 
     charsolved = char
@@ -427,7 +432,8 @@ def resolveMoveName(userstring):
     resultdict = {
         'character': char,
         'move': movesolved,
-        'vt': vtsolved
+        'vt': vtsolved,
+        'type': matchtype
     }
 
     logging.info("Final match:%s", resultdict)

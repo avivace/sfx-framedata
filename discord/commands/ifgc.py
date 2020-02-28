@@ -389,15 +389,21 @@ class Frames():
         if (vtd == "vt0"):
             vtd = "vt1"
 
+        if matched["type"] == 0:
+            target = "matchCol"
+        else:
+            target = "name"
+
         for move in data[char][vtd.lower()]:
-            print(move["name"])
-            if (matched["vt"].lower() != "vt0"):
-                if (movename.lower() == move["matchCol"].lower() and move["vTrigger"] == "Yes"):
+            if (matched["vt"].lower() == "vt0"):
+                if (movename.lower() == move[target].lower() and move["vTrigger"] == ""):
                     result = str(move)
                     embedResult = self.buildFrameEmbed(char, move)
             else:
-                if (movename.lower() == move["matchCol"].lower() and move["vTrigger"] == ""):
+                if (movename.lower() == move[target].lower() and move["vTrigger"] == "Yes"):
                     result = str(move)
                     embedResult = self.buildFrameEmbed(char, move)                
+
+        
 
         return (result, embedResult)
