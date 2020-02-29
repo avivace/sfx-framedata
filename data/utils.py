@@ -148,7 +148,7 @@ def extractMoveLevels(soup, moveRow):
     moveLevelsCol = soup.new_tag("td", class_="custom-col extra-col move-levels-col")
 
     for level in moveLevelFrames:
-        if level not in foundLevels:
+        if level.string not in foundLevels:
             foundLevels.append(level.string)
     
     moveLevelsCol.string = "|".join(foundLevels)
