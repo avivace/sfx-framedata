@@ -18,85 +18,49 @@ with open('../data/extracted/data.json', 'r') as f:
 ryuexact = {
     # CHARACTER: RYU
     # V-TRIGGER 1
+
     "Shoulder Throw": ["lp+lk", "lplk", "throw"],
     "Somersault Throw": ["b+lp+lk", "blplk", "bthrow", "b+throw", "back throw"],
-    "[VS1] Mind's Eye": ["vs1","vskill1","v-skill1"],
-    
+    "[VS1] Mind's Eye": ["vs1","vskill1","v-skill1"],   
     "[VS2] Thust Strike": ["vs2","vskill2","v-skill2"],
-    # GROUP WITH:
-    # "[VS2] Thust Strike (upon successful parry)"
-
+    "[VS2] Thust Strike (upon successful parry)": ["vs2 parry","vskill2 parry","v-skill2 parry"],
     "Denjin Renki": ["vt1", "vtrigger1", "v-trigger1"],
     "Hashogeki": ["vreversal", "v-reversal","vrev"],
-    "Airborne Tatsumaki Senpukyaku": ["j.qcb+k", "jqcb+k", "air tatsu"],
-    "EX Airborne Tatsumaki Senpukyaku": ["j.qcb+kk",  "jqcb+kk", "ex air tatsu"],
     "Shinku Hadoken": ["ca", "critical art", "super"],
-    
-    # "Denjin Hadoken" = "Shinku Hadoken" when using "vt1" modificator
-
-
-    # questa scassa tutto, me lo sento
-    "Hadoken (Lv2)": ["qcf+p vt1"],
-    # GROUP WITH:
-    # "Hadoken (Lv3)"
-    
-    # "EX Hadoken (Lv1)" = "EX Hadoken" when using "vt1" modificator
-    # GROUP WITH:
-    # "EX Hadoken (Lv2)"
-
-
-    
+    "Denjin Hadoken" : ["ca vt1", "critical art vt1", "super vt1"],
+ 
     # V-TRIGGER 2
     "Kakko Fubatsui": ["vt2", "vtrigger2", "v-trigger2"],
-    # GROUP WITH:
-    # "Isshin (Stance)"
-    # "Isshin (Attack)"
+    "Isshin (Stance)": ["vt2 parry","vtrigger2 parry", "v-trigger2 parry"]
+    # "Isshin (Attack)":
+
 }
 
 chunliexact = {
     # CHARACTER: CHUN-LI
     # V-TRIGGER 1
-    
-    "Vertical Jump HK": ["u+hk","uhk","split kicks","split"],
-    "Senenshu": ["df+mk", "dfmk", "overhead"],
-    "Tsuitotsuken": ["b+mp","bmp","f+mp","fmp"],
-    "Hakkei": ["b+hp","bhp","hey","ey"],
-    "Kakurakukyaku": ["df+hk","dfhk"],
-    "Tenkukyaku": ["b+hk","bhk"],
-    "Yokusenkyaku": ["f+hk","fhk"],
-    
-    "Yosokyaku": ["j.d+mk","jd+mk","jdmk","air stomp","stomp"],
-    # GROUP WITH:
-    # Yosokyaku (2)
-    # Yosokyaku (3)
-    
+       
     "Koshuto": ["lp+lk", "lplk", "throw"],
     "Tenshin Shushu": ["b+lp+lk", "blplk", "bthrow", "b+throw", "back throw"],
     "Ryuseiraku": ["j.lp+lk", "jlplk", "jthrow", "j.throw", "air throw"],
-
     "[VS1] Rankyaku": ["vs1","vskill1","v-skill1"],
-    # GROUP WITH:
-    # "[VS1] Souseikyaku"
-
+    "[VS1] Souseikyaku": ["vs1>vs1","vskill1>vskill1","v-skill1>v-skill1"],
     "[VS2] Hazansyu": ["vs2","vskill2","v-skill2"],
     "Renkiko": ["vt1", "vtrigger1", "v-trigger1"],
     "Sohakkei": ["vreversal", "v-reversal","vrev"],
     "Hoyokusen": ["ca", "critical art", "super"],
     
-    
     # V-TRIGGER 2
-    "Kikosho": ["vt2", "vtrigger2", "v-trigger2"]
+    "Kikosho": ["vt2", "vtrigger2", "v-trigger2"],
+    "Kikosho (Charge)": ["vt2 hold", "vtrigger2 hold", "v-trigger2 hold"]
     # ANOTHER "Kikosho" IS PRESENT
-    # GROUP WITH:
-    # "Kikosho" (the second one)
-    # "Kikosho (Charge)"
 }
 
 nashexact = {
     # CHARACTER: NASH
     # V-TRIGGER 1
     
-    "Bullet Combination (3)": ["mk>hk>mp+mk"],
+    "Bullet Combination (3)": ["mk>hk>vs1","mk>hk>mp+mk"],
     "Dragon Suplex": ["lp+lk", "lplk", "throw"],
     "Target Down": ["b+lp+lk", "blplk", "bthrow", "b+throw", "back throw"],
     "Air Jack": ["j.lp+lk", "jlplk", "jthrow", "j.throw", "air throw"],
@@ -120,10 +84,35 @@ nashexact = {
     "Justice Shell": ["vt2+k", "vtrigger2+k", "v-trigger2+k"]
 }
 
+mbisonexact = {
+    # CHARACTER: M. BISON
+    # V-TRIGGER 1   
+     
+    "Psycho Impact": ["lp+lk", "lplk", "throw"],
+    "Psycho Fall": ["b+lp+lk", "blplk", "bthrow", "b+throw", "back throw"],
+    "[VS1] Psycho Reflect": ["vs1","vskill1","v-skill1"],
+    "[VS1] Psycho Reflect (Shoot Projectile)": ["vs1 fb","vskill1 fb","v-skill1 fb"],
+    # "[VS1] Psycho Reflect (Attack)"
+    "[VS2] Hell's Warp": ["vs2","vskill2","v-skill2"],
+    "Psycho Power": ["vt1", "vtrigger1", "v-trigger1"],
+    "Psycho Burst": ["vreversal", "v-reversal","vrev"],
+    "Ultimate Psycho Crusher": ["ca", "critical art", "super"],
+    "Ultimate Psycho Crusher (Airborne)": ["j.ca", "j.critical art", "j.super"],
+    "EX Psycho Inferno (Cancel)": ['qcb+pp cancel'],
+    "EX Double Knee Press (Cancel)": ['bf+kk cancel'],
+    "EX Head Press (Cancel)": ['du+kk cancel'],
+
+    # V-TRIGGER 2
+
+    "Psycho Nightmare": ["vt2", "vtrigger2", "v-trigger2"],
+    # "Psycho Crusher"
+    "Psycho Judgement": ['hcb+k>hcb+k']
+}
+
 cammyexact = {
     # CHARACTER: CAMMY
-    # V-TRIGGER 1
-    
+    # V-TRIGGER 1   
+     
     "Gyro Clipper": ["lp+lk", "lplk", "throw"],
     "Delta Through": ["b+lp+lk", "blplk", "bthrow", "b+throw", "back throw"],
     "Neck Spiral": ["j.lp+lk", "jlplk", "jthrow", "j.throw", "air throw"],
@@ -135,253 +124,37 @@ cammyexact = {
     "Cross Stinger Assault": ["ca", "critical art", "super"],
 
     # V-TRIGGER 2
+
     "Delta Ambush": ["vt2", "vtrigger2", "v-trigger2"],
     "Delta Step": ["f+vt2", "f.vt2", "f+vtrigger2", "f+v-trigger2"],
     "Delta Twist": ["vt2+p","vtrigger2+p","v-trigger2+p"],
     "Reverse Edge": ["vt2+k","vtrigger2+k","v-trigger2+k"]
 }
 
+birdieexact = {
+    # CHARACTER: BIRDIE
+    # V-TRIGGER 1   
+     
+    "Bad Skull": ["lp+lk", "lplk", "throw"],
+    "Bad Chain": ["b+lp+lk", "blplk", "bthrow", "b+throw", "back throw"],
+    "Break Time": ["vs1","vskill1","v-skill1"],
+    "Banana Time": ["b+vs1","b+vskill1","b+v-skill1"],
+    "Drink Time": ["d+vs1","d+vskill1","d+v-skill1"],
+    "[VS2] Chewing Time": ["vs2","vskill2","v-skill2"],
+    "[VS2] Chewing Time (Hold Button)": ["vs2 hold","vskill2 hold","v-skill2 hold"],
+    "Enjoy Time": ["vt1", "vtrigger1", "v-trigger1"],
+    "Pepper Pot": ["vreversal", "v-reversal","vrev"],
+    "Skip To My Chain": ["ca", "critical art", "super"],
 
+    # V-TRIGGER 2
+
+    "Birdie Time": ["vt2", "vtrigger2", "v-trigger2"],
+    # "Bull Swing"
+    "Bull Capture": ["d+vt2", "d+vtrigger2", "d+v-trigger2"]
+}
 
 
 ## Regex matching
-def ryuRegex(movestring):
-    # matching with "qcf"
-    hadoken2 = "qcf\+([L|M|H|P]{1})p"
-    m = re.search(hadoken2, movestring, re.IGNORECASE)
-    if m:
-        # (0) is for the first match
-        # [0] is the first group matched
-        if m.groups(0)[0] == "p":
-            mod = "EX"
-        else:
-            mod = m.groups(0)[0]
-
-        return mod.upper() + " Hadoken"
-
-    # matching with "qcb"
-    tatsu2 = "qcb\+([L|M|H|K]{1})k"
-
-    m = re.search(tatsu2, movestring, re.IGNORECASE)
-    if m:
-        # (0) is for the first match
-        # [0] is the first group matched
-        if m.groups(0)[0] == "k":
-            mod = "EX"
-        else:
-            mod = m.groups(0)[0]
-
-        return mod.upper() + " Tatsumaki Senpukyaku"
-
-    # matching with "hcf"
-    donkey2 = "hcf\+([L|M|H|K]{1})k"
-
-    m = re.search(donkey2, movestring, re.IGNORECASE)
-    if m:
-        # (0) is for the first match
-        # [0] is the first group matched
-        if m.groups(0)[0] == "k":
-            mod = "EX"
-        else:
-            mod = m.groups(0)[0]
-
-        return mod.upper() + " Jodan Sokutou Geri"
-
-    # matching with "hadoken|hado"
-    hadoken = "([L|M|H]|EX)\s(hadoken|hado)"
-    m = re.search(hadoken, movestring, re.IGNORECASE)
-    if m:
-        # (0) is for the first match
-        # [0] is the first group matched
-        return m.groups(0)[0].upper() + " Hadoken"
-
-    # matching with "shoryu|dragon punch|dp"
-    shoryuken = "([L|M|H]|EX)\s(shoryu|dragon punch|dp)"
-
-    m = re.search(shoryuken, movestring, re.IGNORECASE)
-    if m:
-        # (0) is for the first match
-        # [0] is the first group matched
-        return m.groups(0)[0].upper() + " Shoryuken"
-
-    # matching with "tatsu|tatsumaki"
-    tatsu = "([L|M|H]|EX)\s(tatsu|tatsumaki)"
-
-    m = re.search(tatsu, movestring, re.IGNORECASE)
-    if m:
-        # (0) is for the first match
-        # [0] is the first group matched
-        return m.groups(0)[0].upper() + " Tatsumaki Senpukyaku"
-
-    # matching with "donkey kick|donkey"
-    donkey = "([L|M|H]|EX)\s(donkey kick|donkey)"
-
-    m = re.search(donkey, movestring, re.IGNORECASE)
-    if m:
-        # (0) is for the first match
-        # [0] is the first group matched
-        return m.groups(0)[0].upper() + " Jodan Sokutou Geri"
-
-    return ""
-
-def commonRegex(movestring, char):
-    # Le regex sono il male nocivo te lo giuro
-    normals = "(cr|j|st){0,1}.{0,1}([L|M|H]{1})(p|k)"
-    m = re.search(normals, movestring, re.IGNORECASE)
-    if m:
-        if m.groups(0)[0] == "cr":
-            mod = "Crouching"
-        elif m.groups(0)[0] == "j":
-            mod = "Jumping"
-        elif m.groups(0)[0] == "st":
-            mod = "Standing"
-        elif not m.groups(0)[0]:
-            mod = "Standing"
-
-        move = f'{mod} {m.groups(0)[1].upper()}{m.groups(0)[2].upper()}'
-        if (move == "Jumping HK" and (char == "chun-li" or char == "nash")):
-            move = "Diagonal Jumping HK"
-        return move
-
-def chunliRegex(movestring):
-    # matching with "b,f+"
-    kikoken2 = "b,f\+([L|M|H|P]{1})p"
-    m = re.search(kikoken2, movestring, re.IGNORECASE)
-    if m:
-        # (0) is for the first match
-        # [0] is the first group matched
-        if m.groups(0)[0] == "p":
-            mod = "EX"
-        else:
-            mod = m.groups(0)[0]
-
-        return mod.upper() + " Kikoken"
-
-
-    # matching with "d,u+"
-    sbk2 = "d,u\+([L|M|H|k]{1})k"
-    m = re.search(sbk2, movestring, re.IGNORECASE)
-    if m:
-        # (0) is for the first match
-        # [0] is the first group matched
-        if m.groups(0)[0] == "k":
-            mod = "EX"
-        else:
-            mod = m.groups(0)[0]
-
-        return mod.upper() + " Spinning Bird Kick"
-
-
-    # matching with "qcf"
-    hyaku2 = "(j.|j){0,1}qcf\+([L|M|H|K]{1})k"
-    m = re.search(hyaku2, movestring, re.IGNORECASE)
-    if m:
-        if m.groups(0)[1].lower() == "k":
-            mod = "EX"
-        else:
-            mod = m.groups(0)[1].upper()
-
-        # (0) is for the first match
-        # [0] is the first group matched
-        if m.groups(0)[0] == "j":
-            mod = mod + " Airborne"
-        elif m.groups(0)[0] == "j.":
-            mod = mod + " Airborne"
-
-        return f'{mod} Hyakuretsukyaku'
-        
-      
-    # matching with "kiko"
-    kikoken = "([L|M|H]|EX)\s(kiko)"
-    m = re.search(kikoken, movestring, re.IGNORECASE)
-    if m:
-        # (0) is for the first match
-        # [0] is the first group matched
-        return m.groups(0)[0].upper() + " Kikoken"
-
-
-    # matching with "hyaku|legs"
-    hyaku = "([L|M|H]|EX)\s(hyaku|legs)"
-    m = re.search(hyaku, movestring, re.IGNORECASE)
-    if m:
-        # (0) is for the first match
-        # [0] is the first group matched
-        return m.groups(0)[0].upper() + " Hyakuretsukyaku"
-
-
-    # matching with "sbk|spinning"
-    sbk = "([L|M|H]|EX)\s(sbk|spinning)"
-    m = re.search(sbk, movestring, re.IGNORECASE)
-    if m:
-        # (0) is for the first match
-        # [0] is the first group matched
-        return m.groups(0)[0].upper() + " Spinning Bird Kick"
-
-    return ""
-
-def nashRegex(movestring):
-    # matching with "qcf+p"
-    sonic2 = "qcf\+([L|M|H|P]{1})p"
-    m = re.search(sonic2, movestring, re.IGNORECASE)
-    if m:
-        # (0) is for the first match
-        # [0] is the first group matched
-        if m.groups(0)[0] == "p":
-            mod = "EX"
-        else:
-            mod = m.groups(0)[0]
-
-        return mod.upper() + " Sonic Boom"
-
-    # matching with "qcf+k"
-    moon2 = "qcf\+([L|M|H|P]{1})k"
-    m = re.search(moon2, movestring, re.IGNORECASE)
-    if m:
-        # (0) is for the first match
-        # [0] is the first group matched
-        if m.groups(0)[0] == "k":
-            mod = "EX"
-        else:
-            mod = m.groups(0)[0]
-
-        return mod.upper() + " Moonsault Slash"
-
-    # matching with "qcb"
-    scythe = "qcb\+([L|M|H|K]{1})k\s*(vs2){0,1}"
-
-    m = re.search(scythe, movestring, re.IGNORECASE)
-    if m:
-        # (0) is for the first match
-        # [0] is the first group matched
-        if m.groups(0)[0] == "k":
-            mod = "EX"
-        else:
-            mod = m.groups(0)[0]
-    
-        if m.groups(0)[1] == "vs2":
-            mod2 = " (VS2 Ver.)"
-        else:
-            mod2 = ""
-        return f'{mod.upper()} Sonic Scythe{mod2}'
-
-    # matching with "moonsault|moon"
-    moon = "([L|M|H]|EX)\s(moonsault|moon)"
-    m = re.search(moon, movestring, re.IGNORECASE)
-    if m:
-        # (0) is for the first match
-        # [0] is the first group matched
-        return m.groups(0)[0].upper() + " Moonsault Slash"
-
-    # matching with "dp|tragedy"
-    tragedy = "([L|M|H]|EX)\s(dp|tragedy)"
-    m = re.search(tragedy, movestring, re.IGNORECASE)
-    if m:
-        # (0) is for the first match
-        # [0] is the first group matched
-        return m.groups(0)[0].upper() + " Tragedy Assault"
-
-
-    return ""
 
 def resolveMoveName(userstring):
     logging.info("USERSTRING "+userstring)
@@ -409,6 +182,8 @@ def resolveMoveName(userstring):
     ## CHAR MATCHING
     if char == "chunli":
         char = "chun-li"
+    elif char == "bison":
+        char = "mbison"
     
     ## direct key matching
     for moveExact in data[char][vtd.lower()]:
@@ -425,8 +200,11 @@ def resolveMoveName(userstring):
         elif char == "nash":
             result = matchExact(move, nashexact)
         elif char == "cammy":
-            result = matchExact(move, cammyexact)    
-
+            result = matchExact(move, cammyexact) 
+        elif char == "mbison":
+            result = matchExact(move, mbisonexact)
+        elif char == "birdie":
+            result = matchExact(move, birdieexact)
 
     charsolved = char
     # TODO: wrap the matchings
