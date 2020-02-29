@@ -34,7 +34,7 @@ def preFormat(rawSoup):
                 matchCol.string = str(moveNameContent).lower().replace("<td class=\"name\">", "").replace("</td>", "")
                 matchCol.string = matchCol.string.replace("<img class=\"cmd-image-s\" src=\"https://game.capcom.com/cfn/sfv/as/img/cmd/key/1.gif?h=6ecbbeac560a29ef09988f3102c8be9f\"/>", "db")
                 matchCol.string = matchCol.string.replace("<img class=\"cmd-image-s\" src=\"https://game.capcom.com/cfn/sfv/as/img/cmd/key/2.gif?h=146d9a7c6b006b57d999d5633df090f0\"/>", "d")
-                matchCol.string = matchCol.string.replace("<img class=\"cmd-image-s\" src=\"https://game.capcom.com/cfn/sfv/as/img/cmd/key/3.gif?h=705de611ba081ecabe11861b0c4047f3\"/", "df")
+                matchCol.string = matchCol.string.replace("<img class=\"cmd-image-s\" src=\"https://game.capcom.com/cfn/sfv/as/img/cmd/key/3.gif?h=705de611ba081ecabe11861b0c4047f3\"/>", "df")
                 matchCol.string = matchCol.string.replace("<img class=\"cmd-image-s\" src=\"https://game.capcom.com/cfn/sfv/as/img/cmd/key/4.gif?h=30f455943bd68bafe11e9359b871465d\"/>", "b")
                 # matchCol.string = matchCol.string.replace("<img class=\"cmd-image-s\" src=\"https://game.capcom.com/cfn/sfv/as/img/cmd/key/5.gif?h=5c61278719e2dea3e98b59650f7f9a29\"/>", "")
                 matchCol.string = matchCol.string.replace("<img class=\"cmd-image-s\" src=\"https://game.capcom.com/cfn/sfv/as/img/cmd/key/6.gif?h=24d3886f118640b674eae14fabd0e016\"/>", "f")
