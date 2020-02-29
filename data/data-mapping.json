@@ -198,21 +198,27 @@
             "hphk": "hp+hk",
             "(during jump)": "j.",
             "(during forward or back jump)": "j.",
+            "(during vertical or forward jump)": "j.",
             "(close to opponent in air)": "j.",
             "(during forward jump)": "j.",
             "(during vertical jump)": "u",
-            "(during v-trigger ii)": "",
+            "(during v-trigger i)": "vt1",
+            "(during v-trigger ii)": "vt2",
             "(while crouching)": "cr.",
             "(hold buttons)": " hold",
             "(max hold button)": " max hold",
+            "(during dash)": "dash ",
             "(after holding the button)": "",
+            "(within haboob range)": "",
             "(near opponent)": "",
             "(when selecting vskill i)": "",
             "(when selecting vskill ii)": "",
+            "(on hit)": "",
             "forn+": "",
             "nord+": "",
             "norbordordb+": "",
-            "orb+": ""
+            "orb+": "",
+            "orr.dp": ""
         }
     }
 }
