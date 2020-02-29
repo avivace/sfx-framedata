@@ -375,12 +375,12 @@ class Frames():
         if move["vTriggerCancelRecovery"]["onBlock"]:
             embed.add_field(name="vt1cOnHit", value=move["vTriggerCancelRecovery"]["onBlock"])
 
+        if "vTriggerCancelRecovery2" in move:
+            if move["vTriggerCancelRecovery2"]["onHit"]:
+                embed.add_field(name="vt2cOnBlock", value=move["vTriggerCancelRecovery2"]["onHit"])
 
-        if move["vTriggerCancelRecovery2"]["onHit"]:
-            embed.add_field(name="vt2cOnBlock", value=move["vTriggerCancelRecovery2"]["onHit"])
-
-        if move["vTriggerCancelRecovery2"]["onBlock"]:
-            embed.add_field(name="vt2cOnHit", value=move["vTriggerCancelRecovery2"]["onBlock"])
+            if move["vTriggerCancelRecovery2"]["onBlock"]:
+                embed.add_field(name="vt2cOnHit", value=move["vTriggerCancelRecovery2"]["onBlock"])
 
         if move["comments"]:
             embed.set_footer(text=move["comments"])
