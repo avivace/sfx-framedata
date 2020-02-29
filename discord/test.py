@@ -4,6 +4,7 @@ import json
 #with open('data/extracted/data.json', 'r') as f:
 #    data = json.load(f)
 
+
 def test_ryu():
     ryutests = [
         ['cR.lp',  'Crouching LP'],
@@ -43,9 +44,11 @@ def test_ryu():
         ['qcfqcf+p vt1', 'Denjin Hadoken']
     ]
     for userinput, result in ryutests:
-        print("ryu " + userinput, result)
-        assert alias.resolveMoveName(
-            "ryu " + userinput)["move"].lower() == result.lower()
+        #print("ryu " + userinput, result)
+        print("\n")
+        print("INPUT:", userinput)
+        print("RESULT:", alias.resolveMoveName("ryu " + userinput)["move"])
+        print("EXPECTED RESULT:",result.lower())
 
 
 def test_chunli():
@@ -203,3 +206,6 @@ def exactMatches():
         for vt in data[char]:
             for move in data[char][vt]:
                 assert alias.resolveMoveName(char + " " + move["name"])["move"].lower() == move["name"].lower()
+
+
+test_ryu()
