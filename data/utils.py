@@ -31,6 +31,7 @@ def preFormat(rawSoup):
                 matchCol.string = matchCol.string.replace("<img class=\"cmd-image-s\" src=\"https://game.capcom.com/cfn/sfv/as/img/cmd/key/2.gif?h=146d9a7c6b006b57d999d5633df090f0\"/>", "d")
                 matchCol.string = matchCol.string.replace("<img class=\"cmd-image-s\" src=\"https://game.capcom.com/cfn/sfv/as/img/cmd/key/3.gif?h=705de611ba081ecabe11861b0c4047f3\"/>", "df")
                 matchCol.string = matchCol.string.replace("<img class=\"cmd-image-s\" src=\"https://game.capcom.com/cfn/sfv/as/img/cmd/key/4.gif?h=30f455943bd68bafe11e9359b871465d\"/>", "b")
+                matchCol.string = matchCol.string.replace("<img class=\"cmd-image-s\" src=\"https://game.capcom.com/cfn/sfv/as/img/cmd/key/5.gif?h=5c61278719e2dea3e98b59650f7f9a29\"/>", "n")
                 matchCol.string = matchCol.string.replace("<img class=\"cmd-image-s\" src=\"https://game.capcom.com/cfn/sfv/as/img/cmd/key/6.gif?h=24d3886f118640b674eae14fabd0e016\"/>", "f")
                 matchCol.string = matchCol.string.replace("<img class=\"cmd-image-s\" src=\"https://game.capcom.com/cfn/sfv/as/img/cmd/key/8.gif?h=9247962a975feda8fd5e99965f18f774\"/>", "u")
                 matchCol.string = matchCol.string.replace("<img class=\"cmd-image-s\" src=\"https://game.capcom.com/cfn/sfv/as/img/cmd/key/9.gif?h=41302981c9b1fd5c57eb7c11d8980de9\"/>", "uf")
@@ -77,18 +78,24 @@ def preFormat(rawSoup):
                 for invMove in invertedMoveCodes:
                     if invMove in matchCol.string:
                         matchCol.string = matchCol.string.replace(invMove, invMove[::-1])
+                matchCol.string = matchCol.string.replace("lplk", "lp+lk")
                 matchCol.string = matchCol.string.replace("mpmk", "mp+mk")
                 matchCol.string = matchCol.string.replace("hphk", "hp+hk")
                 matchCol.string = matchCol.string.replace("(during jump)", "j.")
                 matchCol.string = matchCol.string.replace("(during forward or back jump)", "j.")
+                matchCol.string = matchCol.string.replace("(close to opponent in air)", "j.")
                 matchCol.string = matchCol.string.replace("(during vertical jump)", "u")
                 matchCol.string = matchCol.string.replace("(during v-trigger ii)", "")
                 matchCol.string = matchCol.string.replace("(while crouching)", "cr.")
                 matchCol.string = matchCol.string.replace("(hold buttons)", " hold")
                 matchCol.string = matchCol.string.replace("(max hold button)", " max hold")
                 matchCol.string = matchCol.string.replace("(after holding the button)", "")
+                matchCol.string = matchCol.string.replace("(near opponent)", "")
                 matchCol.string = matchCol.string.replace("(when selecting vskill i)", "")
                 matchCol.string = matchCol.string.replace("(when selecting vskill ii)", "")
+                matchCol.string = matchCol.string.replace("forn+", "")
+                matchCol.string = matchCol.string.replace("nord+", "")
+                matchCol.string = matchCol.string.replace("norbordordb+", "")
                 
                 moveRow.append(matchCol)
 
