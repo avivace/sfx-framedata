@@ -81,9 +81,9 @@ def cookAnHotSoup(html, characterName):
                 elif (j == 17):
                     move["vTrigger"] = colContent
                 elif (j == 18):
-                    move["matchCol"] = colContent
+                    move["vSkill"] = colContent
                 elif (j == 19):
-                    move["dirtyMatchCol"] = colContent
+                    move["matchCol"] = colContent
 
             if (len(row) > 0):
                 characterData["vt" + str(tableIndex + 1)].append(move)

@@ -6,8 +6,6 @@
         Discord bot providing Street Fighter V frame data for the specified character and move. <br> Supports unofficial common move names and shorthands.
     </p>
     <br>
-    <br>
-    <br>
 </div>
 
 Built and mantained by [ricki122](https://twitter.com/ricki122), [Antonio Vivace](https://twitter.com/avivace4), [d3nnib](https://twitter.com/dennibevilacqua). You can help us keeping the bot online [donating](https://paypal.me/avivace4).
