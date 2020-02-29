@@ -1,19 +1,13 @@
 <template>
   <div id="app">
     <img width="300px" alt="Stree Fighter V logo" src="./assets/logo-2.png">
-    <SFX />
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import SFX from './components/SFX.vue'
 
-export default {
-  name: 'App',
-  components: {
-    SFX
-  }
-}
+export default {}
 </script>
 
 <style>

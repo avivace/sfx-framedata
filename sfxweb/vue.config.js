@@ -1,5 +1,6 @@
 // vue.config.js
 module.exports = {
-  publicPath:'/sfx-framedata/'
+  publicPath:'/sfx-framedata/',
+  runtimeCompiler: true
 }
 
