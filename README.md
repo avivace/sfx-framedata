@@ -122,7 +122,7 @@ npm run deploy
 
 ## Architecture
 
-<img src=".meta/sfx.svg">
+<img src=".github/sfx.svg">
 
 ## License
 
