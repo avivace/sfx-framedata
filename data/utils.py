@@ -55,16 +55,18 @@ def preFormat(rawSoup):
                 matchCol.string = matchCol.string.replace("<span class=\"key-mkfrm\">m</span>", "m")
                 matchCol.string = matchCol.string.replace("<span class=\"key-lpfrm\">l</span>", "l")
                 matchCol.string = matchCol.string.replace("<span class=\"key-lkfrm\">l</span>", "l")
-                matchCol.string = matchCol.string.replace("(during jump)", "j.")
-                matchCol.string = matchCol.string.replace("(during forward or back jump)", "j.")
-                matchCol.string = matchCol.string.replace("(during vertical jump)", "u")
-                matchCol.string = matchCol.string.replace("(while crouching)", "cr.")
-                # matchCol.string = matchCol.string.replace("or", "")
                 dirtyMatchCol =  copy.copy(matchCol)
                 matchCol.string = BeautifulSoup(matchCol.string, "lxml").text
                 for invMove in invertedMoveCodes:
                     if invMove in matchCol.string:
                         matchCol.string = matchCol.string.replace(invMove, invMove[::-1])
+                matchCol.string = matchCol.string.replace("(during jump)", "j.")
+                matchCol.string = matchCol.string.replace("(during forward or back jump)", "j.")
+                matchCol.string = matchCol.string.replace("(during vertical jump)", "u")
+                matchCol.string = matchCol.string.replace("(while crouching)", "cr.")
+                matchCol.string = matchCol.string.replace("(hold buttons)", " hold")
+                matchCol.string = matchCol.string.replace("(max hold button)", " max hold")
+                
                 moveRow.append(matchCol)
                 moveRow.append(dirtyMatchCol)
 
