@@ -12,19 +12,11 @@ def preFormat(rawSoup):
     for moveRow in moveRows:
         if isABodyRow(moveRow):
 
-            # Detect move levels
-            findMoveLevels(formattedSoup, moveRow)
+            # Detect and extract move levels
+            extractMoveLevels(formattedSoup, moveRow)
 
-            # Move away "V" symbol
-            vTriggerCol = formattedSoup.new_tag("td", class_="custom-col extra-col vTrigger-col")
-            vTriggerCol.string = ""
-            vSymbol = moveRow.find(class_="vt")
-            if vSymbol:
-                vSymbol.decompose()
-                vTriggerCol.string = "Yes"
-            moveRow.append(vTriggerCol)
-
-            invertedMoveCodes = ["pl","pm","ph","kl","km","kh"]
+            # Detect and extrac away "V" symbol
+            extractVTrigger(formattedSoup, moveRow)
 
             moveNameContent = copy.copy(moveRow.td)
             matchCol = formattedSoup.new_tag("td", class_="custom-col extra-col match-col")
@@ -60,12 +52,14 @@ def preFormat(rawSoup):
                 matchCol.string = matchCol.string.replace("<span class=\"key-lkfrm\">l</span>", "l")
                 dirtyMatchCol =  copy.copy(matchCol)
                 matchCol.string = BeautifulSoup(matchCol.string, "lxml").text
+                invertedMoveCodes = ["pl","pm","ph","kl","km","kh"]
                 for invMove in invertedMoveCodes:
                     if invMove in matchCol.string:
                         matchCol.string = matchCol.string.replace(invMove, invMove[::-1])
                 matchCol.string = matchCol.string.replace("(during jump)", "j.")
                 matchCol.string = matchCol.string.replace("(during forward or back jump)", "j.")
                 matchCol.string = matchCol.string.replace("(during vertical jump)", "u")
+                matchCol.string = matchCol.string.replace("(during v-trigger ii)", "")
                 matchCol.string = matchCol.string.replace("(while crouching)", "cr.")
                 matchCol.string = matchCol.string.replace("(hold buttons)", " hold")
                 matchCol.string = matchCol.string.replace("(max hold button)", " max hold")
@@ -122,7 +116,7 @@ def isABodyRow(row):
     headers = row.find_all("th")
     return len(headers) == 0
 
-def findMoveLevels(soup, moveRow):
+def extractMoveLevels(soup, moveRow):
     moveLevelFrames = moveRow.find_all(class_=["key-LPFrm","key-MPFrm","key-HPFrm", "key-LKFrm","key-MKFrm","key-HKFrm"])
 
     foundLevels = []
@@ -134,3 +128,12 @@ def findMoveLevels(soup, moveRow):
     
     moveLevelsCol.string = "|".join(foundLevels)
     moveRow.append(moveLevelsCol)
+
+def extractVTrigger(soup, moveRow):
+    vTriggerCol = soup.new_tag("td", class_="custom-col extra-col vTrigger-col")
+    vTriggerCol.string = ""
+    vSymbol = moveRow.find(class_="vt")
+    if vSymbol:
+        vSymbol.decompose()
+        vTriggerCol.string = "Yes"
+    moveRow.append(vTriggerCol)
