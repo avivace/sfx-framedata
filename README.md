@@ -1,12 +1,22 @@
-# sfx-framedata
 
-Un bottino per i combattenti di strada cinque. Runs on discord-py 1.31 or more recent (post-rewrite API).
+<div align="center">
+    <img src=".github/logo-trim-shadow.png" height="100">
+    <h1>SFX Framedata </h1>
+    <p>
+        <b>Discord bot providing Street Fighter V frame data for the specified character and move. Supports unofficial common move names and shorthands.</b>
+    </p>
+    <br>
+    <br>
+    <br>
+</div>
 
 Built and mantained by [ricki122](https://twitter.com/ricki122), [Antonio Vivace](https://twitter.com/avivace4), [d3nnib](https://twitter.com/dennibevilacqua)
 
-## Commands
+## Usage
 
-A sample of the commands available to the bot, see [config file](conf/bots.yaml) for the full list. 
+Add the bot to your Discord server with this [invite link](). Then, you can start using its commands.
+
+## Commands
 
 * `!fd`: 
     Get SFV frame data for the specified char and move. ```!fd Ryu cr.mk```
@@ -15,6 +25,9 @@ A sample of the commands available to the bot, see [config file](conf/bots.yaml)
 
 
 ## Run
+
+These instructions are for self-hosting your own bot and your own data scraping/processing daemon. Some technical knowledge is required.
+If you just want to use the bot, check [Usage](#usage).
 
 #### 0. Requirements
 
@@ -70,6 +83,8 @@ TODOCUMENT (`data/` folder)
 
 #### 3. Discord Bot
 
+Runs on discord-py 1.31 or more recent (post-rewrite API).
+
 [Create a Discord Bot](https://discordpy.readthedocs.io/en/latest/discord.html). Put the token (not the secret) in the `conf/bots.yaml` configuration file.
 
 ```bash
@@ -79,7 +94,7 @@ source bin/activate
 pip3 install -r requirements.txt
 python3 discord-bot.py
 ```
-#### 4. API
+#### 4. API (WIP)
 
 Run
 
@@ -95,7 +110,7 @@ localhost:8080/api/v1/$METHOD$
 localhost:8080/api/v1/ui
 ```
 
-#### 4. Web app
+#### 5. Web app (WIP)
 
 ```
 cd sfxweb
