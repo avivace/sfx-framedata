@@ -15,8 +15,11 @@ def preFormat(rawSoup):
             # Detect and extract move levels
             extractMoveLevels(formattedSoup, moveRow)
 
-            # Detect and extrac away "V" symbol
+            # Detect and extrac "V" symbol
             extractVTrigger(formattedSoup, moveRow)
+
+            # Detect and extrac VSkill
+            extractVSkill(formattedSoup, moveRow)
 
             moveNameContent = copy.copy(moveRow.td)
             matchCol = formattedSoup.new_tag("td", class_="custom-col extra-col match-col")
@@ -28,7 +31,6 @@ def preFormat(rawSoup):
                 matchCol.string = matchCol.string.replace("<img class=\"cmd-image-s\" src=\"https://game.capcom.com/cfn/sfv/as/img/cmd/key/2.gif?h=146d9a7c6b006b57d999d5633df090f0\"/>", "d")
                 matchCol.string = matchCol.string.replace("<img class=\"cmd-image-s\" src=\"https://game.capcom.com/cfn/sfv/as/img/cmd/key/3.gif?h=705de611ba081ecabe11861b0c4047f3\"/>", "df")
                 matchCol.string = matchCol.string.replace("<img class=\"cmd-image-s\" src=\"https://game.capcom.com/cfn/sfv/as/img/cmd/key/4.gif?h=30f455943bd68bafe11e9359b871465d\"/>", "b")
-                # matchCol.string = matchCol.string.replace("<img class=\"cmd-image-s\" src=\"https://game.capcom.com/cfn/sfv/as/img/cmd/key/5.gif?h=5c61278719e2dea3e98b59650f7f9a29\"/>", "")
                 matchCol.string = matchCol.string.replace("<img class=\"cmd-image-s\" src=\"https://game.capcom.com/cfn/sfv/as/img/cmd/key/6.gif?h=24d3886f118640b674eae14fabd0e016\"/>", "f")
                 matchCol.string = matchCol.string.replace("<img class=\"cmd-image-s\" src=\"https://game.capcom.com/cfn/sfv/as/img/cmd/key/8.gif?h=9247962a975feda8fd5e99965f18f774\"/>", "u")
                 matchCol.string = matchCol.string.replace("<img class=\"cmd-image-s\" src=\"https://game.capcom.com/cfn/sfv/as/img/cmd/key/9.gif?h=41302981c9b1fd5c57eb7c11d8980de9\"/>", "uf")
@@ -44,19 +46,39 @@ def preFormat(rawSoup):
                 matchCol.string = matchCol.string.replace("<img class=\"cmd-image-s\" src=\"https://game.capcom.com/cfn/sfv/as/img/cmd/btn/kick.gif?h=782ca1c7f3e42332887e30ab0a5d37df\"/>", "k")
                 matchCol.string = matchCol.string.replace("<img class=\"cmd-image-s\" src=\"https://game.capcom.com/cfn/sfv/as/img/cmd/next.gif?h=124a6dc32d24b2472cf317a685310f07\"/>", ">")
                 matchCol.string = matchCol.string.replace("<img class=\"cmd-image-s\" src=\"https://game.capcom.com/cfn/sfv/as/img/cmd/btn/punch.gif?h=cdde7fc8901adab4686621a896922c1a\"/>", "p")
+                # matchCol.string = re.sub(r"<img.*src=.*1.gif[^<]*\/>", "db", matchCol.string)
+                # matchCol.string = re.sub(r"<img.*src=.*2.gif[^<]*\/>", "d", matchCol.string)
+                # matchCol.string = re.sub(r"<img.*src=.*3.gif[^<]*\/>", "df", matchCol.string)
+                # matchCol.string = re.sub(r"<img.*src=.*4.gif[^<]*\/>", "b", matchCol.string)
+                # matchCol.string = re.sub(r"<img.*src=.*6.gif[^<]*\/>", "f", matchCol.string)
+                # matchCol.string = re.sub(r"<img.*src=.*8.gif[^<]*\/>", "u", matchCol.string)
+                # matchCol.string = re.sub(r"<img.*src=.*9.gif[^<]*\/>", "uf", matchCol.string)
+                # matchCol.string = re.sub(r"<img.*src=.*214.gif[^<]*\/>", "qcb", matchCol.string)
+                # matchCol.string = re.sub(r"<img.*src=.*236.gif[^<]*\/>", "qcf", matchCol.string)
+                # matchCol.string = re.sub(r"<img.*src=.*421.gif[^<]*\/>", "r.dp", matchCol.string)
+                # matchCol.string = re.sub(r"<img.*src=.*41236.gif[^<]*\/>", "hcf", matchCol.string)
+                # matchCol.string = re.sub(r"<img.*src=.*623.gif[^<]*\/>", "dp", matchCol.string)
+                # matchCol.string = re.sub(r"<img.*src=.*63214.gif[^<]*\/>", "hcb", matchCol.string)
+                # matchCol.string = re.sub(r"<img.*src=.*63214789.gif[^<]*\/>", "360", matchCol.string)
+                # matchCol.string = re.sub(r"<img.*src=.*c2.gif[^<]*\/>", "d", matchCol.string)
+                # matchCol.string = re.sub(r"<img.*src=.*c4.gif[^<]*\/>", "b", matchCol.string)
+                # matchCol.string = re.sub(r"<img.*src=.*kick.gif[^<]*\/>", "k", matchCol.string)
+                # matchCol.string = re.sub(r"<img.*src=.*next.gif[^<]*\/>", ">", matchCol.string)
+                # matchCol.string = re.sub(r"<img.*src=.*punch.gif[^<]*\/>", "p", matchCol.string)
                 matchCol.string = matchCol.string.replace("<span class=\"key-hkfrm\">h</span>", "h")
                 matchCol.string = matchCol.string.replace("<span class=\"key-hpfrm\">h</span>", "h")
                 matchCol.string = matchCol.string.replace("<span class=\"key-mpfrm\">m</span>", "m")
                 matchCol.string = matchCol.string.replace("<span class=\"key-mkfrm\">m</span>", "m")
                 matchCol.string = matchCol.string.replace("<span class=\"key-lpfrm\">l</span>", "l")
                 matchCol.string = matchCol.string.replace("<span class=\"key-lkfrm\">l</span>", "l")
-                dirtyMatchCol =  copy.copy(matchCol)
+
                 matchCol.string = BeautifulSoup(matchCol.string, "lxml").text
                 invertedMoveCodes = ["pl","pm","ph","kl","km","kh"]
                 for invMove in invertedMoveCodes:
                     if invMove in matchCol.string:
                         matchCol.string = matchCol.string.replace(invMove, invMove[::-1])
                 matchCol.string = matchCol.string.replace("mpmk", "mp+mk")
+                matchCol.string = matchCol.string.replace("hphk", "hp+hk")
                 matchCol.string = matchCol.string.replace("(during jump)", "j.")
                 matchCol.string = matchCol.string.replace("(during forward or back jump)", "j.")
                 matchCol.string = matchCol.string.replace("(during vertical jump)", "u")
@@ -65,9 +87,10 @@ def preFormat(rawSoup):
                 matchCol.string = matchCol.string.replace("(hold buttons)", " hold")
                 matchCol.string = matchCol.string.replace("(max hold button)", " max hold")
                 matchCol.string = matchCol.string.replace("(after holding the button)", "")
+                matchCol.string = matchCol.string.replace("(when selecting vskill i)", "")
+                matchCol.string = matchCol.string.replace("(when selecting vskill ii)", "")
                 
                 moveRow.append(matchCol)
-                moveRow.append(dirtyMatchCol)
 
     return formattedSoup
 
@@ -139,3 +162,16 @@ def extractVTrigger(soup, moveRow):
         vSymbol.decompose()
         vTriggerCol.string = "Yes"
     moveRow.append(vTriggerCol)
+
+def extractVSkill(soup, moveRow):
+    vSkillOne = moveRow.find(text="(WHEN SELECTING VSKILL I)")
+    vSkillTWo = moveRow.find(text="(WHEN SELECTING VSKILL II)")
+    vSkillCol = soup.new_tag("td", class_="custom-col extra-col vSkill-col")
+    vSkillCol.string = ""
+
+    if vSkillOne:
+        vSkillCol.string = "1"
+    elif vSkillTWo:
+        vSkillCol.string = "2"
+    
+    moveRow.append(vSkillCol)
