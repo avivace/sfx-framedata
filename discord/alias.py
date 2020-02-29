@@ -18,15 +18,6 @@ with open('../data/extracted/data.json', 'r') as f:
 ryuexact = {
     # CHARACTER: RYU
     # V-TRIGGER 1
-    "Collarbone Breaker": ["f+mp","fmp", "overhead"],
-    "Solar Plexus Strike": ["f+hp", "fhp"],
-    "Axe Kick": ["b+hk", "bhk"],
-    
-    "Jodan Nirengeki": ["mp>hp"],
-    "Jodan Sanrengeki": ["mp>hp>hk"],
-    # IF POSSIBLE GROUP UNDER: 
-    # "target combo" (name not in the table)
-
     "Shoulder Throw": ["lp+lk", "lplk", "throw"],
     "Somersault Throw": ["b+lp+lk", "blplk", "bthrow", "b+throw", "back throw"],
     "[VS1] Mind's Eye": ["vs1","vskill1","v-skill1"],
@@ -105,41 +96,53 @@ nashexact = {
     # CHARACTER: NASH
     # V-TRIGGER 1
     
-    
-    "Vertical Jump HK": ["u+hk","uhk"],
-    "Chopping Assault": ["f+mp","fmp", "overhead"],
-    "Spinning Back Knuckle": ["f+hp", "fhp"],
-    "Knee Bazooka": ["f+lk", "flk"],
-    "Jumping Sobat": ["f+mk","fmk"],
-    "Side Knee Attack": ["b+mk","bmk"],
-    "Step Kick": ["f+hk","fhk"],
-
-    "Rapid Punch": ["lp>mp"],
-    "Rapid Kick": ["lk>mk"],
-    "Wind Shear (2)": ["mp>lk"],
-    "Wind Shear (3)": ["mp>lk>hp"],
-    "Down Burst": ["d+mp>f+mp","cr.mp>f+mp","crmp>f+mp","crmp>fmp"],
-    "(Raptor/Bullet) Combination (2)": ["mk>hk"],
-    "Raptor Combination (3)": ["mk>hk>mk"],
-    # "Bullet Combination (3)": ["mk>hk>mp+mk"],
-    # (WHEN SELECTING VSKILL I)
-    # IF POSSIBLE GROUP UNDER: 
-    # "target combo" (name not in the table)
-
+    "Bullet Combination (3)": ["mk>hk>mp+mk"],
     "Dragon Suplex": ["lp+lk", "lplk", "throw"],
     "Target Down": ["b+lp+lk", "blplk", "bthrow", "b+throw", "back throw"],
     "Air Jack": ["j.lp+lk", "jlplk", "jthrow", "j.throw", "air throw"],
     "[VS1] Bullet Clear": ["vs1","vskill1","v-skill1"],
-    "[VS2] Silent Sharpness": ["vs2","vskill2","v-skill2"],
-    
-    "Sonic Move - Hide": ["hp+hk","d+hp+hk","cr.hp+hk","crhp+hk","crhphk"],
-    "Sonic Move - Blitz Air": ["b+hp+hk","bhp+hk","bhphk"],
-    "Sonic Move - Steel Air": ["f+hp+hk","fhp+hk","fhphk"],
-    "Sonic Move - Avoid": ["vreversal", "v-reversal","vrev"],
-    # GROUP UNDER VT1?
-    
-    "Judgement Saber": ["ca", "critical art", "super"] 
+    "[VS2] Silent Sharpness": ["vs2","vskill2","v-skill2"],   
+    "Sonic Move - Hide": ["vt1", "vtrigger1", "v-trigger1"],
+    "Sonic Move - Blitz Air": ["b+vt1", "b.vt1", "b+vtrigger1", "b+v-trigger1"],
+    "Sonic Move - Steel Air": ["f+vt1", "f.vt1", "f+vtrigger1", "f+v-trigger1"],
+    "Sonic Move - Avoid": ["vreversal", "v-reversal","vrev"],   
+    "Judgement Saber": ["ca", "critical art", "super"],
+    "L Sonic Scythe (VS2 Ver.)": ["qcb+lk vs2"],
+    "M Sonic Scythe (VS2 Ver.)": ["qcb+mk vs2"],
+    "H Sonic Scythe (VS2 Ver.)": ["qcb+hk vs2"],
+    "EX Sonic Scythe (VS2 Ver.)": ["qcb+kk vs2"],
+
+    # V-TRIGGER 2
+
+    "Stealth Dash": ["vt2", "vtrigger2", "v-trigger2"],
+    "Stealth Dash (Stop)": ["vt2+b", "vtrigger2+b", "v-trigger2+b"],
+    "Justice Corridor": ["vt2+p", "vtrigger2+p", "v-trigger2+p"],
+    "Justice Shell": ["vt2+k", "vtrigger2+k", "v-trigger2+k"]
 }
+
+cammyexact = {
+    # CHARACTER: CAMMY
+    # V-TRIGGER 1
+    
+    "Gyro Clipper": ["lp+lk", "lplk", "throw"],
+    "Delta Through": ["b+lp+lk", "blplk", "bthrow", "b+throw", "back throw"],
+    "Neck Spiral": ["j.lp+lk", "jlplk", "jthrow", "j.throw", "air throw"],
+    "[VS1] Axel Spin Knuckle": ["vs1","vskill1","v-skill1"],
+    "[VS2] Spinning Attack": ["vs2","vskill2","v-skill2"],
+    "Delta Drive": ["vt1", "vtrigger1", "v-trigger1"],
+    "Strike Back": ["vreversal", "v-reversal","vrev"],
+    "Cross Scissors Pressure": ["hcf+p>j.throw","hcf+p>j.lp+lk","hcf+p>jthrow","hcf+p>jlp+lk","hcf+p>air throw"],
+    "Cross Stinger Assault": ["ca", "critical art", "super"],
+
+    # V-TRIGGER 2
+    "Delta Ambush": ["vt2", "vtrigger2", "v-trigger2"],
+    "Delta Step": ["f+vt2", "f.vt2", "f+vtrigger2", "f+v-trigger2"],
+    "Delta Twist": ["vt2+p","vtrigger2+p","v-trigger2+p"],
+    "Reverse Edge": ["vt2+k","vtrigger2+k","v-trigger2+k"]
+}
+
+
+
 
 ## Regex matching
 def ryuRegex(movestring):
@@ -421,6 +424,8 @@ def resolveMoveName(userstring):
             result = matchExact(move, chunliexact)
         elif char == "nash":
             result = matchExact(move, nashexact)
+        elif char == "cammy":
+            result = matchExact(move, cammyexact)    
 
 
     charsolved = char
