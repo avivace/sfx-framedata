@@ -10,7 +10,7 @@
     <br>
 </div>
 
-Built and mantained by [ricki122](https://twitter.com/ricki122), [Antonio Vivace](https://twitter.com/avivace4), [d3nnib](https://twitter.com/dennibevilacqua)
+Built and mantained by [ricki122](https://twitter.com/ricki122), [Antonio Vivace](https://twitter.com/avivace4), [d3nnib](https://twitter.com/dennibevilacqua). You can help us keeping the bot online [donating](https://paypal.me/avivace4).
 
 ## Usage
 
