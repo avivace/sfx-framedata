@@ -3,7 +3,7 @@
     <img src=".github/logo-trim-shadow.png" height="100">
     <h1>SFX Framedata </h1>
     <p>
-        <b>Discord bot providing Street Fighter V frame data for the specified character and move. Supports unofficial common move names and shorthands.</b>
+        Discord bot providing Street Fighter V frame data for the specified character and move. <br> Supports unofficial common move names and shorthands.
     </p>
     <br>
     <br>
@@ -33,7 +33,7 @@ If you just want to use the bot, check [Usage](#usage).
 
 Python3 and a recent version of Node are required.
 
-```
+```bash
 # Clone the repository
 git clone https://github.com/avivace/sfx-framedata
 cd sfx-framedata
@@ -50,7 +50,7 @@ pipenv install
 You should now be ready to run everything.
 
 Run tests:
-```
+```bash
 pytest discord/test.py
 ```
 
@@ -60,7 +60,7 @@ pytest discord/test.py
 
 Get things ready:
 
-```
+```bash
 cd pup
 sudo sysctl -w kernel.unprivileged_userns_clone=1
 npm install
