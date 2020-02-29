@@ -14,7 +14,7 @@ Built and mantained by [ricki122](https://twitter.com/ricki122), [Antonio Vivace
 
 ## Usage
 
-Add the bot to your Discord server with this [invite link](). Then, you can start using its commands.
+Simply add the bot to your Discord server with this [invite link](https://discordapp.com/oauth2/authorize?client_id=679464049691328543&scope=bot&permissions=0x00000c00). Then, you can start using its commands.
 
 ## Commands
 

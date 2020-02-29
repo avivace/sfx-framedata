@@ -6,37 +6,41 @@ import json
 
 def test_ryu():
     ryutests = [
-        ['cRlp',  'Crouching LP'],
+        ['cR.lp',  'Crouching LP'],
         ['cr.mk',  'Crouching MK'],
-        ['jhp',  'Jumping HP'],
+        ['j.hp',  'Jumping HP'],
         ['Hk',  'Standing HK'],
         ['mp',  'Standing MP'],
         ['J.lk',  'Jumping LK'],
-        ['st.mK',  'Standing MK'],
-        ['stlp',  'Standing LP'],
+        ['mK',  'Standing MK'],
+        ['lp',  'Standing LP'],
         ['hp',  'Standing HP'],
         ['qcf+mp',  'M Hadoken'],
-        ['ex hadoken',  'EX Hadoken'],
-        ['l dp',  'L Shoryuken'],
-        ['h shoryuken',  'H Shoryuken'],
-        ['l tatsu',  'L Tatsumaki Senpukyaku'],
+        ['qcf+pp',  'EX Hadoken'],
+        ['dp+lp',  'L Shoryuken'],
+        ['dp+hp',  'H Shoryuken'],
+        ['qcb+lk', 'L Tatsumaki Senpukyaku'],
         ['qcb+mk',  'M Tatsumaki Senpukyaku'],
         ['qcb+KK',  'EX Tatsumaki Senpukyaku'],
-        ['H donkey',  'H Jodan Sokutou Geri'],
-        ['ex donkey kick',  'EX Jodan Sokutou Geri'],
-        ['h hadoken',  'H Hadoken'],
-        ['qcf+pp',  'EX Hadoken'],
+        ['hcf+hk',  'H Jodan Sokutou Geri'],
         ['hcf+kk',  'EX Jodan Sokutou Geri'],
+        ['qcf+hp',  'H Hadoken'],
+        ['qcf+pp',  'EX Hadoken'],
         ['f+mp',  'Collarbone Breaker'],
-        ['solar plexus strike',  'Solar Plexus Strike'],
+        ['f+hp',  'Solar Plexus Strike'],
         ['bthrow',  'Somersault Throw'],
         ['super',  'Shinku Hadoken'],
-        ['fhp',  'Solar Plexus Strike'],
-        ['f+hp',  'Solar Plexus Strike'],
         ['Jodan Nirengeki',  'Jodan Nirengeki'],
         ['Standing MP',  'Standing MP'],
         ['throw',  'Shoulder Throw'],
-        ['ca',  'Shinku Hadoken']
+        ['ca',  'Shinku Hadoken'],
+        ['qcf+p hold vt1', 'Hadoken (Lv2)'],
+        ['qcf+p max hold vt1', 'Hadoken (Lv3)'],
+        ['qcf+pp hold vt1', 'EX Hadoken (Lv2)'],
+        ['j.qcb+k', 'Airborne Tatsumaki Senpukyaku'],
+        ['j.qcb+kk', 'EX Airborne Tatsumaki Senpukyaku'],
+        ['ca vt1', 'Denjin Hadoken'],
+        ['qcfqcf+p vt1', 'Denjin Hadoken']
     ]
     for userinput, result in ryutests:
         print("ryu " + userinput, result)
@@ -46,41 +50,73 @@ def test_ryu():
 
 def test_chunli():
     chunlitests = [
-        ['cRlp',  'Crouching LP'],
+        ['cR.lp',  'Crouching LP'],
         ['cr.mk',  'Crouching MK'],
-        ['jhp',  'Jumping HP'],
+        ['j.hp',  'Jumping HP'],
         ['Hk',  'Standing HK'],
         ['mp',  'Standing MP'],
         ['J.lk',  'Jumping LK'],
-        ['st.mK',  'Standing MK'],
-        ['stlp',  'Standing LP'],
+        ['mK',  'Standing MK'],
+        ['lp',  'Standing LP'],
         ['hp',  'Standing HP'],
         ['j.hk', 'Diagonal Jumping HK'],
         ['u+hk', 'Vertical Jump HK'],
-        ['split kicks', 'Vertical Jump HK'],
         ['df+mk', 'Senenshu'],
         ['b+mp', 'Tsuitotsuken'],
-        ['bHp', 'Hakkei'],
-        ['dfhk', 'Kakurakukyaku'],
+        ['b+Hp', 'Hakkei'],
+        ['df+hk', 'Kakurakukyaku'],
         ['throw', 'Koshuto'],
         ['ca', 'Hoyokusen'],
         ['vs1', '[VS1] Rankyaku'],
         ['vt1', 'Renkiko'],
         ['vreversal', 'Sohakkei'],
-        ['l kiko', 'L Kikoken'],
-        ['ex kiko', 'EX Kikoken'],
         ['b+hk', 'Tenkukyaku'],
         ['qcf+hk', 'H Hyakuretsukyaku'],
-        ['ex sbk', 'EX Spinning Bird Kick'],
-        ['h sbk', 'H Spinning Bird Kick'],
-        ['ex legs', 'EX Hyakuretsukyaku'],
-        ['l hyaku', 'L Hyakuretsukyaku']
+        ['du+kk', 'EX Spinning Bird Kick'],
+        ['du+hk', 'H Spinning Bird Kick'],
+        ['qcf+kk', 'EX Hyakuretsukyaku'],
+        ['l hyaku', 'L Hyakuretsukyaku'],
+        ['j.qcf+lk', 'L Airborne Hyakuretsukyaku'],
+        ['j.d+mk>d+mk vt1', 'Yosokyaku (2)'],
+        ['j.d+mk>d+mk>d+mk vt1', 'Yosokyaku (3)']
 
     ]
     for userinput, result in chunlitests:
         print("chun-li " + userinput, result)
         assert alias.resolveMoveName(
             "chun-li " + userinput)["move"].lower() == result.lower()
+
+def test_mbison():
+    mbisontests = [
+        ['lp',  'Standing LP'],
+        ['mp',  'Standing MP'],
+        ['hp',  'Standing HP'],
+        ['lk',  'Standing LK'],
+        ['mk',  'Standing MK'],
+        ['hk',  'Standing HK'],
+        ['cr.lp',  'Crouching LP'],
+        ['cr.mp',  'Crouching MP'],
+        ['cr.hp',  'Crouching HP'],
+        ['cr.lk',  'Crouching Lk'],
+        ['cr.mk',  'Crouching MK'],
+        ['cr.hk',  'Crouching HK'],
+        ['j.lp',  'Jumping LP'],
+        ['j.mp',  'Jumping MP'],
+        ['j.hp',  'Jumping HP'],
+        ['j.lk',  'Jumping LK'],
+        ['j.mk',  'Jumping MK'],
+        ['j.hk',  'Jumping HK'],
+        ['df+hp',  'Psycho Axe'],
+        ['mp>df+hp',  'Shadow Axe'],
+        ['hcb+k',  'Psycho Charge']
+
+
+    ]
+    for userinput, result in mbisontests:
+        print("mbison " + userinput, result)
+        assert alias.resolveMoveName(
+            "mbison " + userinput)["move"].lower() == result.lower()
+
 
 
 def test_juri():
