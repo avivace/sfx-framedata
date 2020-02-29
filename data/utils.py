@@ -56,6 +56,7 @@ def preFormat(rawSoup):
                 for invMove in invertedMoveCodes:
                     if invMove in matchCol.string:
                         matchCol.string = matchCol.string.replace(invMove, invMove[::-1])
+                matchCol.string = matchCol.string.replace("mpmk", "mp+mk")
                 matchCol.string = matchCol.string.replace("(during jump)", "j.")
                 matchCol.string = matchCol.string.replace("(during forward or back jump)", "j.")
                 matchCol.string = matchCol.string.replace("(during vertical jump)", "u")
@@ -63,6 +64,7 @@ def preFormat(rawSoup):
                 matchCol.string = matchCol.string.replace("(while crouching)", "cr.")
                 matchCol.string = matchCol.string.replace("(hold buttons)", " hold")
                 matchCol.string = matchCol.string.replace("(max hold button)", " max hold")
+                matchCol.string = matchCol.string.replace("(after holding the button)", "")
                 
                 moveRow.append(matchCol)
                 moveRow.append(dirtyMatchCol)
