@@ -124,6 +124,11 @@ npm run deploy
 
 <img src=".meta/sfx.svg">
 
+## License
+
+Data, graphical assets, names and trademarks are &copy;CAPCOM. All rights reserverd.
+
+Code is released under the [MIT](LICENSE) license.
 
 ### Notes
 
