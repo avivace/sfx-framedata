@@ -507,6 +507,133 @@ guileexact = {
     "Knife Edge": ["vt2", "vtrigger2"]
 }
 
+ibukiexact = {
+    # CHARACTER: IBUKI
+    # V-TRIGGER 1   
+
+    # Jumping LP (from H Kasumigake)
+    # Jumping HP (from H Kasumigake)
+    "Yamikazura": ["throw"],
+    "Kubiori": ["bthrow", "b+throw", "back throw"],
+    "Tobizaru": ["jthrow", "j.throw", "air throw"],
+    "[VS1] Tenrai": ["vs1","vskill1"],
+    "[VS1] Tenrai (Hold Button)": ["vs1 hold","vskill1 hold"],
+    "[VS2] Makibishi": ["vs2","vskill2"],
+    # "[VS2] Makibishi": ["vs2>p"],
+    "Rokushaku Horokudama (Akebono)": ["vt1", "d+vt1", "vtrigger1"],
+    "Rokushaku Horokudama (Hizakari)": ["b+vt1"],
+    "Rokushaku Horokudama (Tasogare)": ["f+vt1"],
+    "Hanagasumi": ["vreversal","vrev"],
+    "EX L Kunai": ["qcf+lp+mp","qcf+lpmp"],
+    "EX M Kunai": ["qcf+lp+hp","qcf+lphp"],
+    "EX H Kunai": ["qcf+mp+hp","qcf+mphp"],
+    "Kachofugetsu": ["ca", "critical art", "super"],
+
+    # V-TRIGGER 2
+
+    "Fuma Shuriken (Haku)": ["vt2", "vtrigger2"],
+    "Fuma Shuriken (Kokufu)": ["b+vt2", "b+vtrigger2"]
+
+}
+
+balrogexact = {
+    # CHARACTER: BALROG
+    # V-TRIGGER 1   
+
+    "Hard Smasher (3)": ["mk>mp>vs1"],
+    "Hard Smasher (4)": ["mk>mp>vs1>p"],
+    # "Hard Smasher (4)": ["mk>mp>vs1>k"],
+    "OTB": ["mk>mp>vs2"],
+    "Stomping Combo (2)": ["d+mk>d+mk"],
+    "Dirty Bomber": ["throw"],
+    "Dirty Shot": ["bthrow", "b+throw", "back throw"],
+    "[VS1] KKB": ["vs1","vskill1"],
+    "[VS1] KKB (Cancel)": ["vs1 cancel","vskill1 cancel"],
+    "[VS1] Buffalo Swing": ["vs1>p"],
+    "[VS1] Buffalo Pressure": ["vs1>k"],
+    "[VS2] FFB": ["vs2","vskill2"],
+    "Crazy Rush": ["vt1", "vtrigger1"],
+    "Buffalo Headbutt": ["vreversal","vrev"],
+    "L Dash Straight (VS2 Ver.)": ["bf+lp vs2"],
+    "M Dash Straight (VS2 Ver.)": ["bf+mp vs2"],
+    "H Dash Straight (VS2 Ver.)": ["bf+hp vs2"],
+    "EX Dash Straight (VS2 Ver.)": ["bf+pp vs2"],
+    "Charging Buffalo (1)": ["f+p 1 vt1"],
+    "Charging Buffalo (2)": ["f+p 2 vt1"],
+    "Charging Buffalo (3)": ["f+p 3 vt1"],
+    "Charging Buffalo (4)": ["f+p 4 vt1"],
+    "EX Charging Buffalo": ["f+pp vt1"],
+    "Charging Buffalo (VS2 Ver.) (1)": ["f+p 1 vs2 vt1","f+p 1 vt1 vs2"],
+    "Charging Buffalo (VS2 Ver.) (2)": ["f+p 2 vs2 vt1","f+p 2 vt1 vs2"],
+    "Charging Buffalo (VS2 Ver.) (3)": ["f+p 3 vs2 vt1","f+p 3 vt1 vs2"],
+    "Charging Buffalo (VS2 Ver.) (4)": ["f+p 4 vs2 vt1","f+p 4 vt1 vs2"],
+    "EX Charging Buffalo (VS2 Ver.) (1)": ["f+pp 1 vs2 vt1","f+pp 1 vt1 vs2"],
+    "EX Charging Buffalo (VS2 Ver.) (2)": ["f+pp 2 vs2 vt1","f+pp 2 vt1 vs2"],
+    "Bursting Buffalo (1)": ["f+k 1 vt1"],
+    "Bursting Buffalo (2)": ["f+k 2 vt1"],
+    "Bursting Buffalo (3)": ["f+k 3 vt1"],
+    "Bursting Buffalo (4)": ["f+k 4 vt1"],
+    "EX Bursting Buffalo": ["f+kk vt1"],
+    "Turn Punch (Lv1)": ["tap lv1"],
+    "Turn Punch (Lv2)": ["tap lv2"],
+    "Turn Punch (Lv3)": ["tap lv3"],
+    "Turn Punch (Lv4)": ["tap lv4"],
+    "Turn Punch (Lv5)": ["tap lv5"],
+    "Turn Punch (Lv6)": ["tap lv6"],
+    "Turn Punch (Lv7)": ["tap lv7"],
+    "Turn Punch (Lv8)": ["tap lv8"],
+    "Turn Punch (Lv9)": ["tap lv9"],
+    "Turn Punch (FINAL)": ["tap lv10"],
+    "Gigaton Blow": ["ca", "critical art", "super"],
+
+    # V-TRIGGER 2
+
+    "No Mercy": ["vt2", "vtrigger2"],
+    "B3": ["vt2 command grab","vt2 grab"]
+
+}
+
+juriexact = {
+    # CHARACTER: JURI
+    # V-TRIGGER 1   
+
+    "Standing LP (Chain Combo)": ["lp chain"],
+    "Standing MP (Chain Combo)": ["mp chain"],
+    "Standing HP (Chain Combo)": ["hp chain"],
+    "Standing LK (Chain Combo)": ["lk chain"],
+    "Standing MK (Chain Combo)": ["mk chain"],
+    "Standing HK (Chain Combo)": ["hk chain"],
+    "Crouching LP (Chain Combo)": ["cr.lp chain"],
+    "Crouching MP (Chain Combo)": ["cr.mp chain"],
+    "Crouching HP (Chain Combo)": ["cr.hp chain"],
+    "Crouching LK (Chain Combo)": ["cr.lk chain"],
+    "Crouching MK (Chain Combo)": ["cr.mk chain"],
+    "Crouching HK (Chain Combo)": ["cr.hk chain"],
+    "Jumping MP (Chain Combo)": ["j.mp chain"],
+    "Jumping HP (Chain Combo)": ["j.hp chain"],
+    "Jumping MK (Chain Combo)": ["j.mk chain"],
+    "Jumping HK (Chain Combo)": ["j.hk chain"],
+    "Kyoretsushu": ["mp>f+hp","mp>b+hp"],
+    "Chisenkyaku": ["throw"],
+    "Kaeikyaku": ["bthrow", "b+throw", "back throw"],
+    "Zankasen": ["jthrow", "j.throw", "air throw"],
+    "[VS1] Kasatushu (Whiff)": ["vs1","vskill1"],
+    "[VS1] Kasatushu Lv.1": ["vs1 lv1","vskill1 lv1"],
+    "[VS1] Kasatushu Lv.2": ["vs1 lv2","vskill1 lv2"],
+    "[VS1] Kasatushu Lv.2 (Instant Activation Version)": ["vs1 lv2 instant"],
+    "[VS2] Fuha Enzan (Charge)": ["vs2 store","vskill2 store"],
+    "[VS2] Fuha Enzan (Attack)": ["vs2","vskill2"],
+    "Feng Shui Enngine Type Alpha": ["vt1", "vtrigger1"],
+    "Kaisenrenkyaku": ["vreversal","vrev"],
+    "Fuharenkyaku (Charge Kick)": ["store"],
+    "Sakkai Fuhazan": ["ca", "critical art", "super"],
+
+    # V-TRIGGER 2
+
+    "Feng Shui Enngine beta": ["vt2", "vtrigger2"]
+
+}
+
 sethexact = {
     # CHARACTER: SETH
     # V-TRIGGER 1   
@@ -617,6 +744,12 @@ def resolveMoveName(userstring):
             result = matchExact(move, alexexact)
         elif char == "guile":
             result = matchExact(move, guileexact)
+        elif char == "ibuki":
+            result = matchExact(move, ibukiexact)
+        elif char == "balrog":
+            result = matchExact(move, balrogexact)
+        elif char == "juri":
+            result = matchExact(move, juriexact)
         elif char == "seth":
             result = matchExact(move, sethexact)
 
