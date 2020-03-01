@@ -1,0 +1,107 @@
+{
+    "type": "object",
+    "required": [
+        "name",
+        "frame",
+        "recovery",
+        "vTriggerCancelRecovery",
+        "cancelInfo",
+        "damage",
+        "stun",
+        "meterGain",
+        "properties",
+        "projectileNullification",
+        "comments",
+        "moveLevels",
+        "vTrigger",
+        "vSkill",
+        "matchCol"
+    ],
+    "properties": {
+        "name": {
+            "type": "string"
+        },
+        "frame": {
+            "type": "object",
+            "required": [
+                "startup",
+                "active",
+                "recovery"
+            ],
+            "properties": {
+                "startup": {
+                    "type": "string"
+                },
+                "active": {
+                    "type": "string"
+                },
+                "recovery": {
+                    "type": "string"
+                }
+            }
+        },
+        "recovery": {
+            "type": "object",
+            "required": [
+                "onHit",
+                "onBlock"
+            ],
+            "properties": {
+                "onHit": {
+                    "type": "string"
+                },
+                "onBlock": {
+                    "type": "string"
+                }
+            }
+        },
+        "vTriggerCancelRecovery": {
+            "type": "object",
+            "required": [
+                "onHit",
+                "onBlock"
+            ],
+            "properties": {
+                "onHit": {
+                    "type": "string"
+                },
+                "onBlock": {
+                    "type": "string"
+                }
+            }
+        },
+        "cancelInfo": {
+            "type": "string"
+        },
+        "damage": {
+            "type": "string"
+        },
+        "stun": {
+            "type": "string"
+        },
+        "meterGain": {
+            "type": "string"
+        },
+        "properties": {
+            "type": "string"
+        },
+        "projectileNullification": {
+            "type": "string"
+        },
+        "comments": {
+            "type": "string"
+        },
+        "moveLevels": {
+            "type": "string"
+        },
+        "vTrigger": {
+            "type": "string"
+        },
+        "vSkill": {
+            "type": "string"
+        },
+        "matchCol": {
+            "type": "string"
+        }
+    }
+}

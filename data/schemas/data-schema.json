@@ -1,0 +1,811 @@
+{
+    "type": "object",
+    "required": [
+        "ryu",
+        "chun-li",
+        "nash",
+        "mbison",
+        "cammy",
+        "birdie",
+        "ken",
+        "necalli",
+        "vega",
+        "rmika",
+        "rashid",
+        "karin",
+        "zangief",
+        "laura",
+        "dhalsim",
+        "fang",
+        "alex",
+        "guile",
+        "ibuki",
+        "balrog",
+        "juri",
+        "urien",
+        "akuma",
+        "kolin",
+        "ed",
+        "abigail",
+        "menat",
+        "zeku",
+        "sakura",
+        "blanka",
+        "falke",
+        "cody",
+        "g",
+        "sagat",
+        "kage",
+        "poison",
+        "ehonda",
+        "lucia",
+        "gill",
+        "seth"
+    ],
+    "properties": {
+        "abigail": {
+            "type": "object",
+            "properties": {
+                "vt1": {
+                    "type": "array",
+                    "items": {
+                        "allOf": [
+                            {
+                                "type": "object",
+                                "$ref": "file:data/schemas/move-schema.json"
+                            }
+                        ]
+                    }
+                },
+                "vt2": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "$ref": "file:data/schemas/move-schema.json"
+                    }
+                }
+            }
+        },
+        "akuma": {
+            "type": "object",
+            "properties": {
+                "vt1": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "$ref": "file:data/schemas/move-schema.json"
+                    }
+                },
+                "vt2": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "$ref": "file:data/schemas/move-schema.json"
+                    }
+                }
+            }
+        },
+        "alex": {
+            "type": "object",
+            "properties": {
+                "vt1": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "$ref": "file:data/schemas/move-schema.json"
+                    }
+                },
+                "vt2": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "$ref": "file:data/schemas/move-schema.json"
+                    }
+                }
+            }
+        },
+        "balrog": {
+            "type": "object",
+            "properties": {
+                "vt1": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "$ref": "file:data/schemas/move-schema.json"
+                    }
+                },
+                "vt2": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "$ref": "file:data/schemas/move-schema.json"
+                    }
+                }
+            }
+        },
+        "birdie": {
+            "type": "object",
+            "properties": {
+                "vt1": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "$ref": "file:data/schemas/move-schema.json"
+                    }
+                },
+                "vt2": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "$ref": "file:data/schemas/move-schema.json"
+                    }
+                }
+            }
+        },
+        "blanka": {
+            "type": "object",
+            "properties": {
+                "vt1": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "$ref": "file:data/schemas/move-schema.json"
+                    }
+                },
+                "vt2": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "$ref": "file:data/schemas/move-schema.json"
+                    }
+                }
+            }
+        },
+        "cammy": {
+            "type": "object",
+            "properties": {
+                "vt1": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "$ref": "file:data/schemas/move-schema.json"
+                    }
+                },
+                "vt2": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "$ref": "file:data/schemas/move-schema.json"
+                    }
+                }
+            }
+        },
+        "chun-li": {
+            "type": "object",
+            "properties": {
+                "vt1": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "$ref": "file:data/schemas/move-schema.json"
+                    }
+                },
+                "vt2": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "$ref": "file:data/schemas/move-schema.json"
+                    }
+                }
+            }
+        },
+        "cody": {
+            "type": "object",
+            "properties": {
+                "vt1": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "$ref": "file:data/schemas/move-schema.json"
+                    }
+                },
+                "vt2": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "$ref": "file:data/schemas/move-schema.json"
+                    }
+                }
+            }
+        },
+        "dhalsim": {
+            "type": "object",
+            "properties": {
+                "vt1": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "$ref": "file:data/schemas/move-schema.json"
+                    }
+                },
+                "vt2": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "$ref": "file:data/schemas/move-schema.json"
+                    }
+                }
+            }
+        },
+        "ed": {
+            "type": "object",
+            "properties": {
+                "vt1": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "$ref": "file:data/schemas/move-schema.json"
+                    }
+                },
+                "vt2": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "$ref": "file:data/schemas/move-schema.json"
+                    }
+                }
+            }
+        },
+        "ehonda": {
+            "type": "object",
+            "properties": {
+                "vt1": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "$ref": "file:data/schemas/move-schema.json"
+                    }
+                },
+                "vt2": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "$ref": "file:data/schemas/move-schema.json"
+                    }
+                }
+            }
+        },
+        "falke": {
+            "type": "object",
+            "properties": {
+                "vt1": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "$ref": "file:data/schemas/move-schema.json"
+                    }
+                },
+                "vt2": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "$ref": "file:data/schemas/move-schema.json"
+                    }
+                }
+            }
+        },
+        "fang": {
+            "type": "object",
+            "properties": {
+                "vt1": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "$ref": "file:data/schemas/move-schema.json"
+                    }
+                },
+                "vt2": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "$ref": "file:data/schemas/move-schema.json"
+                    }
+                }
+            }
+        },
+        "g": {
+            "type": "object",
+            "properties": {
+                "vt1": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "$ref": "file:data/schemas/move-schema.json"
+                    }
+                },
+                "vt2": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "$ref": "file:data/schemas/move-schema.json"
+                    }
+                }
+            }
+        },
+        "gill": {
+            "type": "object",
+            "properties": {
+                "vt1": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "$ref": "file:data/schemas/move-schema.json"
+                    }
+                },
+                "vt2": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "$ref": "file:data/schemas/move-schema.json"
+                    }
+                }
+            }
+        },
+        "guile": {
+            "type": "object",
+            "properties": {
+                "vt1": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "$ref": "file:data/schemas/move-schema.json"
+                    }
+                },
+                "vt2": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "$ref": "file:data/schemas/move-schema.json"
+                    }
+                }
+            }
+        },
+        "ibuki": {
+            "type": "object",
+            "properties": {
+                "vt1": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "$ref": "file:data/schemas/move-schema.json"
+                    }
+                },
+                "vt2": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "$ref": "file:data/schemas/move-schema.json"
+                    }
+                }
+            }
+        },
+        "juri": {
+            "type": "object",
+            "properties": {
+                "vt1": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "$ref": "file:data/schemas/move-schema.json"
+                    }
+                },
+                "vt2": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "$ref": "file:data/schemas/move-schema.json"
+                    }
+                }
+            }
+        },
+        "kage": {
+            "type": "object",
+            "properties": {
+                "vt1": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "$ref": "file:data/schemas/move-schema.json"
+                    }
+                },
+                "vt2": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "$ref": "file:data/schemas/move-schema.json"
+                    }
+                }
+            }
+        },
+        "karin": {
+            "type": "object",
+            "properties": {
+                "vt1": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "$ref": "file:data/schemas/move-schema.json"
+                    }
+                },
+                "vt2": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "$ref": "file:data/schemas/move-schema.json"
+                    }
+                }
+            }
+        },
+        "ken": {
+            "type": "object",
+            "properties": {
+                "vt1": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "$ref": "file:data/schemas/move-schema.json"
+                    }
+                },
+                "vt2": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "$ref": "file:data/schemas/move-schema.json"
+                    }
+                }
+            }
+        },
+        "kolin": {
+            "type": "object",
+            "properties": {
+                "vt1": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "$ref": "file:data/schemas/move-schema.json"
+                    }
+                },
+                "vt2": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "$ref": "file:data/schemas/move-schema.json"
+                    }
+                }
+            }
+        },
+        "laura": {
+            "type": "object",
+            "properties": {
+                "vt1": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "$ref": "file:data/schemas/move-schema.json"
+                    }
+                },
+                "vt2": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "$ref": "file:data/schemas/move-schema.json"
+                    }
+                }
+            }
+        },
+        "lucia": {
+            "type": "object",
+            "properties": {
+                "vt1": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "$ref": "file:data/schemas/move-schema.json"
+                    }
+                },
+                "vt2": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "$ref": "file:data/schemas/move-schema.json"
+                    }
+                }
+            }
+        },
+        "mbison": {
+            "type": "object",
+            "properties": {
+                "vt1": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "$ref": "file:data/schemas/move-schema.json"
+                    }
+                },
+                "vt2": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "$ref": "file:data/schemas/move-schema.json"
+                    }
+                }
+            }
+        },
+        "menat": {
+            "type": "object",
+            "properties": {
+                "vt1": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "$ref": "file:data/schemas/move-schema.json"
+                    }
+                },
+                "vt2": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "$ref": "file:data/schemas/move-schema.json"
+                    }
+                }
+            }
+        },
+        "nash": {
+            "type": "object",
+            "properties": {
+                "vt1": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "$ref": "file:data/schemas/move-schema.json"
+                    }
+                },
+                "vt2": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "$ref": "file:data/schemas/move-schema.json"
+                    }
+                }
+            }
+        },
+        "necalli": {
+            "type": "object",
+            "properties": {
+                "vt1": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "$ref": "file:data/schemas/move-schema.json"
+                    }
+                },
+                "vt2": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "$ref": "file:data/schemas/move-schema.json"
+                    }
+                }
+            }
+        },
+        "poison": {
+            "type": "object",
+            "properties": {
+                "vt1": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "$ref": "file:data/schemas/move-schema.json"
+                    }
+                },
+                "vt2": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "$ref": "file:data/schemas/move-schema.json"
+                    }
+                }
+            }
+        },
+        "rashid": {
+            "type": "object",
+            "properties": {
+                "vt1": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "$ref": "file:data/schemas/move-schema.json"
+                    }
+                },
+                "vt2": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "$ref": "file:data/schemas/move-schema.json"
+                    }
+                }
+            }
+        },
+        "rmika": {
+            "type": "object",
+            "properties": {
+                "vt1": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "$ref": "file:data/schemas/move-schema.json"
+                    }
+                },
+                "vt2": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "$ref": "file:data/schemas/move-schema.json"
+                    }
+                }
+            }
+        },
+        "ryu": {
+            "type": "object",
+            "properties": {
+                "vt1": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "$ref": "file:data/schemas/move-schema.json"
+                    }
+                },
+                "vt2": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "$ref": "file:data/schemas/move-schema.json"
+                    }
+                }
+            }
+        },
+        "sagat": {
+            "type": "object",
+            "properties": {
+                "vt1": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "$ref": "file:data/schemas/move-schema.json"
+                    }
+                },
+                "vt2": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "$ref": "file:data/schemas/move-schema.json"
+                    }
+                }
+            }
+        },
+        "sakura": {
+            "type": "object",
+            "properties": {
+                "vt1": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "$ref": "file:data/schemas/move-schema.json"
+                    }
+                },
+                "vt2": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "$ref": "file:data/schemas/move-schema.json"
+                    }
+                }
+            }
+        },
+        "seth": {
+            "type": "object",
+            "properties": {
+                "vt1": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "$ref": "file:data/schemas/move-schema.json"
+                    }
+                },
+                "vt2": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "$ref": "file:data/schemas/move-schema.json"
+                    }
+                }
+            }
+        },
+        "urien": {
+            "type": "object",
+            "properties": {
+                "vt1": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "$ref": "file:data/schemas/move-schema.json"
+                    }
+                },
+                "vt2": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "$ref": "file:data/schemas/move-schema.json"
+                    }
+                }
+            }
+        },
+        "vega": {
+            "type": "object",
+            "properties": {
+                "vt1": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "$ref": "file:data/schemas/move-schema.json"
+                    }
+                },
+                "vt2": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "$ref": "file:data/schemas/move-schema.json"
+                    }
+                }
+            }
+        },
+        "zangief": {
+            "type": "object",
+            "properties": {
+                "vt1": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "$ref": "file:data/schemas/move-schema.json"
+                    }
+                },
+                "vt2": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "$ref": "file:data/schemas/move-schema.json"
+                    }
+                }
+            }
+        },
+        "zeku": {
+            "type": "object",
+            "properties": {
+                "vt1": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "$ref": "file:data/schemas/move-schema.json"
+                    }
+                },
+                "vt2": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "$ref": "file:data/schemas/move-schema.json"
+                    }
+                }
+            }
+        }
+    }
+}

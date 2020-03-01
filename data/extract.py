@@ -3,7 +3,7 @@ import os
 import re
 import codecs
 from bs4 import BeautifulSoup
-from utils import preClean, preFormat, getMoveStructure, getSoupIngredients, bringSoupToTheTable
+from utils import preClean, preFormat, getMoveStructure, getSoupIngredients, bringSoupToTheTable, validateJson
 
 
 def cookAnHotSoup(html, characterName):
@@ -112,16 +112,23 @@ def main():
             print(
                 "\nERROR: Sorry, you don't have all the ingredients you need to cook your soup :(\n(No data source file present)")
 
-    # Save file
-    print(
-        f"\nDONE\nSoup is hot and ready to be tasted: {DATA_OUTPUT_DIR}data.json")
-    bringSoupToTheTable(DATA_OUTPUT_DIR, data)
+
+    # Validate data against schema
+    if validateJson(data, DATA_SCHEMA_PATH):
+        # Save file
+        print(
+            f"\nDONE\nSoup is hot and ready to be tasted: {DATA_OUTPUT_DIR}data.json")
+        bringSoupToTheTable(DATA_OUTPUT_DIR, data)
+    else:
+        print(
+            f"\nERROR\nThe soup is spoiled, cannot bring it to the table\n")
 
 
-if __name__ == "__main__":
+if __name__ == "__main__": 
     data = {}
     SOUP_INGREDIENTS_PATH = "pup/htmldumps/"
     SOUP_INGREDIENTS = getSoupIngredients()
     DATA_OUTPUT_DIR = "data/extracted/"
     MOVE_STRUCTURE_PATH = "data/move-structure.json"
+    DATA_SCHEMA_PATH = "data/schemas/data-schema.json"
     main()

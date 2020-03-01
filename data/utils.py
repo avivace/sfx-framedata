@@ -2,6 +2,7 @@
 import os
 import copy
 import json
+import jsonschema
 from bs4 import BeautifulSoup
 
 def preFormat(rawSoup):
@@ -152,3 +153,17 @@ def reverseMoveAndLevels(col):
     for invMove in invertedMoveCodes:
         if invMove in col.string:
             col.string = col.string.replace(invMove, invMove[::-1])
+
+
+def validateJson(data, schemaPath):
+    try:
+        dataSchema = {}
+        with open(schemaPath, 'r') as schema_file:
+            dataSchema = json.loads(schema_file.read())
+
+        jsonschema.validate(instance=data, schema=dataSchema)
+
+        return True
+    except Exception as err:
+        print(err)
+        return False
