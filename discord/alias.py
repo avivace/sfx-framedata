@@ -329,6 +329,92 @@ karinexact = {
     "Yasha Gaeshi Chi": ["vt2 parry low"]
 }
 
+zangiefexact = {
+    # CHARACTER: ZANGIEF
+    # V-TRIGGER 1   
+
+    "Atomic Drop": ["throw"],
+    "Captured": ["bthrow", "b+throw", "back throw"],
+    "Horosho Chokeslam": ["throw cr"],
+    "[VS1] Iron Muscle": ["vs1","vskill1"],
+    "[VS1] Iron Muscle (Attack)": ["vs1 hold","vskill1 hold"],
+    "[VS1] Iron Muscle (Attack after forward walk)": ["vs1 release","vskill1 release"],
+    "[VS2] Super Russian Kick": ["vs2","vskill2"],
+    "[VS2] Super Russian Kick (Hold Button)": ["vs2 hold","vskill2 hold"],
+    "Cyclone Lariat": ["vt1", "vtrigger1"],
+    "Activation Cyclone Lariat": ["vt1 hold", "vtrigger1 hold"],
+    "Post-activation Cyclone Lariat": ["vt1 max hold", "vtrigger1 max hold"],
+    "Muscle Explosion": ["vreversal","vrev"],
+    "Double Lariat": ["ppp"],
+    "Bolshoi Russian Suplex": ["ca", "critical art", "super"],
+
+    # V-TRIGGER 2
+
+    "Cossacck Muscle": ["vt2", "vtrigger2"]
+}
+
+lauraexact = {
+    # CHARACTER: LAURA
+    # V-TRIGGER 1   
+
+    "Seoi Throw": ["throw"],
+    "Pullback Hold": ["bthrow", "b+throw", "back throw"],
+    "[VS1] Volty Line": ["vs1","vskill1"],
+    "[VS1] Linear Movement - Avante (Movement)": ["f+vs1","f+vskill1"],
+    "[VS1] Linear Movement - Avante (Attack)": ["f+vs1 hold","f+vskill1 hold"],
+    "[VS1] Linear Movement - Esquiva (Movement)": ["b+vs1","b+vskill1"],
+    "[VS1] Linear Movement - Esquiva (Attack)": ["b+vs1 hold","b+vskill1 hold"],
+    "[VS1] Linear Movement - Finta (Movement)": ["b+vs1>vs1"],
+    "[VS1] Linear Movement - Finta (Attack)": ["b+vs1>vs1 hold"],
+    "[VS2] Volty Sprink": ["vs2","vskill2"],
+    "[VS2] Thunder Spike": ["vs2>p"],
+    "[VS2] Heavy Heel": ["vs2>k"],
+    "[VS2] Thunder Spike Lv.1": ["vs2>p vt1"],
+    "[VS2] Thunder Spike Lv.2": ["vs2>p hold vt1"],
+    "Spark Show": ["vt1", "vtrigger1"],
+    "Double Slap": ["vreversal","vrev"],
+    "Inazuma Spin Hold": ["ca", "critical art", "super"],
+
+    # V-TRIGGER 2
+
+    "Shock Stance": ["vt2", "vtrigger2"],
+    "Shock Choke": ["vt2>vt2"],
+    "Linear Movement - Avante (Movement)": ["vt2>vs1"],
+    "Linear Movement - Avante (Attack)": ["vt2>vs1 hold"],
+    "Volty Sprink": ["vt2>vs2"],
+    "Thunder Spike": ["vt2>vs2>p"],
+    "Heavy Heel": ["vt2>vs2>k"]
+}
+
+dhalsimexact = {
+    # CHARACTER: DHALSIM
+    # V-TRIGGER 1   
+
+    "Yoga Rocket": ["throw"],
+    "Yoga Hoop": ["bthrow", "b+throw", "back throw"],
+    "[VS1] Yoga Float": ["vs1","vskill1"],
+    "[VS1] Yoga Float (Airborne)": ["j.vs1","j.vskill1"],
+    "[VS2] Yoga Deep Breath": ["vs2","vskill2"],
+    "[VS2] Yoga Deep Breath(Airborne)": ["j.vs2","j.vskill2"],
+    "Yoga Burner": ["vt1", "vtrigger1"],
+    "Yoga Mala": ["vreversal","vrev"],
+    "Yoga Fire (VS2 Ver.)": ["qcf+p vs2"],
+    "EX Yoga Fire (VS2 Ver.)": ["qcf+pp vs2"],
+    "Yoga Teleport": ["dp+ppp","dp+kkk"],
+    "Airborne Yoga Teleport": ["j.dp+ppp","j.dp+kkk"],
+    "Yoga Sunburst (Lv1)": ["ca", "critical art", "super"],
+    "Yoga Sunburst (Lv2)": ["ca hold", "critical art hold", "super hold"],
+    "Yoga Sunburst (Lv3)": ["ca max hold", "critical art max hold", "super max hold"],
+    "Airborne Yoga Sunburst (Lv1)": ["j.ca", "j.critical art", "j.super"],
+    "Airborne Yoga Sunburst (Lv2)": ["j.ca hold", "j.critical art hold", "j.super hold"],
+    "Airborne Yoga Sunburst (Lv3)": ["j.ca max hold", "j.critical art max hold", "j.super max hold"],
+
+    # V-TRIGGER 2
+
+    "Yoga Sansara": ["vt2", "vtrigger2"],
+    "Airborne Yoga Sansara": ["j.vt2", "j.vtrigger2"]
+}
+
 sethexact = {
     # CHARACTER: SETH
     # V-TRIGGER 1   
@@ -413,6 +499,12 @@ def resolveMoveName(userstring):
             result = matchExact(move, rashidexact)
         elif char == "karin":
             result = matchExact(move, karinexact)
+        elif char == "zangief":
+            result = matchExact(move, zangiefexact)
+        elif char == "laura":
+            result = matchExact(move, lauraexact)
+        elif char == "dhalsim":
+            result = matchExact(move, dhalsimexact)
         elif char == "seth":
             result = matchExact(move, sethexact)
 
