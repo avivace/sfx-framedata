@@ -196,14 +196,15 @@
             "lplk": "lp+lk",
             "mpmk": "mp+mk",
             "hphk": "hp+hk",
+            "360360": "720",
             "(during jump)": "j.",
             "(during forward or back jump)": "j.",
             "(during vertical or forward jump)": "j.",
             "(close to opponent in air)": "j.",
             "(during forward jump)": "j.",
             "(during vertical jump)": "u",
-            "(during v-trigger i)": "vt1",
-            "(during v-trigger ii)": "vt2",
+            "(during v-trigger i)": "",
+            "(during v-trigger ii)": "",
             "(while crouching)": "cr.",
             "(hold buttons)": " hold",
             "(max hold button)": " max hold",
@@ -218,7 +219,9 @@
             "nord+": "",
             "norbordordb+": "",
             "orb+": "",
-            "orr.dp": ""
+            "orr.dp": "",
+            "orpp>p": "",
+            "orpp>k": ""
         }
     }
 }
