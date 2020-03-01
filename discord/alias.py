@@ -79,9 +79,9 @@ nashexact = {
     # V-TRIGGER 2
 
     "Stealth Dash": ["vt2", "vtrigger2"],
-    "Stealth Dash (Stop)": ["vt2+b", "vtrigger2+b"],
-    "Justice Corridor": ["vt2+p", "vtrigger2+p"],
-    "Justice Shell": ["vt2+k", "vtrigger2+k"]
+    "Stealth Dash (Stop)": ["vt2>b", "vtrigger2>b"],
+    "Justice Corridor": ["vt2>p", "vtrigger2>p"],
+    "Justice Shell": ["vt2>k", "vtrigger2>k"]
 }
 
 mbisonexact = {
@@ -105,7 +105,7 @@ mbisonexact = {
     # V-TRIGGER 2
 
     "Psycho Nightmare": ["vt2", "vtrigger2"],
-    # "Psycho Crusher"
+    "Psycho Crusher": ["psycho crusher"],
     "Psycho Judgement": ["hcb+k>hcb+k"]
 }
 
@@ -127,8 +127,8 @@ cammyexact = {
 
     "Delta Ambush": ["vt2", "vtrigger2"],
     "Delta Step": ["f+vt2", "f+vtrigger2"],
-    "Delta Twist": ["vt2+p","vtrigger2+p"],
-    "Reverse Edge": ["vt2+k","vtrigger2+k"]
+    "Delta Twist": ["vt2>p","vtrigger2>p"],
+    "Reverse Edge": ["vt2>k","vtrigger2>k"]
 }
 
 birdieexact = {
@@ -149,8 +149,8 @@ birdieexact = {
     # V-TRIGGER 2
 
     "Birdie Time": ["vt2", "vtrigger2"],
-    # "Bull Swing"
-    "Bull Capture": ["d+vt2", "d+vtrigger2"]
+    "Bull Swing": ["bull swing","vt2 chain","chain vt2"],
+    "Bull Capture": ["d+vt2", "d+vtrigger2","vt2 low chain","low chain vt2"]
 }
 
 kenexact = {
@@ -184,15 +184,15 @@ necalliexact = {
     "[VS2] Crawling Beast": ["vs2","vskill2"],
     "Torrent of Power": ["vt1", "vtrigger1"],
     "The Calling": ["vreversal","vrev"],
-    # "Clouded Mirror"
+    "Clouded Mirror": ["clouded mirror","vt1 leap","leap vt1"],
     "Clouded Mirror (HOLD BUTTON)": ["vt1 hold", "vtrigger1 hold"],
     "Ceremony of Honor": ["ca", "critical art", "super"],
     "Soul Offering": ["ca vt1", "critical art vt1", "super vt1"],
 
     # V-TRIGGER 2
 
-    "Eruption of Power": ["vt2", "vtrigger2"]
-    # "Heart Of Gold"
+    "Eruption of Power": ["vt2", "vtrigger2"],
+    "Heart Of Gold": ["fb vt2","vt2 fb","heart of gold"]
 }
 
 vegaexact = {
@@ -225,7 +225,7 @@ vegaexact = {
 
     "Alegrias": ["vt2", "vtrigger2"],
     # "Flash Arch - Rossa (Stance)"
-    "Flash Arch - Rossa (Attack)": ["vt2 vt2"],
+    "Flash Arch - Rossa (Attack)": ["vt2 parry"],
     "Flash Arch - Granate": ["f+vt2", "f+vtrigger2"]
 }
 
@@ -415,6 +415,98 @@ dhalsimexact = {
     "Airborne Yoga Sansara": ["j.vt2", "j.vtrigger2"]
 }
 
+fangexact = {
+    # CHARACTER: F.A.N.G
+    # V-TRIGGER 1   
+
+    "Senpukuga (Prone)": ["d+ppp"],
+    "Senpukuga (Attack)": ["d+ppp>k"],
+    "Shimonshu": ["throw"],
+    "Kyoshitsugeki": ["bthrow", "b+throw", "back throw"],
+    "[VS1] Nishodoku": ["vs1","vskill1"],
+    "[VS2] Sodokubu": ["vs2","vskill2"],
+    "[VS2] Sodokubu (upon successful parry)": ["vs2 parry","vskill2 parry"],
+    "Dokunomu": ["vt1", "vtrigger1"],
+    "Nikaiho": ["vreversal","vrev"],
+    "EX Ryobenda (Placed Poison)": ["bf+kk poison"],
+    "Nikyoushu": ["j.ppp"],
+    "Shishiruirui": ["ca", "critical art", "super"],
+
+    # V-TRIGGER 2
+
+    "Koryo Dokuda": ["vt2", "vtrigger2"]
+}
+
+alexexact = {
+    # CHARACTER: ALEX
+    # V-TRIGGER 1   
+
+    "Face-Crush Chop": ["throw"],
+    "Leg Tomahawk": ["bthrow", "b+throw", "back throw"],
+    "[VS1] Overhaul": ["vs1","vskill1"],
+    "[VS2] Overchain": ["vs2","vskill2"],
+    "Rage Shift": ["vt1", "vtrigger1"],
+    "Big Boot": ["vreversal","vrev"],
+    "L Flash Chop (VS2 Ver.)": ["qcf+lp vs2"],
+    "M Flash Chop (VS2 Ver.)": ["qcf+mp vs2"],
+    "H Flash Chop (VS2 Ver.)": ["qcf+hp vs2"],
+    "EX Flash Chop (VS2 Ver.)": ["qcf+pp vs2"],
+    "L Slash Elbow (VS2 Ver.)": ["bf+lk vs2"],
+    "M Slash Elbow (VS2 Ver.)": ["bf+mk vs2"],
+    "H Slash Elbow (VS2 Ver.)": ["bf+hk vs2"],
+    "EX Slash Elbow (VS2 Ver.)": ["bf+kk vs2"],
+    "L Air Knee Smash (VS2 Ver.)": ["dp+lk vs2"],
+    "M Air Knee Smash (VS2 Ver.)": ["dp+mk vs2"],
+    "H Air Knee Smash (VS2 Ver.)": ["dp+hk vs2"],
+    "EX Air Knee Smash (VS2 Ver.)": ["dp+kk vs2"],
+    "L Air Stampede (VS2 Ver.)": ["du+lk vs2"],
+    "M Air Stampede (VS2 Ver.)": ["du+mk vs2"],
+    "H Air Stampede (VS2 Ver.)": ["du+hk vs2"],
+    "EX Air Stampede (VS2 Ver.)": ["du+kk vs2"],
+    "Power Drop": ["hcb+p"],
+    "EX Power Drop": ["hcb+pp"],
+    # "Sledge Hammer (Parry)"
+    "Sledge Hammer (Attack)": ["vt1 parry"],
+    "Sledge Hammer (Charge Attack)": ["vt1 hold"],
+    "Power Drop (Sledge Hammer Version)": ["hcb+p vt1"],
+    "EX Power Drop (Sledge Hammer Version)": ["hcb+pp vt1"],
+    "Heavy Hammer": ["ca", "critical art", "super"],
+    "Heavy Hammer (1st Hit Blocked or Miss)": ["ca miss"],
+
+    # V-TRIGGER 2
+
+    "Rage Boost": ["vt2", "vtrigger2"],
+    "Flyng DDT": ["ddt"],
+    "Choke Sleeper": ["qcf+p>vt2"]
+}
+
+guileexact = {
+    # CHARACTER: GUILE
+    # V-TRIGGER 1   
+
+    "Knee Bazooka": ["b+lk","f+lk"],
+    "Rolling Sobat": ["b+mk","f+mk"],
+    "Dragon Suplex": ["throw"],
+    "Judo Throw": ["bthrow", "b+throw", "back throw"],
+    "Flying Mare": ["jthrow", "j.throw", "air throw"],
+    "Flying Buster Chop": ["jbthrow", "j.bthrow", "back air throw","j.b+throw"],
+    "[VS1] Sonic Blade": ["vs1","vskill1"],
+    "[VS2] Dive Sonic": ["vs2","vskill2"],
+    "Solid Puncher": ["vt1", "vtrigger1"],
+    "Reverse Back Knuckle": ["vreversal","vrev"],
+    "Sonic Break (1st Projectile)":["mini boom","b+vt1","f+vt1"],
+    "Sonic Break (additional projectiles)":["vt1>p","bf+p>p"],
+    "EX Sonic Break":["bf+pp>p"],
+    "Sonic Cross":["vs1>bf+p"],
+    "EX Sonic Cross":["vs1>bf+pp"],
+    "Sonic Hurricane": ["ca", "critical art", "super"],
+    "Sonic Tempest": ["ca vt1", "critical art vt1", "super vt1"],
+
+    # V-TRIGGER 2
+
+    "Knife Edge": ["vt2", "vtrigger2"]
+}
+
 sethexact = {
     # CHARACTER: SETH
     # V-TRIGGER 1   
@@ -466,6 +558,20 @@ def resolveMoveName(userstring):
         char = "chun-li"
     elif char == "bison":
         char = "mbison"
+    elif char == "mika":
+        char = "rmika"
+    elif char == "sim":
+        char = "dhalsim"
+    elif char == "claw":
+        char = "vega"
+    elif char == "dictator":
+        char = "mbison"
+    elif char == "boxer":
+        char = "balrog"
+    elif char == "rog":
+        char = "balrog"
+    elif char == "honda":
+        char = "ehonda"
     
     ## direct key matching
     for moveExact in data[char][vtd.lower()]:
@@ -505,6 +611,12 @@ def resolveMoveName(userstring):
             result = matchExact(move, lauraexact)
         elif char == "dhalsim":
             result = matchExact(move, dhalsimexact)
+        elif char == "fang":
+            result = matchExact(move, fangexact)
+        elif char == "alex":
+            result = matchExact(move, alexexact)
+        elif char == "guile":
+            result = matchExact(move, guileexact)
         elif char == "seth":
             result = matchExact(move, sethexact)
 
