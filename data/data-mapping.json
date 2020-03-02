@@ -15,151 +15,214 @@
         "mbison": {
             "prettyName": "M. Bison",
             "image": "https://i.imgur.com/U62mhIH.jpg"
-        },   
+        },
         "cammy": {
             "prettyName": "Cammy",
             "image": "https://i.imgur.com/sZJ4DmT.jpg"
-        },  
+        },
         "birdie": {
             "prettyName": "Birdie",
             "image": "https://i.imgur.com/7l07Grz.jpg"
-        },  
+        },
         "ken": {
             "prettyName": "Ken",
             "image": "https://i.imgur.com/EHVQds2.jpg"
-        },  
+        },
         "necalli": {
             "prettyName": "Necalli",
             "image": "https://i.imgur.com/wW5suKK.jpg"
-        },  
+        },
         "vega": {
             "prettyName": "Vega",
             "image": "https://i.imgur.com/KwHs3cd.jpg"
-        },  
+        },
         "rmika": {
             "prettyName": "R. Mika",
             "image": "https://i.imgur.com/AnYoQjp.jpg"
-        },  
+        },
         "rashid": {
             "prettyName": "Rashid",
             "image": "https://i.imgur.com/qzK1sFZ.jpg"
-        },  
+        },
         "karin": {
             "prettyName": "Karin",
             "image": "https://i.imgur.com/qonmkFj.jpg"
-        },  
+        },
         "zangief": {
             "prettyName": "Zangief",
             "image": "https://i.imgur.com/T6wXwXE.jpg"
-        },  
+        },
         "laura": {
             "prettyName": "Laura",
             "image": "https://i.imgur.com/69ZFggB.jpg"
-        },  
+        },
         "dhalsim": {
             "prettyName": "Dhalsim",
             "image": "https://i.imgur.com/MykTABk.jpg"
-        },  
+        },
         "fang": {
             "prettyName": "F.A.N.G",
             "image": "https://i.imgur.com/4k9sQGJ.jpg"
-        },  
+        },
         "alex": {
             "prettyName": "Alex",
             "image": "https://i.imgur.com/3pjc99C.jpg"
-        },  
+        },
         "guile": {
             "prettyName": "Guile",
             "image": "https://i.imgur.com/MRrKATH.jpg"
-        },  
+        },
         "ibuki": {
             "prettyName": "Ibuki",
             "image": "https://i.imgur.com/VPPZ2sd.jpg"
-        },  
+        },
         "balrog": {
             "prettyName": "Balrog",
             "image": "https://i.imgur.com/6mr4ihT.jpg"
-        },  
+        },
         "juri": {
             "prettyName": "Juri",
             "image": "https://i.imgur.com/jHaGcHB.jpg"
-        },  
+        },
         "urien": {
             "prettyName": "Urien",
             "image": "https://i.imgur.com/1FqRRL9.jpg"
-        },   
+        },
         "akuma": {
             "prettyName": "Akuma",
             "image": "https://i.imgur.com/BWZHg0U.jpg"
-        },  
+        },
         "kolin": {
             "prettyName": "Kolin",
             "image": "https://i.imgur.com/rynoxSd.jpg"
-        },  
+        },
         "ed": {
             "prettyName": "Ed",
             "image": "https://i.imgur.com/pB892Lr.jpg"
-        },  
+        },
         "abigail": {
             "prettyName": "Abigail",
             "image": "https://i.imgur.com/xuxnH96.jpg"
-        },  
+        },
         "menat": {
             "prettyName": "Menat",
             "image": "https://i.imgur.com/61fTmcM.jpg"
-        },  
+        },
         "zeku": {
             "prettyName": "Zeku",
             "image": "https://i.imgur.com/MT6B1jh.jpg"
-        },  
+        },
         "sakura": {
             "prettyName": "Sakura",
             "image": "https://i.imgur.com/cnHk8r3.jpg"
-        }, 
+        },
         "blanka": {
             "prettyName": "Blanka",
             "image": "https://i.imgur.com/QNvMlHg.jpg"
-        }, 
+        },
         "falke": {
             "prettyName": "Falke",
             "image": "https://i.imgur.com/OUw7Hzm.jpg"
-        }, 
+        },
         "cody": {
             "prettyName": "Cody",
             "image": "https://i.imgur.com/W0JaQ7Z.jpg"
-        }, 
+        },
         "g": {
             "prettyName": "G",
             "image": "https://i.imgur.com/fnLX4Nz.jpg"
-        }, 
+        },
         "sagat": {
             "prettyName": "Sagat",
             "image": "https://i.imgur.com/A30Z4pE.jpg"
-        }, 
+        },
         "kage": {
             "prettyName": "Kage",
             "image": "https://i.imgur.com/GcHZn8T.jpg"
-        }, 
+        },
         "poison": {
             "prettyName": "Poison",
             "image": "https://i.imgur.com/ToFIBd9.jpg"
-        }, 
+        },
         "ehonda": {
             "prettyName": "E. Honda",
             "image": "https://i.imgur.com/mVavZgE.jpg"
-        }, 
+        },
         "lucia": {
             "prettyName": "Lucia",
             "image": "https://i.imgur.com/jyISlks.jpg"
-        }, 
+        },
         "gill": {
             "prettyName": "Gill",
             "image": "https://i.imgur.com/tjiXLhz.jpg"
-        }, 
+        },
         "seth": {
             "prettyName": "Seth",
             "image": "https://i.imgur.com/3bvGAWo.jpg"
         }
-
+    },
+    "soup": {
+        "images": {
+            "https://game.capcom.com/cfn/sfv/as/img/cmd/key/1.gif?h=6ecbbeac560a29ef09988f3102c8be9f": "db",
+            "https://game.capcom.com/cfn/sfv/as/img/cmd/key/2.gif?h=146d9a7c6b006b57d999d5633df090f0": "d",
+            "https://game.capcom.com/cfn/sfv/as/img/cmd/key/3.gif?h=705de611ba081ecabe11861b0c4047f3": "df",
+            "https://game.capcom.com/cfn/sfv/as/img/cmd/key/4.gif?h=30f455943bd68bafe11e9359b871465d": "b",
+            "https://game.capcom.com/cfn/sfv/as/img/cmd/key/5.gif?h=5c61278719e2dea3e98b59650f7f9a29": "n",
+            "https://game.capcom.com/cfn/sfv/as/img/cmd/key/6.gif?h=24d3886f118640b674eae14fabd0e016": "f",
+            "https://game.capcom.com/cfn/sfv/as/img/cmd/key/8.gif?h=9247962a975feda8fd5e99965f18f774": "u",
+            "https://game.capcom.com/cfn/sfv/as/img/cmd/key/9.gif?h=41302981c9b1fd5c57eb7c11d8980de9": "uf",
+            "https://game.capcom.com/cfn/sfv/as/img/cmd/key/214.gif?h=b1e91134cef6d20e99b404fae2437195": "qcb",
+            "https://game.capcom.com/cfn/sfv/as/img/cmd/key/236.gif?h=81e527af198d2e5ddacf0aed44f61cdb": "qcf",
+            "https://game.capcom.com/cfn/sfv/as/img/cmd/key/421.gif?h=59e10a581b753ed56f0ec4c84b6171de": "r.dp",
+            "https://game.capcom.com/cfn/sfv/as/img/cmd/key/41236.gif?h=787788efb7ec868b50e3ba62dbc35a31": "hcf",
+            "https://game.capcom.com/cfn/sfv/as/img/cmd/key/623.gif?h=91ce5a17eb810540f177449f580dc244": "dp",
+            "https://game.capcom.com/cfn/sfv/as/img/cmd/key/63214.gif?h=94b63ab09919622f1e451e21ffa32412": "hcb",
+            "https://game.capcom.com/cfn/sfv/as/img/cmd/key/63214789.gif?h=ea94c393814d70e1aedca75b3fc57311": "360",
+            "https://game.capcom.com/cfn/sfv/as/img/cmd/key/c2.gif?h=7658c782425aef8b1eb937fcc509e195": "d",
+            "https://game.capcom.com/cfn/sfv/as/img/cmd/key/c4.gif?h=2a138cf782017000f8c40c9f6013b2e3": "b",
+            "https://game.capcom.com/cfn/sfv/as/img/cmd/btn/kick.gif?h=782ca1c7f3e42332887e30ab0a5d37df": "k",
+            "https://game.capcom.com/cfn/sfv/as/img/cmd/next.gif?h=124a6dc32d24b2472cf317a685310f07": ">",
+            "https://game.capcom.com/cfn/sfv/as/img/cmd/btn/punch.gif?h=cdde7fc8901adab4686621a896922c1a": "p"
+        },
+        "tags": {
+            "<span class=\"key-hkfrm\">h</span>": "h",
+            "<span class=\"key-hpfrm\">h</span>": "h",
+            "<span class=\"key-mpfrm\">m</span>": "m",
+            "<span class=\"key-mkfrm\">m</span>": "m",
+            "<span class=\"key-lpfrm\">l</span>": "l",
+            "<span class=\"key-lkfrm\">l</span>": "l"
+        },
+        "strings": {
+            "lplk": "lp+lk",
+            "mpmk": "mp+mk",
+            "hphk": "hp+hk",
+            "360360": "720",
+            "(during jump)": "j.",
+            "(during forward or back jump)": "j.",
+            "(during vertical or forward jump)": "j.",
+            "(close to opponent in air)": "j.",
+            "(during forward jump)": "j.",
+            "(during vertical jump)": "u",
+            "(during v-trigger i)": "",
+            "(during v-trigger ii)": "",
+            "(while crouching)": "cr.",
+            "(hold buttons)": " hold",
+            "(max hold button)": " max hold",
+            "(during dash)": "dash ",
+            "(hold and release)": "har",
+            "(after holding the button)": "",
+            "(within haboob range)": "",
+            "(near opponent)": "",
+            "(when selecting vskill i)": "",
+            "(when selecting vskill ii)": "",
+            "(on hit)": "",
+            "forn+": "",
+            "nord+": "",
+            "norbordordb+": "",
+            "orb+": "",
+            "orr.dp": "",
+            "orpp>p": "",
+            "orpp>k": ""
+        }
     }
 }
