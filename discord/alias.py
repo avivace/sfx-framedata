@@ -634,6 +634,86 @@ juriexact = {
 
 }
 
+urienexact = {
+    # CHARACTER: URIEN
+    # V-TRIGGER 1   
+
+    "Spartan Bomb (Forward)": ["throw"],
+    "Spartan Bomb (Back)": ["bthrow", "b+throw", "back throw"],
+    "[VS1] Metallic Aura": ["vs1","vskill1"],
+    "[VS2] Indignant Thunder": ["vs2","vskill2"],
+    "Aegis Reflector (Forward)": ["b+vt1", "b+vtrigger1"],
+    "Aegis Reflector (Back)": ["vt1", "vtrigger1", "f+vt1", "f+vtrigger1"],
+    "Aegis Reflector (Up)": ["d+vt1", "d+vtrigger1"],
+    "Anger Snap Fist": ["vreversal","vrev"],
+    "EX L Metallic Sphere": ["qcf+lp+mp","qcf+lpmp"],
+    "EX M Metallic Sphere": ["qcf+lp+hp","qcf+lphp"],
+    "EX H Metallic Sphere": ["qcf+mp+hp","qcf+mphp"],
+    "EX L Metallic Sphere (Hold Button)": ["qcf+lp+mp hold","qcf+lpmp hold"],
+    "EX M Metallic Sphere (Hold Button)": ["qcf+lp+hp hold","qcf+lphp hold"],
+    "EX H Metallic Sphere (Hold Button)": ["qcf+mp+hp hold","qcf+mphp hold"],
+    "L Metallic Sphere (VS2 Ver.)": ["qcf+lp vs2"],
+    "M Metallic Sphere (VS2 Ver.)": ["qcf+mp vs2"],
+    "H Metallic Sphere (VS2 Ver.)": ["qcf+hp vs2"],
+    "EX Metallic Sphere L (VS2 Ver.)": ["qcf+lp+mp vs2", "qcf+lpmp vs2"],
+    "EX Metallic Sphere M (VS2 Ver.)": ["qcf+lp+hp vs2", "qcf+lphp vs2"],
+    "EX Metallic Sphere H (VS2 Ver.)": ["qcf+mp+hp vs2", "qcf+mphp vs2"],
+    "2nd Aegis Reflector (Forward)": ["b+aegis"],
+    "2nd Aegis Reflector (Back)": ["aegis", "f+aegis"],
+    "2nd Aegis Reflector (Up)": ["d+aegis"],
+    "Dominant Crush": ["ca", "critical art", "super"],
+
+    # V-TRIGGER 2
+
+    "Tyrant Pressure": ["vt2", "vtrigger2"],
+    "Tyrant Blaze": ["vt2 tackle", "tackle vt2"],
+    "Tyrant Blaze (Charge Attack)": ["vt2 tackle hold", "tackle vt2 hold"]
+}
+
+akumaexact = {
+    # CHARACTER: AKUMA
+    # V-TRIGGER 1   
+
+    "Goshoha": ["throw", "lp+lk"],
+    "Shuretsuzan": ["bthrow", "b+throw", "back throw"],
+    "[VS1] Rakan": ["vs1","vskill1"],
+    "[VS1] Rakan Gosho": ["vs1>p"],
+    "[VS1] Rakan Gokyaku": ["vs1>k"],
+    "[VS2] Kiai": ["vs2","vskill2"],
+    "[VS2] Sekia Goshoha": ["vs2>hcb+p"],
+    "[VS2] EX Sekia Goshoha": ["vs2>hcb+pp"],
+    "Dohatsu Shoten": ["vt1", "vtrigger1"],
+    "Gosenkyaku": ["vreversal","vrev"],
+    "Ashura Senku (Forward)": ["dp+kkk"],
+    "Ashura Senku (Back)": ["r.dp+kkk"],
+    "Hyakki Gozan": ["hcf+k>"],
+    "Hyakki Gosho": ["hcf+k>p"],
+    "Hyakki Gojin": ["hcf+k>k"],
+    "Hyakki Gosai": ["hcf+k>lp+lk", "hcf+k>lplk", "hcf+k>throw"],
+    "EX Hyakki Gozan": ["hcf+kk>"],
+    "EX Hyakki Gosho": ["hcf+kk>p"],
+    "EX Hyakki Gojin": ["hcf+kk>k"],
+    "EX Hyakki Gosai": ["hcf+kk>lp+lk", "hcf+kk>lplk", "hcf+kk>throw"],
+    "Hyakki Gozanku (On startup hit)": ["hcf+kk>qcf+p"],
+    "Hyakki Gorasen": ["hcf+kk>qcb+k"],
+    "Gohadoken": ["qcf+p vt1"],
+    "Zanku Hadoken": ["j.qcf+p vt1"],
+    "Sekia Kuretsuha": ["ca", "critical art", "super"],
+    "Shun Goku Satsu": ["demon"],
+
+    # V-TRIGGER 2
+
+    "Shiretsu Hasshi": ["vt2", "vtrigger2"],
+    "Gohadoken": ["qcf+pp vt2"],
+    "Sekia Goshoha": ["hcb+pp vt2"],
+    "EX Zanku Hadoken (On release hit)": ["j.qcf+pp vt2"],
+    "Goshoryuken": ["dp+pp vt2"],
+    "Tatsumaki Zankukyaku": ["qcb+kk vt2"],
+    "Airborne Tatsumaki Zankukyaku": ["j.qcb+kk vt2"],
+    "Hyakkishu": ["hcf+kk vt2"]
+
+}
+
 sethexact = {
     # CHARACTER: SETH
     # V-TRIGGER 1   
@@ -750,6 +830,10 @@ def resolveMoveName(userstring):
             result = matchExact(move, balrogexact)
         elif char == "juri":
             result = matchExact(move, juriexact)
+        elif char == "urien":
+            result = matchExact(move, urienexact)
+        elif char == "akuma":
+            result = matchExact(move, akumaexact)
         elif char == "seth":
             result = matchExact(move, sethexact)
 
