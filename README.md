@@ -1,6 +1,6 @@
 
 <div align="center">
-    <img src=".github/logo-trim-shadow.png" height="100">
+    <img src=".github/logo-trim-shadow.png" height="160">
     <h1>SFX Framedata </h1>
     <p>
         Discord bot providing Street Fighter V frame data for the specified character and move. <br> Supports unofficial common move names and shorthands.
